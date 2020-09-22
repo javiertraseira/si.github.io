@@ -222,7 +222,7 @@ Aparece el primer ordenador personal, las supercomputadoras actuales y los smart
 
 ## La Ley de Moore
 
->   La **ley de Moore **dice que aproximadamente cada dos años se duplica el número de **transistores **en un procesador.
+>   La **ley de Moore** dice que aproximadamente cada dos años se duplica el número de **transistores** en un procesador.
 
 Se trata de una predicción formulada por el cofundador de Intel, Gordon E. Moore, el 19 de abril de 1965, cuyo cumplimiento se ha podido constatar hasta el día de hoy.
 
