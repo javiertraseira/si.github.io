@@ -82,12 +82,12 @@ Campos fundamentales de las **ciencias de la computación**:
 
 El ordenador es una máquina compuesta de elementos físicos (**hardware**), en su mayoría circuitos electrónicos, capaces de realizar una gran variedad de trabajos de **procesamiento digital** a gran velocidad.
 
-![esquema_si]( /media/esquema_si.jpg)
+![esquema_si](/media/esquema_si.jpg)
 
 Estos componentes electrónicos necesitan de otros componentes no físicos que los pongan en funcionamiento; los **programas, apps o software**.
 
 
-![partes_si]( /media/partes_si.jpg)
+![partes_si](/media/partes_si.jpg)
 
 >   Un ordenador se distingue de otros dispositivos similares, como una calculadora no programable, es que es una máquina de propósito general, es decir, puede realizar tareas muy diversas, de acuerdo a las posibilidades de sus programas y el hardware.
 
@@ -103,13 +103,13 @@ El **software básico **para hacer funcionar cualquier ordenador se denomina **s
 
 El **firmware **es otro elemento importante entre software y hardware dentro de un sistema informático. Consta de instrucciones (software) que fijan la lógica primaria sobre los circuitos (hardware) funcionando como el nexo entre las instrucciones que llegan al dispositivo desde el exterior y sus diversas partes electrónicas.
 
-<img src=" /media/firmware.jpg" alt="firmware" style="zoom:67%;" />
+<img src="/media/firmware.jpg" alt="firmware" style="zoom:67%;" />
 
 
 
 La conexión entre los diferentes subsistemas o componentes de un SI se realiza utilizando una **interfaz.**
 
-![interfaz]( /media/interfaz.png)
+![interfaz](/media/interfaz.png)
 
 Este módulo está centrado en el estudio del subsistema físico de los SI, es decir, los ordenadores y sus
 componentes así como de su mantenimiento y características.
@@ -118,7 +118,7 @@ componentes así como de su mantenimiento y características.
 
 >   Se denomina **hardware **a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
 
-![piezas_ordenador]( /media/piezas_ordenador.jpg)
+![piezas_ordenador](/media/piezas_ordenador.jpg)
 
 
 
@@ -193,7 +193,7 @@ Aparece el primer ordenador personal, las supercomputadoras actuales y los smart
 
 
 
-![IBM360]( /media/IBM360.jpg)
+![IBM360](media/IBM360.jpg)
 
 > IBM 360
 
@@ -224,4 +224,4 @@ Aparece el primer ordenador personal, las supercomputadoras actuales y los smart
 
 Se trata de una predicción formulada por el cofundador de Intel, Gordon E. Moore, el 19 de abril de 1965, cuyo cumplimiento se ha podido constatar hasta el día de hoy.
 
-![Ley_moore]( /media/Ley_moore.jpg)
+![Ley_moore](media/Ley_moore.jpg)
