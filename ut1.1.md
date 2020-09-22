@@ -57,7 +57,7 @@ Campos fundamentales de las **ciencias de la computación**:
     - La implementación y estudio de sistemas que exhiben (ya sea por una inteligencia autónoma o comportamiento propio, a veces inspirado por las características de los seres vivos.
     - Robótica: algoritmos para el control de robots autónomos
 
-    <img src="/media/driving.jpg" alt="driving" style="zoom:67%;" />
+    <img src="media/driving.jpg"  style="zoom:67%;" />
 
     
 
@@ -101,9 +101,9 @@ El **software básico **para hacer funcionar cualquier ordenador se denomina **s
 
 >   El **sistema operativo (SO)** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
 
-El **firmware **es otro elemento importante entre software y hardware dentro de un sistema informático. Consta de instrucciones (software) que fijan la lógica primaria sobre los circuitos (hardware) funcionando como el nexo entre las instrucciones que llegan al dispositivo desde el exterior y sus diversas partes electrónicas.
+El **firmware** es otro elemento importante entre software y hardware dentro de un sistema informático. Consta de instrucciones (software) que fijan la lógica primaria sobre los circuitos (hardware) funcionando como el nexo entre las instrucciones que llegan al dispositivo desde el exterior y sus diversas partes electrónicas.
 
-<img src="/media/firmware.jpg" alt="firmware" style="zoom:67%;" />
+<img src="/media/firmware.jpg" style="zoom:67%;" />
 
 
 
@@ -116,7 +116,7 @@ componentes así como de su mantenimiento y características.
 
 ## El hardware de un ordenador
 
->   Se denomina **hardware **a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
+>   Se denomina **hardware** a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
 
 ![piezas_ordenador](/media/piezas_ordenador.jpg)
 
