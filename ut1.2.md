@@ -88,7 +88,7 @@ Este software se podría dividir en:
 
 El software también se suele clasificar siguiendo el siguiente esquema:
 
-![](\media\clasificacion_software.jpg)
+![](media/clasificacion_software.jpg)
 
 ## Licencias de software
 
@@ -98,7 +98,7 @@ Para cada uno de estos tres tipos de software vistos anteriormente, es necesario
     
 -   **Software de propietario** es aquel cuyas condiciones de uso, copia y  distribución están sometidas a normas o restricciones. Su código fuente es cerrado, es decir, no está disponible para el usuario (el propietario puede mostrarlo, pero esto no implica que pase a ser software libre en  cuanto a su uso).
 
-![licencias](\media\licencias.jpg)
+![licencias](media/licencias.jpg)
 
 
 
@@ -195,4 +195,6 @@ Algunos tipos de licencias de **software libre**:
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Freeware** Uso gratuito No se puede modificar              | **Shareware** Se prueba y luego se paga No se puede modificar |
 | **Dominio público** Software sin licencia. Se permite uso, copia, modificación o redistribución con o sin fines de lucro. |                                                              |
+
+
 
