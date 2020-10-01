@@ -164,10 +164,10 @@ Como antecedentes al inicio de la informática, podemos encontrar a lo largo de 
 
 >   📌 La primera muestra de ello la podemos encontrar en el **ábaco**, que se utilizo en varias culturas de la antigüedad y en la Edad Media y que permitía realizar operaciones de suma y resta con facilidad.
 
->   En el S XVII podemos encontrar la calculadora que diseñó **Blaise Pascal**, que estaba basada en dispositivos mecánicos y que solo realizaba operaciones limitadas como las sumas y las restas, pero que sentó las bases para que, más adelante, **Leibnitz **desarrollara otra calculadora más potente y con
+>   En el S XVII podemos encontrar la calculadora que diseñó **Blaise Pascal**, que estaba basada en dispositivos mecánicos y que solo realizaba operaciones limitadas como las sumas y las restas, pero que sentó las bases para que, más adelante, **Leibnitz** desarrollara otra calculadora más potente y con
 >   más funciones, como el producto y la división.
 
->   A principios del siglo XIX **J.M. Jacquard **desarrolló un telar programable mediante tarjetas perforadas, que fue el antecesor de los primeros dispositivos de cálculo y cuyo diseño fue utilizado posteriormente para la introducción de datos.
+>   A principios del siglo XIX **J.M. Jacquard** desarrolló un telar programable mediante tarjetas perforadas, que fue el antecesor de los primeros dispositivos de cálculo y cuyo diseño fue utilizado posteriormente para la introducción de datos.
 
 La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológicamente vertiginosa y se clasifica en <u>cinco</u> generaciones:
 
@@ -193,7 +193,7 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 
 
--  **5ª Generación **(*1981-hoy*) Aparece el primer **ordenador personal**, las supercomputadoras actuales y los smartphones. Aparecen los SO en red, móviles y distribuidos.
+-  **5ª Generación** (*1981-hoy*) Aparece el primer **ordenador personal**, las supercomputadoras actuales y los smartphones. Aparecen los SO en red, móviles y distribuidos.
 
 ![](media/PC.jpg)
 
@@ -226,7 +226,7 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ### Tercera generación (1965-1975)
 
-- Circuitos integrados, con decenas de transistores.
+- **Circuitos integrados**, con decenas de transistores.
 
 -   Ejemplo: IBM 360, 2.000.000 \$ en el mercado.
 
@@ -241,10 +241,10 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 ### Cuarta generación (1971-1981)
 
 
--  Aparece el primer microprocesador en 1971: el 4004de Intel
+-  Aparece el primer **microprocesador** en 1971: *el 4004 de Intel*
 -  Se caracteriza por la alta integración de componentes electrónicos y sigue disminuyendo su coste y tamaño.
 -  Aparecen las primeras microcomputadoras (Apple II, Spectrumy Commodore)
--  Surgen los primeros sistemas operativos mordernos como Unix
+-  Surgen los primeros sistemas operativos mordernos como Unix.
 
 ![](/media/4004.jpg)
 
@@ -252,7 +252,7 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ### Quinta generación (1981-hoy)
 
--  Se considera a partir de la aparición del primer ordenador personal PC de IBM
+-  Se considera a partir de la aparición del primer **ordenador personal** (PC) de IBM
 -  El **IBM PC**, 1.500.000$
 -  Apple Macintosh, iphone, Android..
 -  Nuevos lenguajes de programación (orientada a objetos) y SO modernos.
