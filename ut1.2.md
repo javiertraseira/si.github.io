@@ -92,7 +92,7 @@ El software también se suele clasificar siguiendo el siguiente esquema:
 
 ## Licencias de software
 
-Para cada uno de estos tres tipos de software vistos anteriormente, es necesario distinguir entre software libre o software, dependiendo de las **licencias **y permisos para su uso:
+Para cada uno de estos tres tipos de software vistos anteriormente, es necesario distinguir entre software libre o software, dependiendo de las **licencias** y permisos para su uso:
 
 -   **Software libre** es el que otorga libertad de uso, copia y distribución a los usuarios. Su código puede ser totalmente abierto o estar sometido a ciertas normas según la licencia asociada concreta a ese programa.
     
@@ -104,7 +104,7 @@ Para cada uno de estos tres tipos de software vistos anteriormente, es necesario
 
 >   💡  Una **licencia de software** es un contrato entre el licenciante (autor/titular de los derechos de explotación/distribuidor) y el licenciatario del programa informático (usuario consumidor/usuario profesional o empresa), para utilizar el software cumpliendo una serie de términos y condiciones establecidas en sus cláusulas.
 
-Cuando compramos o bajamos de Internet un programa, al instalarlo solemos aceptar sin leer (*mala costumbre*) un contrato que especifica el tipo de **Licencia** de uso del software, en inglés *EULA*o *End User License Agreement*: licencia por la cual el uso de un producto sólo está permitido para un único usuario (el comprador). Es un acuerdo unilateral puesto que el usuario no tiene más opción que aceptar o rechazar el contenido del mismo.
+Cuando compramos o bajamos de Internet un programa, al instalarlo solemos aceptar sin leer (*mala costumbre*) un contrato que especifica el tipo de **Licencia** de uso del software, en inglés *EULA* o *End User License Agreement*: licencia por la cual el uso de un producto sólo está permitido para un único usuario (el comprador). Es un acuerdo unilateral puesto que el usuario no tiene más opción que aceptar o rechazar el contenido del mismo.
 
 Aunque se confunden, software de **código abierto** y el **software libre** no son exactamente lo mismo debido a diferencias sutiles de concepto.
 
@@ -112,7 +112,9 @@ Aunque se confunden, software de **código abierto** y el **software libre** no 
 
 >   💡 El proyecto GNU fue iniciado en 1984 por Richard Stallman y fundó la Free Software Foundation sin ánimo de lucro.
 
-Se fundamenta en la moral y exige la libertad absoluta del software. Cuatro libertades del software libre:
+Se fundamenta en la moral y exige la libertad absoluta del software. 
+
+Las **cuatro libertades** del software libre son:
 
 1.  La libertad de usar el programa, con cualquier propósito. (libertad 0)
 
@@ -130,7 +132,7 @@ Aunque se confunden, software de **código abierto** y el **software libre** no 
 
 ### El software de código abierto (Open Source)
 
-Trata de suavizar las condiciones del GNU para facilitar su uso por las compañías.
+Trata de suavizar las condiciones del *GNU* para facilitar su uso por las compañías.
 
 >   💡 El Open Source o código abierto, es la expresión con la que se conoce al software distribuido y desarrollado libremente.
 
@@ -157,9 +159,9 @@ Podemos <u>clasificar</u> las licencias de software en diferentes tipos, ya que 
 
 - **Licencias libres:** se basan en las cuatro libertades vistas anteriormente
 
-- Licencias permisivas
+   - Licencias permisivas
 
-- Licencias copyleft: Imponen algunas condiciones en la redistribución.
+   - Licencias copyleft: Imponen algunas condiciones en la redistribución.
 
 - **Licencias** **semi-libres**: restringen alguna de las cuatro libertades vistas anteriormente.
 
