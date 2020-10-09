@@ -296,7 +296,7 @@ Para pasar de hexadecimal a decimal se toman los dígitos hexadecimales y se van
 
 #### Conversiones de hexadecimal a binario
 
-Para convertir números octales a binarios se sustituye cada dígito hexadecimal por su representación binaria **con cuatro dígitos **de acuerdo a la tabla vista anteriormente.
+Para convertir números octales a binarios se sustituye cada dígito hexadecimal por su representación binaria **con cuatro dígitos** de acuerdo a la tabla vista anteriormente.
 
 - Convertir en decimal el número hexadecimal **70C558**:
 
