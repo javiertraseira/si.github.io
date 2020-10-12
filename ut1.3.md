@@ -667,4 +667,4 @@ hacer la señal resultante la digital más inmune al ruido y otras interferencia
 
 A las imágenes en mapa de bits se las suele definir por su altura y anchura (en píxeles) y por su **profundidad de color** (en bits por píxel), que determina el número de colores distintos que se pueden almacenar en cada punto individual, y por lo tanto la calidad del color de la imagen.
 
-![](/media/profundidad color.png)
+![](/media/profundidad_color.png)
