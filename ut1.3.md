@@ -549,17 +549,15 @@ En este caso, el 0 (decimal) sólo tiene una única representación 00000000 y l
 
 En ciencia se utiliza habitualmente la **notación científica decimal** en la que se basa, donde cada número lleva asociada una mantisa y un exponente.
 
-<img src="/media/notacion_cientifica.png" style="zoom:67%;" />
+<img src="media/notacion_cientifica.png" style="zoom:67%;" />
 
 La idea del estándar IEE754 es descomponer el número en dos partes para su representación binaria:
 
-- Una **mantisa** (también llamada coeficiente o significando) que contiene los dígitos del número. Mantisas negativas representan números negativos.
-
-   Por ejemplo, en el número decimal 13.8543, la parte entera es 13 y la mantisa 13.8543–13= 0,**8543**. Cuando el número decimal es negativo, como  –3.8543, la parte entera es –14 y la mantisa=–13.8543– (–14)= 0.1457.
+- Una **mantisa** (también llamada coeficiente o significando) que contiene los dígitos del número.  
 
 - Un **exponente** que indica dónde se coloca el punto decimal (o binario) en relación al inicio de la mantisa. Los exponentes negativos representan números menores que uno.
 
-  <img src="/media/mantisa_exponente.png" style="zoom:67%;" />
+  <img src="media/mantisa_exponente.png" style="zoom:67%;" />
 
 
 
@@ -575,7 +573,7 @@ Para convertir un número real a su representación en coma flotante deberemos h
 - Exponente: sumarle 127 (8 bits)
 - Mantisa (23 bits)
 
-![iee754](/media/iee754.png)
+![iee754](media/iee754.png)
 
 Los números en coma flotante decimales normalmente se expresan en **notación** científica con un punto explícito siempre entre el primer y el segundo dígitos. El exponente o bien se escribe explícitamente incluyendo la base, o se usa una e para separarlo de la mantisa.
 
@@ -597,7 +595,7 @@ Los formatos más comunes del **estándar IEE754 **son de 32 o 64 bits de longit
 
 - Ejemplos:
 
-  ![](/media/coma_flotante.png)
+  ![](media/coma_flotante.png)
 
 
 
@@ -635,7 +633,7 @@ Hay que recordar que cuando hablamos de cantidades de información y sus unidade
 
 
 
-![]( \media\big_little_endian.jpg)
+![](media/big_little_endian.jpg)
 
 
 
@@ -648,7 +646,7 @@ Un ordenador o cualquier sistema de control basado en un microprocesador no pued
 La conversión **analógica-digital** (CAD) o **digitalización** consiste en la transcripción de señales analógicas en señales digitales, con el propósito de facilitar su procesamiento (codificación, compresión, etc.) y
 hacer la señal resultante la digital más inmune al ruido y otras interferencias.
 
-<img src="/media/digitalizacion.jpg" style="zoom:80%;" />
+<img src="media/digitalizacion.jpg" style="zoom:80%;" />
 
 - Ventajas de la **digitalización**:
 
@@ -667,4 +665,4 @@ hacer la señal resultante la digital más inmune al ruido y otras interferencia
 
 A las imágenes en mapa de bits se las suele definir por su altura y anchura (en píxeles) y por su **profundidad de color** (en bits por píxel), que determina el número de colores distintos que se pueden almacenar en cada punto individual, y por lo tanto la calidad del color de la imagen.
 
-![](/media/profundidad_color.png)
+![](media/profundidad_color.png)
