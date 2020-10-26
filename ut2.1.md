@@ -271,7 +271,7 @@ Cada vez que el sistema quiere acceder a un nuevo dato, éste es almacenado en l
 
 Existen diferentes niveles de caché denominados *L1*, L2 y L3.
 
-![memoria_cache]( \media\memoria_cache.png)
+![memoria_cache](media/memoria_cache.png)
 
 
 
