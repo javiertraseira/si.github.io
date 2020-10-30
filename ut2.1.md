@@ -1,4 +1,4 @@
-# UT1.4: Introducción a los SI: Arquitectura
+# UT2.1: Arquitectura funcional de un ordenador 
 
 ## Arquitectura de computadores
 
