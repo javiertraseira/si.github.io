@@ -141,11 +141,11 @@ Debido a la estructura de 64 bits de un microprocesador las direcciones de memor
 
   
 
-![](/media/bsod.jpg)
+![](media/bsod.jpg)
 
    Pantallazo de la muerte (*blue screen of death*) en un sistema Windows clásico
 
-![](/media/kernel_panic.jpg)
+![](media/kernel_panic.jpg)
 
    *Kernel Panic* en un sistema Linux
 
@@ -173,7 +173,7 @@ Para hacer la conversión de decimal a binario, hay que ir dividiendo el número
 -   Convertir en binario el número decimal **28**:
 
 
-   <img src="/media/decimal_binario.jpg" style="zoom:67%;" />
+   <img src="media/decimal_binario.jpg" style="zoom:67%;" />
 
 $$
 28 = 11100
@@ -186,7 +186,7 @@ Para hacer la conversión de decimal a octal, hay que ir dividiendo el número d
 
 -   Convertir en octal el número decimal **786**:
 
-<img src="/media/decimal_octal.jpg" style="zoom:50%;" />
+<img src="media/decimal_octal.jpg" style="zoom:50%;" />
 $$
 786=1422
 $$
@@ -198,7 +198,7 @@ Para hacer la conversión de decimal a hexadecimal, hay que ir dividiendo el nú
 
 -   Convertir en hexadecimal el número decimal **1869**:
 
-![]( \media\decimal_hexadecimal.jpg)
+![](media/decimal_hexadecimal.jpg)
 $$
 1869 = 74D
 $$
@@ -209,7 +209,7 @@ Para realizar la conversión de binario a decimal se toman los dígitos binarios
 
 - Convertir en decimal el número binario **1000011011**:
 
-![](/media/binario_decimal.png)
+![](media/binario_decimal.png)
 
 
 
@@ -322,13 +322,13 @@ Bit es el acrónimo *Binary digit* (‘dígito binario’). Un bit es un dígito
 
 Los bits se pueden combinar para dar distintos resultados y generar distintos sistemas de codificación como hemos visto.
 
-![](/media/light_bulbs.jpg)
+![](media/light_bulbs.jpg)
 
 Los **sistemas de codificación** se utilizan para procesar la información que el usuario entiende y el ordenador no.
 
 En dispositivos magnéticos, por ejemplo, una posición magnetizada se convierte en un uno y cada posición no magnetizada en un cero. Se buscará en una **tabla de códigos** y se compara la combinación de esos ocho bits, obteniendo la equivalencia con un carácter concreto en el caso de textos.
 
-![](/media/magnetics.png)
+![](media/magnetics.png)
 
 Diferentes tipos de información poseen diferentes codificaciones, pero las más habituales son:
 
@@ -381,7 +381,7 @@ El código ASCII se divide básicamente en:
 
 - **Codificación de la tabla ASCII original (7 bits)**:	<https://ascii.cl/es/>
 
-![](/media/tabla_ascii.jpg)
+![](media/tabla_ascii.jpg)
 
 
 
@@ -399,7 +399,7 @@ En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es vá
 
 -   **Codificación de la tabla ASCII extendida (8 bits):**
 
-![](/media/ascii_extendida.jpg)
+![](media/ascii_extendida.jpg)
 
 
 
@@ -447,7 +447,7 @@ Es un código de caracteres internacionalizado. Es el resultado más conocido de
 
 
 
-![](/media/planos_unicode.jpg)
+![](media/planos_unicode.jpg)
 
 
 
@@ -459,7 +459,7 @@ Es un código de caracteres internacionalizado. Es el resultado más conocido de
 
 **Unicode BMP: subconjunto ASCII (Basic Latin)**
 
-![](/media/unicode_bmp.png)
+![](media/unicode_bmp.png)
 
 
 
@@ -487,7 +487,7 @@ Es un código de caracteres internacionalizado. Es el resultado más conocido de
 
 >   💡 En sistemas de computación el código **BCD** (Binary-Coded Decimal) o Decimal codificado en binario es un estándar para representar números decimales en el sistema binario, en donde cada dígito decimal es codificado **con una secuencia de 4 bits**.
 
-![](/media/codigo_bcd.jpg)
+![](media/codigo_bcd.jpg)
 
 
 #### Codificación de números negativos
@@ -549,17 +549,15 @@ En este caso, el 0 (decimal) sólo tiene una única representación 00000000 y l
 
 En ciencia se utiliza habitualmente la **notación científica decimal** en la que se basa, donde cada número lleva asociada una mantisa y un exponente.
 
-<img src="/media/notacion_cientifica.png" style="zoom:67%;" />
+<img src="media/notacion_cientifica.png" style="zoom:67%;" />
 
 La idea del estándar IEE754 es descomponer el número en dos partes para su representación binaria:
 
-- Una **mantisa** (también llamada coeficiente o significando) que contiene los dígitos del número. Mantisas negativas representan números negativos.
-
-   Por ejemplo, en el número decimal 13.8543, la parte entera es 13 y la mantisa 13.8543–13= 0,**8543**. Cuando el número decimal es negativo, como  –3.8543, la parte entera es –14 y la mantisa=–13.8543– (–14)= 0.1457.
+- Una **mantisa** (también llamada coeficiente o significando) que contiene los dígitos del número.  
 
 - Un **exponente** que indica dónde se coloca el punto decimal (o binario) en relación al inicio de la mantisa. Los exponentes negativos representan números menores que uno.
 
-  <img src="/media/mantisa_exponente.png" style="zoom:67%;" />
+  <img src="media/mantisa_exponente.png" style="zoom:67%;" />
 
 
 
@@ -575,7 +573,7 @@ Para convertir un número real a su representación en coma flotante deberemos h
 - Exponente: sumarle 127 (8 bits)
 - Mantisa (23 bits)
 
-![iee754](/media/iee754.png)
+![iee754](media/iee754.png)
 
 Los números en coma flotante decimales normalmente se expresan en **notación** científica con un punto explícito siempre entre el primer y el segundo dígitos. El exponente o bien se escribe explícitamente incluyendo la base, o se usa una e para separarlo de la mantisa.
 
@@ -597,7 +595,7 @@ Los formatos más comunes del **estándar IEE754 **son de 32 o 64 bits de longit
 
 - Ejemplos:
 
-  ![](/media/coma_flotante.png)
+  ![](media/coma_flotante.png)
 
 
 
@@ -635,7 +633,7 @@ Hay que recordar que cuando hablamos de cantidades de información y sus unidade
 
 
 
-![]( \media\big_little_endian.jpg)
+![](media/big_little_endian.jpg)
 
 
 
@@ -648,7 +646,7 @@ Un ordenador o cualquier sistema de control basado en un microprocesador no pued
 La conversión **analógica-digital** (CAD) o **digitalización** consiste en la transcripción de señales analógicas en señales digitales, con el propósito de facilitar su procesamiento (codificación, compresión, etc.) y
 hacer la señal resultante la digital más inmune al ruido y otras interferencias.
 
-<img src="/media/digitalizacion.jpg" style="zoom:80%;" />
+<img src="media/digitalizacion.jpg" style="zoom:80%;" />
 
 - Ventajas de la **digitalización**:
 
@@ -667,4 +665,4 @@ hacer la señal resultante la digital más inmune al ruido y otras interferencia
 
 A las imágenes en mapa de bits se las suele definir por su altura y anchura (en píxeles) y por su **profundidad de color** (en bits por píxel), que determina el número de colores distintos que se pueden almacenar en cada punto individual, y por lo tanto la calidad del color de la imagen.
 
-![](/media/profundidad color.png)
+![](media/profundidad_color.png)
