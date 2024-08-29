@@ -126,8 +126,24 @@ La conexión entre los diferentes subsistemas o componentes de un SI se realiza 
 
 ![Sistema_informatico](media/Sistema_informatico.png)
 
+### Hardware
 
-## El Hardware de un sistema informático
+
+### Software
+
+
+### Personal
+
+- Usuario básico: Es aquel que utiliza el ordenador para desarrollar tareas en su puesto de trabajo.
+
+- Programador: El programador, también conocido como desarrollador, es el responsable de convertir las especificaciones técnicas del analista en código fuente. Utilizan lenguajes de programación para crear, modificar y mantener software. Deben tener un profundo conocimiento de la lógica de programación, las estructuras de datos y tecnologías de desarrollo.
+
+- Técnico: El técnico se encarga de la instalación, configuración, mantenimiento y resolución de problemas en los sistemas informáticos. Su función es asegurar el correcto funcionamiento del hardware y software, brindar soporte técnico a los usuarios y gestionar la infraestructura de red.
+
+- Jefe de proyecto: El jefe de proyecto se destaca como la figura clave en la planificación, ejecución y control del proyecto y es el motor que ha de impulsar el avance del mismo mediante la toma de decisiones tendentes a la consecución de los objetivos.
+
+
+## Hardware de un sistema informático
 
 ```note
 💡 Se denomina **hardware** a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
