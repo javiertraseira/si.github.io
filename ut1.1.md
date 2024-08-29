@@ -128,9 +128,36 @@ La conexión entre los diferentes subsistemas o componentes de un SI se realiza 
 
 ### Hardware
 
+```note
+💡 Se denomina **hardware** a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
+```
+
+<img src="media/piezas_ordenador.jpg" alt="piezas_ordenador" style="zoom: 80%;" /><img src="media/cpd.jpg" alt="cpd" style="zoom:50%;" />
+
+Tipos de hardware:
+
+- **Supercomputador**.
+Procesa una gran cantidad de información de forma muy rápida para realizar cálculos complejos. Se emplea sobre todo para la investigación en campos como la medicina (cáncer, Alzheimer, etc.), la meteorología (tsunamis y predicción del tiempo, etc.
+
+- **Ordenador personal o portátil**
+(PC o desktop y laptop). Realiza tareas sencillas como navegar por Internet, consumir contenido multimedia, confeccionar documentos, etc. Además, el portátil, gracias a su batería, puede transportarse con relativa facilidad.
+
+- **Dispositivo móvil**
+(tablet, smartphone, smartwatch, etc.). Pequeño ordenador con pantalla táctil y batería que, además de hacer las mismas tareas que los ordenadores (con limitaciones en cuanto a capacidad de procesamiento y batería), permiten realizar llamadas, controlar constantes vitales, etc.
+
+- **Mainframe**
+(computadora central). Posee una gran capacidad de procesamiento como el supercomputador, pero centrado en el manejo de operaciones de entrada y salida, proporcionando una alta fiabilidad. Se utiliza sobre todo en grandes empresas para dar soporte a una gran cantidad de usuarios.
+
+- **Servidor**
+Proporciona servicios como compartición de datos, aplicaciones o dispositivos (como impresoras o discos duros) a través de una red a un conjunto de usuarios. Su capacidad se calcula en función de los servicios que ofrece y del número de usuarios que atiende. Se usa sobre todo para alojar sitios web y compartir recursos.
+
+- **Sistemas de control**
+Gestionan y controlan el comportamiento de equipos o máquinas. Suelen ser de tamaño reducido y en ocasiones tienen restricciones de tiempo real. Están instalados en microondas, lavadoras, coches, cajeros, etc.
+
 
 ### Software
 
+![Sistema_informatico](media/software_si.png)
 
 ### Personal
 
@@ -143,16 +170,7 @@ La conexión entre los diferentes subsistemas o componentes de un SI se realiza 
 - Jefe de proyecto: El jefe de proyecto se destaca como la figura clave en la planificación, ejecución y control del proyecto y es el motor que ha de impulsar el avance del mismo mediante la toma de decisiones tendentes a la consecución de los objetivos.
 
 
-## Hardware de un sistema informático
-
-```note
-💡 Se denomina **hardware** a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
-```
-
-<img src="media/piezas_ordenador.jpg" alt="piezas_ordenador" style="zoom: 80%;" /><img src="media/cpd.jpg" alt="cpd" style="zoom:50%;" />
-
-
-### Evolución histórica del hardware
+## Evolución histórica del hardware
 
 La evolución histórica de la informática va pareja con la evolución de la mecánica y de la electrónica.
 
