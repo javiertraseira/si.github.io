@@ -13,3 +13,5 @@ html_theme_options = {
     'includehidden': True,
     'titles_only': False
 }
+
+extensions = ["sphinx_rtd_dark_mode"]
