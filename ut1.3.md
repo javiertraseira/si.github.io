@@ -11,7 +11,7 @@ En este tema analizaremos los distintos **sistemas de numeración** que se usan 
 ## Sistemas de numeración
 
 ```note
-Se define un **sistema de numeración **como el conjunto de símbolos y reglas que se utilizan para representar cantidades o datos numéricos.
+Se define un **sistema de numeración** como el conjunto de símbolos y reglas que se utilizan para representar cantidades o datos numéricos.
 ```
 
 Estos sistemas se caracterizan por la *base* a la que hacen referencia. 
@@ -420,12 +420,12 @@ En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es vá
 
   | **Letra ASCII (dec \| hex).** | **ASCII bin.** | **Letra ASCII hex.**  | **ASCII bin.** |
   |-------------------------------|----------------|-----------------------|----------------|
-  | I (**73 **\| **49**)          | **0101001**    | a (**97 **\| **61**)  | **1100001**    |
-  | n (**110 **\| **6E**)         | **1101110**    | t (**116 **\| **74**) | **1110100**    |
-  | f (**102 **\| **66**)         | **1100110**    | i (**105 **\| **69**) | **1101001**    |
-  | o (**111 **\| **6F**)         | **1101111**    | c (**99 **\| **63**)  | **1100011**    |
-  | r (**114 **\| **72**)         | **1110010**    | a (**97 **\| **61**)  | **1100001**    |
-  | m (**109 **\| **6D**)         | **1101101**    |                       |                |
+  | I (73 \| 49)          | 0101001    | a (97 \| 61)  | 1100001    |
+  | n (110 \| 6E)         | 1101110    | t (116 \| 74) | 1110100    |
+  | f (102 \| 66)         | 1100110    | i (105 \| 69) | 1101001    |
+  | o (111 \| 6F)         | 1101111    | c (99 \| 63)  | 1100011    |
+  | r (114 \| 72)         | 1110010    | a (97 \| 61)  | 1100001    |
+  | m (109 \| 6D)         | 1101101    |                       |                |
 
 
 
@@ -475,7 +475,6 @@ En Unicode existen distintas formas de codificar un mismo carácter según el fo
 -   UTF-8 y UTF-16 son codificaciones de amplitud variable. Esto significa que si un carácter se puede representar con un sólo byte, UTF-8 empleará sólo un byte. Si requiere dos bytes, usará dos, y así sucesivamente.
 
     
-
 **Unicode BMP: subconjunto ASCII (Basic Latin)**
 
 ![](media/unicode_bmp.png)

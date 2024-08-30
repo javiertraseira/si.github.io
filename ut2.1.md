@@ -12,26 +12,33 @@ La **CPU** también está compuesta por una memoria (en la cual residen los dato
 
 Algunos <u>conceptos</u> importantes que veremos en arquitectura de computadores:
 
--   **Lenguaje máquina**. Conjunto de instrucciones codificadas que un ordenador puede interpretar y ejecutar directamente. Estas instrucciones son combinaciones binarias de la máquina en la que se ejecutan.
+- **Lenguaje máquina**. Conjunto de instrucciones codificadas que un ordenador puede interpretar y ejecutar directamente. Estas instrucciones son combinaciones binarias de la máquina en la que se ejecutan.
     
--   **Lenguaje de alto nivel. **Lenguaje de programación que (a diferencia del de máquina) es independiente del ordenador que lo va a ejecutar, y que presenta mayores facilidades para el programador, pues emplea signos cercanos al lenguaje natural; por ejemplo, los lenguajes C,Pascal, Java o Cobol.
+- **Lenguaje de alto nivel.** Lenguaje de programación que (a diferencia del de máquina) es independiente del ordenador que lo va a ejecutar, y que presenta mayores facilidades para el programador, pues emplea signos cercanos al lenguaje natural; por ejemplo, los lenguajes C,Pascal, Java o Cobol.
     
--   **Programa**. Secuencia de instrucciones, escritas para realizar una tarea específica en un ordenador o computadora.
+- **Programa**. Secuencia de instrucciones, escritas para realizar una tarea específica en un ordenador o computadora.
     
--   **Memorias de semiconductores**. Tipo de memoria que se emplea actualmente como memoria principal de las computadoras. La RAM pertenece a una clase particular de este tipo de memorias: la de direccionamiento cableado.
+- **Memorias de semiconductores**. Tipo de memoria que se emplea actualmente como memoria principal de las computadoras. La RAM pertenece a una clase particular de este tipo de memorias: la de direccionamiento cableado.
 
 Históricamente ha habido **dos arquitecturas** de ordenadores fundamentales:
 
 <img src=" media/arquitecturas.png" alt="arquitecturas" style="zoom:67%;" />
 
-Ambas arquitecturas constan de los siguientes 6 **elementos principales**:
+Ambas arquitecturas constan de los siguientes  **elementos principales**:
 
 - **Unidad Central de Procesamiento (CPU)**
-- **Unidad de Control (UC)**
-- **Unidad Aritmético Lógica (ALU)**
+  El cerebro del ordenador, que se compone de: 
+  - Unidad de Control (UC) 
+  - Unidad Aritmético Lógica (ALU).
+  
 - **Memoria principal**
+Almacena temporalmente datos e instrucciones para un acceso rápido por parte de la CPU.
+
 - **Sistemas de Entrada/Salida**
+Permiten la comunicación entre el computador y el mundo exterior, como teclados, monitores y otros dispositivos.
+
 - **Buses de comunicación**
+Canales que permiten la transferencia de datos entre los diferentes componentes del ordenador.
 
 ### La arquitectura Harvard
 
@@ -47,21 +54,19 @@ Una de las memorias contiene solamente las instrucciones del programa (Memoria d
 
 Tradicionalmente los sistemas con microprocesadores se basan en esta arquitectura, en la cual la unidad central de proceso (CPU), está conectada a una memoria principal única (casi siempre sólo RAM) donde se guardan las instrucciones del programa y los datos. A dicha memoria se accede a través de un sistema de buses único (control, direcciones y datos):
 
+![](media/arquitectura_vonneumann.png)
+
 El origen de la arquitectura Von Neumann surge a raíz de una colaboración en el proyecto ENIAC del matemático de origen húngaro, John Von Neumann. Éste trabajaba en 1945 en el Laboratorio Nacional Los Álamos.
 
 El primer computador comercial construido en esta forma fue el **UNIVAC I**, fabricado en 1951 por la Sperry-Rand Corporation y comprado por la Oficina del Censo de Estados Unidos.
 
 ## Esquema arquitectura Von Neumann
 
-Las **características** de esta arquitectura son:
+Las características de esta arquitectura son:
 
-- Tanto programas como datos se almacenan en una memoria en común llamada memoria principal.
-
-- Cada celda de memoria de la máquina se identifica con un número único, llamado dirección.
-
-- Cada programa se ejecuta de forma secuencial comenzando por la primera instrucción. Para cambiar esta secuencia se usan comandos de control.
-
-  
+- Tanto programas como datos se almacenan en una memoria en común llamada **memoria principal**.
+- Cada celda de memoria de la máquina se identifica con un número único, llamado **dirección**.
+- Cada **programa** se ejecuta de forma secuencial comenzando por la primera instrucción. Para cambiar esta secuencia se usan comandos de control.
 
 Dicha arquitectura consta de los siguientes <u>**bloques**</u>:
 - Unidad Central del Procesamiento (**CPU**)
@@ -72,23 +77,16 @@ Dicha arquitectura consta de los siguientes <u>**bloques**</u>:
 - Unidad de Entrada/Salida
 - Buses
 
-![](media/arquitectura_von_neumann.jpg)
-
-
-
 - **De forma esquemática:**
 
 ![von_neumann_esquematico](media/von_neumann_esquematico.png)
 
-
-
 ![esquema_von_neumann](media/esquema_von_neumann.png)
-
 
 
 - Un esquema del **flujo de información** más completo:
 
-![](media/esquema_flujo.png)
+![von_neumann](media/arquitectura_von_neumann.jpg)
 
 
 
@@ -337,7 +335,7 @@ Sus funciones son:
 - Sirven para liberar a la CPU para realizar otras tareas.
 - Los controladores incluyen una parte tangible (hardware) y una parte intangible (software).
 
-## los periféricos	
+## Los periféricos	
 
 > 💡 Los **periféricos** son dispositivos hardware con los cuales el usuario puede interactuar con el ordenador (teclado, ratón, monitor), almacenar o leer datos y/o programas (dispositivos de almacenamiento o memorias auxiliares),imprimir, etc
 >
