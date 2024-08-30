@@ -7,8 +7,6 @@ Según el Diccionario de la Real Academia Española se define a la **informátic
 {: .note } 
 Conjunto de conocimientos científicos y técnicas que hacen posible el tratamiento automático de la información por medio de dispositivos digitales, denominados ordenadores o computadoras.
 
-{: .note } Prueba
-
 
 Su aparición como ciencia se debe a la presentación del primer ordenador en el año 1936 denominado **Z1** y usado como arma de cálculo durante la 2ª Guerra Mundial.
 
@@ -89,7 +87,8 @@ Campos fundamentales de las **ciencias de la computación**:
 
 ## El ordenador
 
-{: .note } Un **ordenador** o computadora es una máquina electrónica que sirve para procesar información digital.
+{: .note } 
+Un **ordenador** o computadora es una máquina electrónica que sirve para procesar información digital.
 
 
 El ordenador es una máquina compuesta de elementos físicos (**hardware**), en su mayoría circuitos electrónicos, capaces de realizar una gran variedad de trabajos de **procesamiento digital** a gran velocidad.
@@ -101,7 +100,8 @@ Estos componentes electrónicos necesitan de otros componentes no físicos que l
 
 ![partes_si](media/partes_si.jpg)
 
-{: .note } Un ordenador se distingue de otros dispositivos similares, como una calculadora no programable, es que es una máquina de propósito general, es decir, puede realizar tareas muy diversas, de acuerdo a las posibilidades de sus programas y el hardware.
+{: .note } 
+Un ordenador se distingue de otros dispositivos similares, como una calculadora no programable, es que es una máquina de propósito general, es decir, puede realizar tareas muy diversas, de acuerdo a las posibilidades de sus programas y el hardware.
 
 Para que los componentes electrónicos de un ordenador sean capaces de funcionar y realizar un proceso determinado, es necesario ejecutar un conjunto de órdenes o instrucciones.
 
@@ -113,7 +113,8 @@ Cuando un programa está compuesto por varios, forma lo que se denomina como **a
 
 El **software básico** para hacer funcionar cualquier ordenador se denomina **sistema operativo (SO)**
 
-{: .note } El **sistema operativo (SO)** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
+{: .note } 
+El **sistema operativo (SO)** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
 
 
 El **firmware** es otro elemento importante entre software y hardware dentro de un sistema informático. Consta de instrucciones (software) que fijan la lógica primaria sobre los circuitos (hardware) funcionando como el nexo entre las instrucciones que llegan al dispositivo desde el exterior y sus diversas partes electrónicas.
@@ -128,16 +129,17 @@ La conexión entre los diferentes subsistemas o componentes de un SI se realiza 
 
 ## El Sistema Informático
 
-{: .note } Un sistema informático está formado a su vez por el hardware del equipo, el software que lo ejecuta y el personal humano que lo controla y programa.
+{: .note } 
+Un sistema informático está formado a su vez por el hardware del equipo, el software que lo ejecuta y el personal humano que lo controla y programa.
 
 
 ![Sistema_informatico](media/Sistema_informatico.png)
 
 ### Hardware
 
-```note
+{: .note } 
 Se denomina **hardware** a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
-```
+
 
 <img src="media/piezas_ordenador.jpg" alt="piezas_ordenador" style="zoom: 80%;" /><img src="media/cpd.jpg" alt="cpd" style="zoom:50%;" />
 
@@ -309,7 +311,8 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ## La Ley de Moore
 
-{: .note } La **ley de Moore** dice que aproximadamente cada dos años se duplica el número de **transistores** en un procesador.
+{: .note } 
+La **ley de Moore** dice que aproximadamente cada dos años se duplica el número de **transistores** en un procesador.
 
 
 Se trata de una predicción formulada por el cofundador de Intel, Gordon E. Moore, el 19 de abril de 1965, cuyo cumplimiento se ha podido constatar hasta el día de hoy.
