@@ -188,47 +188,55 @@ La **Unidad Aritmético lógica** está formada a su vez por:
 
 Vamos a trabajar con los siguientes registros de la CPU que ya hemos nombrado:
 
--   **El Registro de Instrucciones (IR)** es un registro de propósito especial. Se utiliza para guardar la instrucción que se ha buscado desde la memoria.
+- **El Registro de Instrucciones (IR)** es un registro de propósito especial. Se utiliza para guardar la instrucción que se ha buscado desde la memoria.
     
--   **El Registro Contador de Programa (PC):** Se utiliza para guardar la dirección de memoria de la próxima instrucción a buscar.
+- **El Registro Contador de Programa (PC):** Se utiliza para guardar la dirección de memoria de la próxima instrucción a buscar.
     
--   **Registro de Direcciones de memoria** se usa para guardar exclusivamente direcciones de memoria.
+- **Registro de Direcciones de memoria** se usa para guardar exclusivamente direcciones de memoria.
     
--   **Registro de datos (RD): **Almacenamiento temporal entre los datos de la memoria y la ALU
+- **Registro de datos (RD):** Almacenamiento temporal entre los datos de la memoria y la ALU
     
--   **Registro Acumulador (RA)** en el que son almacenados temporalmente los resultados aritméticos y lógicos intermedios que serán tratados por el circuito operacional de la unidad aritmético-lógica (ALU).
+- **Registro Acumulador (RA)** en el que son almacenados temporalmente los resultados aritméticos y lógicos intermedios que serán tratados por el circuito operacional de la unidad aritmético-lógica (ALU).
     
--   **Registros de Entrada de operandos de la ALU:** Los Registros de Operandos de entrada a la ALU.
-
-
+- **Registros de Entrada de operandos de la ALU:** Los Registros de Operandos de entrada a la ALU.
 
 ![esquema_general](media/esquema_general.jpg)
 
+- Funcionamiento del esquema:
+
+1. Se extraerá de la memoria principal la instrucción a ejecutar. Para ello dispone de dos registros: el **Contador de Programa (PC)** en el que se almacena la dirección de la celda de memoria que tiene la siguiente instrucción y el **Registro de Instrucción (RI)** en el que se deposita el código de la instrucción a ejecutar.
+2. Una vez conocido el código de operación la UC establecerá las conexiones de los circuitos de la ALU que deberán intervenir en la operación.
+3. La UC extraerá de la memoria principal los datos necesarios para ejecutar la instrucción; ordena la lectura de la celda cuya dirección se encuentra en el **Registro de Instrucción (RI)**.
+4. La UC ordenará a la ALU que efectúe las operaciones necesarias. El resultado de la operación se almacenará en el **Registro Acumulador**.
+5. Finalmente se incrementará en 1 el registro del **Contador de Programa**.
+
 ##   La memoria	
 
->   💡 Se denomina **memoria **a cualquier dispositivo electrónico que retenga, memorice o almacena datos informáticos durante un período de tiempo determinado.
+```note
+Se denomina **memoria** a cualquier dispositivo electrónico que retenga, memorice o almacena datos informáticos durante un período de tiempo determinado.
+```
 
 Existen diversos tipos de memoria:
 
--   **Registros CPU**: celdas para operar a gran velocidad en la CPU.
--   **Memoria principal interna**: Son memorias de muy alta velocidad y precio situadas dentro de la propia placa base del ordenador o dispositivo. Existe memoria interna RAM y ROM.
--   **Memoria caché**: memoria temporal intermedia de muy alta velocidad.
--   **Memoria o almacenamiento secundario externo**: Se le da ese nombre a los soportes de almacenamiento masivos que sean capaces de almacenar información en distintos medios y tecnologías.
+- **Registros CPU**: celdas para operar a gran velocidad en la CPU.
+- **Memoria caché**: memoria temporal intermedia de muy alta velocidad.
+- **Memoria principal interna**: Son memorias de muy alta velocidad y precio situadas dentro de la propia placa base del ordenador o dispositivo. Existe memoria interna RAM y ROM.
+- **Memoria o almacenamiento secundario externo**: Se le da ese nombre a los soportes de almacenamiento masivos que sean capaces de almacenar información en distintos medios y tecnologías.
 
 ![esquemas_memoria](media/esquemas_memoria.png)
 
-#### La memoria principal interna
+### La memoria principal interna
 
-> 💡 La **memoria interna principal** son chips conectados a la placa base principal de cualquier ordenador o computadora. Son dispositivos caros y rápidos que almacenan información para la operaciones y el procesamiento de los datos de la CPU, gráfica y el sistema operativo.
->
+> 💡 La **memoria interna principal** son chips conectados a la placa base principal de cualquier ordenador o computadora. Son dispositivos caros y rápidos que almacenan información para las operaciones y el procesamiento de los datos de la CPU, gráfica y el sistema operativo.
+
 
 Existen dos tipos de memoria interna principal: **RAM** y **ROM**:
 
--   Memoria **RAM** (**R**andom ***A***ccess ***M***emory): en ella es posible almacenar y modificar información. Al irse la corriente o apagarse el dispositivo se borra su información almacenada.
+-  Memoria **RAM** (**R**andom ***A***ccess ***M***emory): en ella es posible almacenar y modificar información. Al irse la corriente o apagarse el dispositivo se borra su información almacenada.
     
--   Memoria **ROM** (**R**ead ***O***nly ***M***emory): es una memoria de solo lectura donde reside el firmware de la máquina necesario para hacerla arrancar.
+-  Memoria **ROM** (**R**ead ***O***nly ***M***emory): es una memoria de solo lectura donde reside el firmware de la máquina para su arranque.
 
-##### 1. Memoria RAM
+#### La memoria principal interna: RAM
 
 >   📌 **Físicamente** hablando, los componentes internos de la memoria RAM son **celdas** que actúan como pequeños condensadores, del tal forma que si están cargados se traducen como un **1** y en caso contrario como un **0**.
 
@@ -237,13 +245,14 @@ Representación de la **estructura física** de las celdas:
 ![celdas_memoria](media/celdas_memoria.jpg)
 
 
-
 La memoria RAM es básicamente una tabla, que contiene la dirección (o lugar) donde está cierto dato y el contenido del propio dato. La memoria dispone de un **registro de direcciones** y de un **registro de datos de intercambio de memoria**. En el *registro de direcciones* se almacena la dirección en la
 que se almacenará o leerá un dato, y en el *registro de intercambio de memoria* se almacena ese dato leído o que se almacenará.
 
-##### 2. Memoria ROM
+#### 2. La memoria principal interna: ROM
 
->   💡 La memoria **ROM** o memoria de solo lectura contiene programas especiales (**firmware**) que sirven para cargar e iniciar el arranque del ordenador.
+```note
+La memoria **ROM** o memoria de solo lectura contiene programas especiales (**firmware**) que sirven para cargar e iniciar el arranque del ordenador.
+```
 
 En la memoria ROM se encuentra almacenada la información referente a los componentes hardware de un equipo.
 
@@ -251,23 +260,26 @@ Posteriormente, será labor del sistema operativo realizar el resto de operacion
 
 El software que integra la ROM forma lo que se denomina la **BIOS** del ordenador (*Basic Input Output System*), también conocido como **UEFI**.
 
-##### 3. La memoria caché
+### La memoria caché
 
->   💡 La **memoria caché** es un tipo de memoria temporal de muy alta velocidad que almacena datos e instrucciones temporalmente con alta probabilidad de volver a utilizarse durante el procesamiento.
+```note
+La **memoria caché** es un tipo de memoria temporal de muy alta velocidad que almacena datos e instrucciones temporalmente con alta probabilidad de volver a utilizarse durante el procesamiento.
+```
 
 El objetivo de usar memoria caché es ayudar a la memoria principal mejorando la velocidad de proceso.
+
+![](media/cache_memory.png)
 
 Existe también el concepto de **buffer**, que se usa para compensar la diferencia de velocidades de flujo de datos entre un dispositivo y otro.
 
 Cada vez que el sistema quiere acceder a un nuevo dato, éste es almacenado en la memoria caché. Entonces, cuando se necesita recurrir nuevamente al mismo dato, el sistema se dirigirá directamente a la caché, haciendo así el proceso mucho más rápido.
 
-Existen diferentes niveles de caché denominados *L1*, L2 y L3.
+Existen diferentes niveles de caché denominados *L1, L2 y L3*.
 
 ![memoria_cache](media/memoria_cache.png)
 
 
-
-##### 4. Registros CPU
+###  Registros CPU
 
 Dentro de la CPU hay una memoria interna compuesta por un conjunto de registros de muy alta velocidad. Este elemento es necesario para transferir datos entre los diversos registros y la ALU, ya que ésta en realidad sólo opera con datos de la memoria interna de la CPU. Los registros de la CPU se clasifican en:
 
@@ -279,19 +291,20 @@ Dentro de la CPU hay una memoria interna compuesta por un conjunto de registros 
 
 - **Registro puntero a pila.**
 
-##   La memoria secundaria	
+###  Memoria secundaria	
 
->   💡 La **memoria o almacenamiento secundario** es aquella que se utiliza para guardar los datos en forma permanente.
+```note
+La **memoria o almacenamiento secundario** es aquella que se utiliza para guardar los datos en forma permanente.
+```
 
-La memoria secundaria es un tipo de almacenamiento masivo y permanente (no volátil), mucho más barato y con mayor capacidad para almacenar datos. No obstante, este tipo de memoria tiene menor velocidad que la memoria principal
+La memoria secundaria es un tipo de almacenamiento masivo y permanente (no volátil), mucho más barato y con mayor capacidad para almacenar datos. No obstante, este tipo de memoria tiene <u>menor velocidad</u> que la memoria principal
 
 Para almacenar información en memoria secundaria se pueden usar los siguientes tipos de tecnología:
 
 -   Magnética (discos duros, cintas magnéticas).
+-   Discos en Estado sólido (SSD, NVM2)
+-   Memoria Flash (NAND)
 -   Óptica (CD, DVD, BD).
--   Magneto-óptica (Disco Zip, Minidisc).
--   Estado sólido (SSD)
--   Memoria Flash (Nand)
 
 ## Esquema de memorias
 
@@ -299,12 +312,13 @@ Para almacenar información en memoria secundaria se pueden usar los siguientes 
 ![esquema_memorias](media/esquema_memorias.png)
 
 
+## El bus	
 
-##   El bus	
+```note
+ El **bus** es una autopista o canal de transmisión que transfiere información entre los diferentes componentes internos del ordenador.
+ ```
 
->   El **bus **es una autopista o canal de transmisión que transfiere información entre los diferentes componentes internos del ordenador.
-
-Existen tres tipos de buses:
+Existen varios tipos de buses:
 
 - **Bus de control**: mandan señales básicas de control a los distintos componentes internos.
   
@@ -317,9 +331,24 @@ Existen tres tipos de buses:
 
 >   La capacidad de un bus de datos depende de los bits que pueda transmitir simultáneamente (conductos de datos que transmiten en paralelo), de la velocidad del bus (frecuencia reloj) y del tipo de procesador o chipset del sistema.
 
+
+Podemos clasificar los buses también según el tipo de transmisión: 
+- **Serie/Paralelo**: un bus en serie envía la información secuencialmente bit a bit, mientras que un bus paralelo puede enviar una palabra completa en un solo ciclo de reloj. Los buses paralelos tienen par tanta la ventaja de su velocidad pero tienen problemas de  sincronización de señales para largas distancias y son más caras 
+- **Unidireccional/bidireccional**: en función de si únicamente pueden transmitir información en un sentido o si pue den transmitir en ambos sentidos. 
+- **Simplex/semiduplex/fullduplex** el bus simple es unidireccional. Es semiduplex cuando puede enviar en ambos sentidos pero no al mismo tiempo (a bien envía en un sentido o  bien envía en el otro), y es fullduplex cuando puede enviar en ambos sentidos simultáneamente. 
+- **Síncrono/asíncrono**: en un bus síncrono las señales se envían siempre atendiendo a un pulso de reloj, mientras que en un bus asíncrono se envían unas señales de inicio de transmisión y fin de transmisión antes de comenzar a emitir y cuando finaliza la emisión. 
+
+Existen dos tipos de transferencia en los buses como ya comentamos: 
+- **Serie**: El bus solamente es capaz de transferir los datos bit a bit. Es decir, el bus tiene un único cable que transmite la información.
+- **Paralelo**: El bus permite transferir varios bits simultáneamente, por ejemplo 8 bits.
+
+![esquema_buses](media/esquema_buses.png)
+
 ## Unidad de control E/S	
 
+```note
 Las **unidades control de entrada/salida o chipsets** sirven para comunicar el procesador y el resto de componentes internos del ordenador con los periféricos de entrada/salida y las memorias de almacenamiento externo o auxiliares.
+```
 
 Las placas base solían incluir dos unidades de E/S o chipsets denominadas **puente norte** y **puente sur** o un **chipset general** integrado que hace de ambos. Suelen ser los circuitos integrados más grandes después de la CPU y la GPU.
 
@@ -329,16 +358,19 @@ Sus funciones son:
 - Sirven para liberar a la CPU para realizar otras tareas.
 - Los controladores incluyen una parte tangible (hardware) y una parte intangible (software).
 
+![esquema_chipset](media/esquema_chipset.png)
+
 ## Los periféricos	
 
-> 💡 Los **periféricos** son dispositivos hardware con los cuales el usuario puede interactuar con el ordenador (teclado, ratón, monitor), almacenar o leer datos y/o programas (dispositivos de almacenamiento o memorias auxiliares),imprimir, etc
->
+```note
+Los **periféricos** son dispositivos hardware con los cuales el usuario puede interactuar con el ordenador (teclado, ratón, monitor), almacenar o leer datos y/o programas (dispositivos de almacenamiento o memorias auxiliares),imprimir, etc
+```
 
 Los periféricos se conectan con el ordenador, la CPU y sus componentes, a través de los denominados **puertos** o conectores externos. Esta gestión la lleva a cabo a través de la **unidad de entrada/salida** vista anteriormente.
 
->   📌 Muchos de los periféricos de entrada/salida necesitan un tipo de software especial para ser configurados (conocidos como **drivers**)
+Muchos de los periféricos de entrada/salida necesitan un tipo de software especial para ser configurados (conocidos como **drivers**)
 
-Los **periféricos** pueden clasificarse a groso modo en:
+Los **periféricos** pueden clasificarse en:
 
 -   Periféricos de **entrada**
 -   Periféricos de **salida**
@@ -346,3 +378,4 @@ Los **periféricos** pueden clasificarse a groso modo en:
 -   Periféricos de **comunicación**
 -   Periféricos **híbridos**
 
+![esquema_perifericos](media/esquema_perifericos.png)
