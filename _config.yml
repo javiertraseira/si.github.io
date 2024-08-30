@@ -13,11 +13,15 @@ callouts:
     title: New
     color: green
   note:
-    title: Note
+    title: info
     color: blue
   warning:
     title: Warning
     color: red
+
+translate:
+ note: info
+ search: buscar
 
 plugins:
   - jekyll-block-ial
