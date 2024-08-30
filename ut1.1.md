@@ -58,6 +58,8 @@ Campos fundamentales de las **ciencias de la computación**:
 
     <img src="media/driving.jpg" alt="driving" style="zoom:67%;" />
 
+    ![](media/ia_generative.png)
+
     
 
 - **Gráficos por ordenador:**
@@ -73,6 +75,15 @@ Campos fundamentales de las **ciencias de la computación**:
    - Computación cuántica
    
    ![](media/3a7dde2b6c5d4b4823a060c22adeb388.jpg)
+
+
+- **Ingeniería del software y de sistemas:**
+
+    - Estudio del diseño de software
+    - Análisis del software, soporte y su mantenimiento
+    - Testeo y planificación
+
+   ![](media/software_engineering.png)
 
 ## El ordenador
 
@@ -160,13 +171,13 @@ Gestionan y controlan el comportamiento de equipos o máquinas. Suelen ser de ta
 
 ### Personal
 
-- Usuario básico: Es aquel que utiliza el ordenador para desarrollar tareas en su puesto de trabajo.
+- **Usuario básico**: Es aquel que utiliza el ordenador para desarrollar tareas en su puesto de trabajo.
 
-- Programador: El programador, también conocido como desarrollador, es el responsable de convertir las especificaciones técnicas del analista en código fuente. Utilizan lenguajes de programación para crear, modificar y mantener software. Deben tener un profundo conocimiento de la lógica de programación, las estructuras de datos y tecnologías de desarrollo.
+- **Programador**: El programador, también conocido como desarrollador, es el responsable de convertir las especificaciones técnicas del analista en código fuente. Utilizan lenguajes de programación para crear, modificar y mantener software. Deben tener un profundo conocimiento de la lógica de programación, las estructuras de datos y tecnologías de desarrollo.
 
-- Técnico: El técnico se encarga de la instalación, configuración, mantenimiento y resolución de problemas en los sistemas informáticos. Su función es asegurar el correcto funcionamiento del hardware y software, brindar soporte técnico a los usuarios y gestionar la infraestructura de red.
+- **Técnico**: El técnico se encarga de la instalación, configuración, mantenimiento y resolución de problemas en los sistemas informáticos. Su función es asegurar el correcto funcionamiento del hardware y software, brindar soporte técnico a los usuarios y gestionar la infraestructura de red.
 
-- Jefe de proyecto: El jefe de proyecto se destaca como la figura clave en la planificación, ejecución y control del proyecto y es el motor que ha de impulsar el avance del mismo mediante la toma de decisiones tendentes a la consecución de los objetivos.
+- **Jefe de proyecto**: El jefe de proyecto se destaca como la figura clave en la planificación, ejecución y control del proyecto y es el motor que ha de impulsar el avance del mismo mediante la toma de decisiones tendentes a la consecución de los objetivos.
 
 ## Tipologías de Sistemas Informáticos
 
@@ -185,6 +196,8 @@ Estos sistemas monitorizan y controlan los procesos industriales o físicos, com
 ### Sistemas de apoyo en toma de decisiones
 
 Un Sistema informático de apoyo a la toma de decisiones, también conocido como Sistema de soporte a la decisión o **DSS** (Decision Support System), básicamente es un sistema basado en computadoras diseñado con el propósito de ser usado por una gerencia o gerencia de área para ayudarlos en el proceso de tomar una decisión para resolver problemas y con ello poder diagramar las directrices para seleccionar la mejor opción o predecir los futuros escenarios para afrontar nuevos desafíos.
+
+![](media/dss.png)
 
 ### Sistemas de colaboración empresarial
 
@@ -233,9 +246,10 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 - Conmutadores: **válvulas de vacío**
 - Poco fiables
-- ENIAC. Primer ordenador digital fabricado en 1945.
-- Un barracón, 30 toneladas
-- Potencia de cálculo: menos que una calculadora de bolsillo
+- **ENIAC**. Primer ordenador digital fabricado en 1945.
+- Un barracón, 30 toneladas.
+- Potencia de cálculo: menos que una calculadora de bolsillo.
+- Programados en lenguaje máquina.
 
 ![](media/0adb73381c079934e6d2c81a4fd9041d.jpg)
 
@@ -256,7 +270,8 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ### Tercera generación (1965-1975)
 
-- Circuitos integrados, con decenas de transistores.
+- **Circuitos integrados**, con decenas de transistores.
+- Las computadoras reducen su costo y tamaño, incrementado velocidad y fiabilidad.
 - Ejemplo: IBM 360, 2.000.000 \$ en el mercado.
 - Aparecen lenguajes como BASIC, C o Pascal.
 
@@ -267,10 +282,10 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ### Cuarta generación (1971-1981)
 
--  Aparece el primer microprocesador en 1971: el 4004 de Intel
+-  Aparece el primer microprocesador en 1971: el **4004** de Intel.
 -  Se caracteriza por la alta integración de componentes electrónicos y sigue disminuyendo su coste y tamaño.
--  Aparecen las primeras microcomputadoras (Apple II, Spectrumy Commodore)
--  Surgen los primeros sistemas operativos mordernos como Unix
+-  Aparecen las primeras microcomputadoras (Apple II, Spectrum y Commodore)
+-  Surgen los primeros sistemas operativos mordernos como Unix.
 
 ![](media/4004.jpg)
 
@@ -278,10 +293,11 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ### Quinta generación (1981-hoy)
 
--  Se considera a partir de la aparición del primer ordenador personal PC de IBM
--  El **IBM PC** costaba 1.500.000$
--  Apple Macintosh, iphone, Android..
+-  Se considera a partir de la aparición del primer ordenador personal o **PC** de IBM
+-  El primer **IBM PC** costaba 1.500.000$
+-  Primeros ordenadores de Apple
 -  Nuevos lenguajes de programación (orientada a objetos) y SO modernos.
+-  Más adelante aparecen los primeros smartphones (iPhone, Android..)
 -  Electrónica de consumo moderna y tecnología móvil.
 
 
