@@ -418,14 +418,14 @@ En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es vá
 
     Buscar en la tabla ASCII anterior la equivalencia alfanumérica exacta del símbolo con su valor hexadecimal y convertirlo después a binario.
 
-| **Letra ASCII (dec \| hex).** | **ASCII bin.** | **Letra ASCII hex.**  | **ASCII bin.** |
-|-------------------------------|----------------|-----------------------|----------------|
-| I (**73 **\| **49**)          | **0101001**    | a (**97 **\| **61**)  | **1100001**    |
-| n (**110 **\| **6E**)         | **1101110**    | t (**116 **\| **74**) | **1110100**    |
-| f (**102 **\| **66**)         | **1100110**    | i (**105 **\| **69**) | **1101001**    |
-| o (**111 **\| **6F**)         | **1101111**    | c (**99 **\| **63**)  | **1100011**    |
-| r (**114 **\| **72**)         | **1110010**    | a (**97 **\| **61**)  | **1100001**    |
-| m (**109 **\| **6D**)         | **1101101**    |                       |                |
+  | **Letra ASCII (dec \| hex).** | **ASCII bin.** | **Letra ASCII hex.**  | **ASCII bin.** |
+  |-------------------------------|----------------|-----------------------|----------------|
+  | I (**73 **\| **49**)          | **0101001**    | a (**97 **\| **61**)  | **1100001**    |
+  | n (**110 **\| **6E**)         | **1101110**    | t (**116 **\| **74**) | **1110100**    |
+  | f (**102 **\| **66**)         | **1100110**    | i (**105 **\| **69**) | **1101001**    |
+  | o (**111 **\| **6F**)         | **1101111**    | c (**99 **\| **63**)  | **1100011**    |
+  | r (**114 **\| **72**)         | **1110010**    | a (**97 **\| **61**)  | **1100001**    |
+  | m (**109 **\| **6D**)         | **1101101**    |                       |                |
 
 
 
@@ -453,15 +453,15 @@ En Unicode existen distintas formas de codificar un mismo carácter según el fo
     
 - Planos más importantes:
 
-   -   **BMP **(Basic Multilingual Plane) Agrupa los símbolos más habituales de la mayoría de lenguas actuales.
+   -   **BMP** (Basic Multilingual Plane) Agrupa los símbolos más habituales de la mayoría de lenguas actuales.
 
-   -   **SMP **(Suplementary Multilingual Plane): Lenguas antiguas y más
+   -   **SMP** (Suplementary Multilingual Plane): Lenguas antiguas y más
 
-   -   **SIP **(Supl. Ideographic Plane): Ext. CJK (China, Japón, Korea)
+   -   **SIP** (Supl. Ideographic Plane): Ext. CJK (China, Japón, Korea)
 
-   -   **TIP **(Tiertary Ideographic Plane): Lenguas antiguas asiáticas
+   -   **TIP** (Tiertary Ideographic Plane): Lenguas antiguas asiáticas
 
-   -   **SSP **(Suplementary Special-purpose Plane): usos especiales
+   -   **SSP** (Suplementary Special-purpose Plane): usos especiales
 
 
 
@@ -481,26 +481,26 @@ En Unicode existen distintas formas de codificar un mismo carácter según el fo
 ![](media/unicode_bmp.png)
 
 
-- [ ]  Buscar en el **mapa de caracteres de Windows** los valores hexadecimales de los siguientes caracteres de texto Unicode:
+- Buscar en el **mapa de caracteres de Windows** los valores hexadecimales de los siguientes caracteres de texto Unicode:
 
 
-| **Carácter Unicode** | **Valor hexadecimal** |
-|----------------------|-----------------------|
-| =                    | U+003D                |
-| µ                    | U+00B5                |
-| T                    | U+0054                |
-| æ                    | U+00E6                |
-| &                    | U+0026                |
-| \@                   | U+0040                |
-| ☺                    | U+263A                |
-| Ф                    | U+0424                |
-| ♠                    | U+2660                |
+  | **Carácter Unicode** | **Valor hexadecimal** |
+  |----------------------|-----------------------|
+  | =                    | U+003D                |
+  | µ                    | U+00B5                |
+  | T                    | U+0054                |
+  | æ                    | U+00E6                |
+  | &                    | U+0026                |
+  | \@                   | U+0040                |
+  | ☺                    | U+263A                |
+  | Ф                    | U+0424                |
+  | ♠                    | U+2660                |
 
 
 
-### Codificaciones numéricas
+## Codificaciones numéricas
 
-#### Representación de números negativos
+### Representación de números negativos
 
 Es evidente que si se dispone únicamente de los dos símbolos 0 y 1 usando un código binario natural sólo es posible representar números enteros y positivos.
 
@@ -508,11 +508,11 @@ Para representar un **número negativo**, en matemáticas se hace uso de un sign
 
 Para representar números con signo existen varias posibilidades que veremos a continuación:
 
-1. **Signo y magnitud**
-1.  **Complemento a uno**
-2.  **Complemento a dos**
+1. Signo y magnitud
+1. Complemento a uno
+2. Complemento a dos
 
-##### Signo y magnitud
+#### Signo y magnitud
 
 Partiendo de que la forma de operar en un sistema digital es a través de un conjunto definido de bits, por ejemplo grupos de 8 bits (un byte), el enfoque es reservar 1 bit (normalmente el primero) para indicar el signo. Normalmente se asocia un 0 al signo “+” y un 1 al signo “-“. El resto de los bits del grupo indica la magnitud.
 
@@ -524,7 +524,7 @@ Se debe tener en cuenta los siguientes aspectos importantes:
 - A la hora de hacer operaciones debemos tratar de forma separada el signo, es decir, debemos procesar por una parte los signos y por otra las magnitudes.
 - El cero está representado dos veces: 00000000 y 10000000, lo cual es poco eficiente.
 
-##### Complemento a uno
+#### Complemento a uno
 
 Otra forma de representación es utilizar el **complemento a uno** para representar los números negativos. Se reserva igualmente el primer bit para representar el signo y el resto de bits se usan para representar:
 
@@ -534,17 +534,15 @@ Otra forma de representación es utilizar el **complemento a uno** para represen
 
 Así el numero 3 se representa igualmente por **00000011** y el número -3 se representa por **11111100**.
 
-
 Las operaciones son más fáciles que con la representación “signo y magnitud” pero adolece igualmente del problema de la doble representación del 0. En efecto, tenemos que 00000000 y 11111111 lo representan.
 
-##### Complemento a dos
+#### Complemento a dos
 
 Un enfoque que solventa algunos de los problemas de los anteriores es la representación de número negativo en **complemento a dos**. 
 Al igual que en  el caso anterior, el primer bit le reservamos para el signo y el resto de bits se usan para representar:
 
 - Si es positivo, se pone tal cual.
-
-- Si es negativo, se pone el complemento a 2
+- Si es negativo, se pone el complemento a 2.
 
 **Para obtener el complemento a dos se halla el complemento a uno como hemos visto anteriormente y se le suma 1.**
 
@@ -552,14 +550,14 @@ Así, el número 3 se representa igualmente por 00000011 y el número -3 se repr
 
 En este caso, el 0 (decimal) sólo tiene una única representación 00000000 y las operaciones aritméticas se pueden realizar mediante sumadores.
 
-#### Código binario BCD
+### Código binario BCD
 
 >   💡 En sistemas de computación el código **BCD** (Binary-Coded Decimal) o Decimal codificado en binario es un estándar para representar números decimales en el sistema binario, en donde cada dígito decimal es codificado **con una secuencia de 4 bits**.
 
 ![](media/codigo_bcd.jpg)
 
 
-#### Codificación números reales: coma flotante (IEE754)
+### Codificación números reales: coma flotante (IEE754)
 
 
 >   💡 La representación en **coma flotante** es una forma de notación científica basada en el estándar **IEE754** usada en los ordenadores con la cual se pueden representar números reales extremadamente grandes (como π) y pequeños de una manera muy eficiente y compacta, y con la que se pueden realizar operaciones aritméticas.
@@ -570,12 +568,13 @@ En ciencia se utiliza habitualmente la **notación científica decimal** en la q
 
 La idea del estándar IEE754 es descomponer el número en dos partes para su representación binaria:
 
-- Una **mantisa** (también llamada coeficiente o significando) que contiene los dígitos del número.  
+- Una **mantisa** (también llamada coeficiente o significando) que contiene los dígitos del número.
+
+> Por ejemplo, en el número decimal 13.8543, la parte entera es 13 y la mantisa 13.8543–13= 0,8543. Cuando el número decimal es negativo, como –13.8543, la parte entera es –14 y la mantisa= –13.8543 – (–14)= 0.1457.
 
 - Un **exponente** que indica dónde se coloca el punto decimal (o binario) en relación al inicio de la mantisa. Los exponentes negativos representan números menores que uno.
 
   <img src="media/mantisa_exponente.png" style="zoom:67%;" />
-
 
 
 Para convertir un número real a su representación en coma flotante deberemos hacerlo en <u>3 pasos</u>:
@@ -590,9 +589,54 @@ Para convertir un número real a su representación en coma flotante deberemos h
 - Exponente: sumarle 127 (8 bits)
 - Mantisa (23 bits)
 
+#### 32 bits
+
+Para convertir en IEE754 de 32 bits se usan los siguientes bits:
+- Signo (1 bit: si es positivo 0, si es negativo 1)
+- Exponente: se le debe sumar +127 (8 bits) para que no queden exponentes negativos (2n-1-1)
+- Mantisa (23 bits)
+
 ![iee754](media/iee754.png)
 
-Los números en coma flotante decimales normalmente se expresan en **notación** científica con un punto explícito siempre entre el primer y el segundo dígitos. El exponente o bien se escribe explícitamente incluyendo la base, o se usa una e para separarlo de la mantisa.
+#### 64 bits
+
+Para convertir en IEE754 de 64 bits se usarán en cambio los siguientes bits:
+- Signo (1 bit: si es positivo 0, si es negativo 1)
+- Exponente: sumarle 1023 (11 bits)  
+- Mantisa (52 bits)
+
+![iee754](media/iee75464.png)
+
+
+- Convertir el número 134.25 en coma flotante (IEE 754) de 32 bits:
+
+  - Paso 1:
+
+    - Parte entera de 134 en binario es = 10000110
+    - Parte decimal 0.25 en binario: 01
+
+  - Paso 2:
+
+    El número 134.25 = 10000110.01
+    Se deberá mover la coma tantas posiciones a la izquierda (o derecha) como sea posible para dejarlo de la forma 1.xxxxxxxxx · 2 (^posiciones movidas).
+
+    El exponente será pues el 7.
+
+  - Paso 3:
+
+    $$
+    1.000011001 2^7
+    $$
+
+    - Signo (1 bit): positivo luego 0
+    - Exponente (8 bits): 7+127 = 134 en binario = 10000110 
+    - Mantisa (23 bits): 000011001 (se completará con ceros a la derecha)
+
+  - Resultado:
+
+  ![iee754](media/resultado_iee754.png)
+
+Los números en coma flotante decimales normalmente se expresan en **notación científica** con un punto explícito siempre entre el primer y el segundo dígitos. El exponente o bien se escribe explícitamente incluyendo la base, o se usa una e para separarlo de la mantisa.
 
 | **Mantisa** | **Exponente** | **Notación científica** | **Valor en punto fijo** |
 | ----------- | ------------- | ----------------------- | ----------------------- |
@@ -601,7 +645,7 @@ Los números en coma flotante decimales normalmente se expresan en **notación**
 | 5           | \-3           | 5 ⋅ 10-3                | 0.005                   |
 | 6.667       | \-11          | 6.667e-11               | 0.0000000000667         |
 
-Los formatos más comunes del **estándar IEE754 **son de 32 o 64 bits de longitud:
+Los formatos más comunes del **estándar IEE754** son de 32 o 64 bits de longitud:
 
 | **Formato**        | **Bits totales** | **Bits significativos** | **Bits del exponente** | **Número más pequeño** | **Número más grande** |
 | ------------------ | ---------------- | ----------------------- | ---------------------- | ---------------------- | --------------------- |
@@ -618,7 +662,22 @@ Los formatos más comunes del **estándar IEE754 **son de 32 o 64 bits de longit
 
 ## Unidades de medida de información
 
-Hay que recordar que cuando hablamos de cantidades de información y sus unidades de medida, éstas serán múltiplos de **potencias de 2**, aumentando en **2^10** cada vez.
+Cuando se trata de unidades de medida y la transmisión de datos se puede utilizar el sistema internacional (**SI**) que utiliza en vez de potencias de dos para indicar cantidades de menor a mayor:
+
+| **Nombre** | **Abreviatura** | **Factor**                                   |
+| ---------- | --------------- | -------------------------------------------- |
+| Kilo       | **K**           | 10^3                              |
+| Mega       | **M**           |  10^6                        |
+| Giga       | **G**           | 10^9                     |
+| Tera       | **T**           | 10^12                |
+| Peta       | **P**           | 10^15            |
+| Exa        | **E**           | 10^18         |
+| Zetta      | **Z**           | 10^21     |
+| Yotta      | **Y**           | 10^24 |
+
+
+En informática se utiliza habitualmente para medir de cantidades de información y sus unidades de medida el sistema *ISO/IEC 80000-13*, que utiliza múltiplos de **potencias de 2**, aumentando en 2^10 cada vez:
+
 
 | **Nombre** | **Abreviatura** | **Factor**                                   |
 | ---------- | --------------- | -------------------------------------------- |
@@ -643,14 +702,11 @@ Hay que recordar que cuando hablamos de cantidades de información y sus unidade
 
 ## Representación interna
 
->   📌 **Little Endian** y **Big Endian** se refieren al orden que las máquinas asignan a los bytes que representan  valores numéricos, cadenas o instrucciones dentro de sus registros internos.
+>   📌 **Little Endian** y **Big Endian** se refieren al orden que las máquinas asignan a los bytes que representan valores numéricos, cadenas o instrucciones dentro de sus registros internos.
 
 -   **Big Endian** asigna los bytes menos significativos en el extremo más alto. Este formato que puede parecer una forma más "natural" de escritura es utilizado por procesadores usados en máquinas Apple o ARM entre otras.
 -   **Little Endian** asigna los bytes menos significativos en el extremo más bajo de la memoria. Este formato es adoptado por la mayoría de procesadores **Intel**, **AMD** o ARM.
-
-
-
-![](media/big_little_endian.jpg)
+  ![](media/big_little_endian.jpg)
 
 
 
@@ -660,14 +716,16 @@ Hay que recordar que cuando hablamos de cantidades de información y sus unidade
 
 Un ordenador o cualquier sistema de control basado en un microprocesador no puede interpretar señales analógicas, ya que sólo utiliza señales digitales como bien sabemos. Es necesario traducir, o transformar en señales binarias, lo que se denomina <u>proceso de digitalización o conversión</u> de señales analógicas a digitales.
 
-La conversión **analógica-digital** (CAD) o **digitalización** consiste en la transcripción de señales analógicas en señales digitales, con el propósito de facilitar su procesamiento (codificación, compresión, etc.) y
-hacer la señal resultante la digital más inmune al ruido y otras interferencias.
+```note
+La conversión **analógica-digital** (CAD) o **digitalización** consiste en la transcripción de señales analógicas en señales digitales, con el propósito de facilitar su procesamiento (codificación, compresión, etc.) y hacer la señal resultante la digital más inmune al ruido y otras interferencias.
+```
 
 <img src="media/digitalizacion.jpg" style="zoom:80%;" />
 
 - Ventajas de la **digitalización**:
 
 1.  Cuando una señal digital es atenuada o experimenta perturbaciones leves, puede ser reconstruida y amplificada mediante sistemas de regeneración de señales.
+
 2.  Cuenta con sistemas de detección y corrección de errores, que se utilizan cuando la señal llega al receptor; entonces comprueban (uso de redundancia) la señal, primero para detectar algún error, y, algunos sistemas, pueden luego corregir alguno o todos los errores detectados previamente.
     
 3.  Facilidad para el procesamiento de la señal. Cualquier operación es fácilmente realizable a través de cualquier software de edición o procesamiento de señal.
@@ -676,9 +734,9 @@ hacer la señal resultante la digital más inmune al ruido y otras interferencia
     
 5.  Es posible aplicar técnicas de compresión de datos sin pérdidas o técnicas de compresión con pérdidas basados en la codificación perceptual mucho más eficientes que con señales analógicas.
 
-
-
->   Una imagen en **mapa de bits**, es una estructura o fichero de datos digital que representa una matriz de píxeles o puntos de color, que se puede visualizar en un monitor o cualquier otro dispositivo de representación.
+```note
+Una imagen en **mapa de bits**, es una estructura o fichero de datos digital que representa una matriz de píxeles o puntos de color, que se puede visualizar en un monitor o cualquier otro dispositivo de representación.
+```
 
 A las imágenes en mapa de bits se las suele definir por su altura y anchura (en píxeles) y por su **profundidad de color** (en bits por píxel), que determina el número de colores distintos que se pueden almacenar en cada punto individual, y por lo tanto la calidad del color de la imagen.
 
