@@ -3,4 +3,5 @@ lang: es
 description: Sistemas Informáticos (1ºSI)
 remote_theme: just-the-docs/just-the-docs
 
- 
+ plugins:
+  - jekyll-block-ial
