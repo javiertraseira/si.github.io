@@ -1,3 +1,9 @@
+---
+title: Informática
+parent: ut1.1
+nav_order: 1
+---
+
 ## Informática
 
 Según el Diccionario de la Real Academia Española se define a la **informática** como:
