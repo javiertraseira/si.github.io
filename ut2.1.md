@@ -84,15 +84,17 @@ Dicha arquitectura consta de los siguientes <u>**bloques**</u>:
 ![esquema_von_neumann](media/esquema_von_neumann.png)
 
 
-- Un esquema del **flujo de información** más completo:
+- Esquema más completo del **flujo de información**:
 
 ![von_neumann](media/arquitectura_von_neumann.jpg)
 
 
 
-### Cuello de botella de la arquitectura
+### Cuello de botella del modelo  
 
->   📌 El canal de transmisión de los datos entre CPU y memoria genera un **cuello de botella** para el rendimiento del procesador. En la mayoría de computadoras modernas, la velocidad de comunicación entre la memoria y la CPU es más baja que la velocidad a la que puede trabajar esta última, reduciendo el rendimiento del procesador y limitando seriamente la velocidad de proceso eficaz, sobre todo cuando se necesitan procesar grandes cantidades de datos.
+>   📌 El canal de transmisión de los datos entre CPU y memoria genera un **cuello de botella** para el rendimiento del procesador. 
+
+En la mayoría de computadoras modernas, la velocidad de comunicación entre la memoria y la CPU es más baja que la velocidad a la que puede trabajar esta última, reduciendo el rendimiento del procesador y limitando seriamente la velocidad de proceso eficaz, sobre todo cuando se necesitan procesar grandes cantidades de datos.
 
 La CPU se ve forzada a esperar continuamente a que lleguen los datos necesarios desde o hacia la memoria.
 
@@ -100,9 +102,11 @@ El término “cuello de botella de Von Neumann” fue acuñado por John Backus 
 
 El problema de funcionamiento se redujo introduciendo una **memoria caché** entre la CPU y la memoria principal, y mejorando los algoritmos del predictor de saltos que veremos más adelante.
 
-##   La CPU	
+## La CPU	
 
->   💡 El **procesador** o CPU es el hardware dentro de un ordenador o cualquier otro dispositivo programable, que interpreta las **instrucciones** de un programa informático mediante la realización de operaciones básicas, lógicas y de entrada/salida en el sistema.
+```note
+El **procesador** o CPU es el hardware dentro de un ordenador o cualquier otro dispositivo programable, que interpreta las **instrucciones** de un programa informático mediante la realización de operaciones básicas, lógicas y de entrada/salida en el sistema.
+```
 
 Un procesador está compuesto principalmente de:
 
@@ -111,10 +115,8 @@ Un procesador está compuesto principalmente de:
     -   Unidad Aritmetico-Lógica (**ALU**)
     -   Registros de la CPU
 -   Memoria Caché (*L1 y L2*)
--   Controlador / decodificador de instrucciones
 -   Reloj
--   Tarjeta gráfica integrada u otros elementos auxiliares
-
+-   Otros: Tarjeta gráfica integrada (IGP) u otros elementos auxiliares
 
 
 >   💡 La **frecuencia de reloj** en relación a un procesador o indica la frecuencia a la cual los transistores que lo conforman conmutan eléctricamente, es decir, abren y cierran el flujo de una corriente eléctrica.
@@ -126,15 +128,13 @@ $$
 $$
 
 
-### 1. Unidad de Control (UC)
+### Unidad de Control (UC)
 
 Las funciones de la **Unidad de Control (UC) **son las siguientes:
 
 -   Administra los recursos del ordenador, es decir, la memoria, los dispositivos de entrada, de salida y los de almacenamiento.
-    
 -   Selecciona e interpreta las **instrucciones** del programa cargado y se encarga de que sean ejecutadas.
-    
--   Transfiere los datos a la Unidad Aritmético-Lógica (ALU) para su procesamiento.
+-   Transfiere los datos a la Unidad **Aritmético-Lógica (ALU)** para su procesamiento.
 
 La **Unidad de Control** está formada a su vez por:
 
@@ -146,23 +146,20 @@ La **Unidad de Control** está formada a su vez por:
 
 ![](media/elementos_uc.png)
 
-La unidad de control se encarga de leer las instrucciones (de los programas almacenados en la memoria) y se encarga de enviar las ordenes a los componentes del procesador para que ejecuten las instrucciones.
+La unidad de control se encarga de leer las instrucciones (de los programas almacenados en la memoria) y se encarga de enviar las órdenes a los componentes del procesador para que ejecuten las instrucciones.
 
-El proceso empieza cuando llega una instrucción al **registro de instrucciones**. Posteriormente el **decodificador** interpreta la instrucción a realizar y como deben de actuar los componentes del procesador
-para llevarla a cabo. Esta acción se realiza mediante el **secuenciador** que envía micro-órdenes marcadas por el **reloj**.
+El proceso empieza cuando llega una instrucción al **registro de instrucciones**. Posteriormente el **decodificador** interpreta la instrucción a realizar y como deben de actuar los componentes del procesador para llevarla a cabo. Esta acción se realiza mediante el **secuenciador** que envía micro-órdenes marcadas por el **reloj**.
 
-###  2. Unidad Aritmético-Lógica (ALU)
+###  Unidad Aritmético-Lógica (ALU)
 
 >   💡 Las funciones de la **Unidad aritmético-lógica (ALU)** son principalmente la de ejecutar operaciones aritméticas y comparaciones.
 
 -   Cálculos (operaciones aritméticas)
-
     -   suma, resta, multiplicación y división
 
 -   Comparaciones (operaciones lógicas)
-
     -   operadores aritméticos: \<, \<=, =\>, \>
--   operadores booleanos: AND, OR, NOT
+    -   operadores booleanos: AND, OR, NOT
 
 <img src="media/alu_icon.jpg" style="zoom:67%;" />
 
@@ -176,23 +173,20 @@ La **Unidad Aritmético lógica** está formada a su vez por:
 
 4.  **Registro de estado:** Registra las condiciones de la operación anterior.
 
-
-
 ![esquema_alu](media/esquema_alu.jpg)
-
-
 
 <img src="media/funcionamiento_alu.jpg" alt="funcionamiento_alu" style="zoom:80%;" />
 
 >   El funcionamiento con el diseño que estamos analizando (el básico) comienza cuando le llega al registro de entrada un dato (una cadena de bits que representan un número), posteriormente el **circuito operacional** (en la imagen se representa como "ALU" y coloreado azul) y se procesa junto al
 >   contenido del **acumulador** y posteriormente se deposita de nuevo en el acumulador. Repitiendo esta acción se generan los cálculos.
 
-### 3. Registros CPU
+### Registros CPU
 
-> 💡 Los **registros de la CPU** son tecnicamente un tipo de memoria de muy alta velocidad formada por celdas de poca capacidad e integrada directamente en el microprocesador, que permite guardar transitoriamente y acceder a valores muy usados, generalmente en operaciones matemáticas.
->
+> Los **registros de la CPU** son tecnicamente un tipo de memoria de muy alta velocidad formada por celdas de poca capacidad e integrada directamente en el microprocesador, que permite guardar transitoriamente y acceder a valores muy usados, generalmente en operaciones matemáticas.
 
-Se va a trabajar con los siguientes registros de la CPU que ya hemos nombrado:
+![esquema_alu](media/register_cpu.jpg)
+
+Vamos a trabajar con los siguientes registros de la CPU que ya hemos nombrado:
 
 -   **El Registro de Instrucciones (IR)** es un registro de propósito especial. Se utiliza para guardar la instrucción que se ha buscado desde la memoria.
     
