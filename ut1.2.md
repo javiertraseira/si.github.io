@@ -2,7 +2,9 @@
 
 ## El software
 
->   💡 El **software** es el conjunto de **instrucciones** y **programas**, parte intangible, que utiliza un ordenador o computadora para funcionar y que se almacena en su memoria.
+```note
+El **software** es el conjunto de **instrucciones** y **programas**, parte intangible, que utiliza un ordenador o computadora para funcionar y que se almacena en su memoria.
+```
 
 Comúnmente se utiliza este término para referirse de una forma muy genérica a los programas de un dispositivo informático, la parte **lógica** de un ordenador.
 
@@ -18,12 +20,17 @@ tablas de una base datos, etc.
 
 Para que los componentes electrónicos de un ordenador sean capaces de funcionar y realizar un proceso determinado, es necesario ejecutar un conjunto de órdenes o instrucciones.
 
->   📌Se denomina **programa** al conjunto de **instrucciones** ordenadas y adecuadas para llevar a cabo un determinado proceso.
+```note
+Se denomina **programa** al conjunto de **instrucciones** ordenadas y adecuadas para llevar a cabo un determinado proceso.
+```
 
->   📌El **software básico** para hacer funcionar cualquier ordenador se denomina sistema operativo y es lo que estudiaremos en este módulo junto con diversos programas.
+```note
+El **software básico** para hacer funcionar cualquier ordenador se denomina sistema operativo y es lo que estudiaremos en este módulo junto con diversos programas.
+```
 
->   📌El **sistema operativo** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
-
+```note
+El **sistema operativo** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
+```
 
 
 ## Clasificación del software
@@ -38,7 +45,7 @@ El software se suele clasificar de forma típica en tres tipos según su funció
 
 ### Software del sistema (base)
 
->   El software de sistema también llamado **software de base** es el conjunto de programas que sirven para interactuar con el sistema informático, confiriendo control sobre todo el hardware, además de dar soporte a otros programas.
+> 💡  El software de sistema también llamado **software de base** es el conjunto de programas que sirven para interactuar con el sistema informático, confiriendo control sobre todo el hardware, además de dar soporte a otros programas.
 
 Este software se divide en:
 
@@ -126,8 +133,9 @@ Es aquel cuyas condiciones de uso, copia y distribución están sometidas a norm
 
 ![licencias](media/soflibrepropietario.png)
 
-
->   💡  Una **licencia de software** es un contrato entre el licenciante (autor/titular de los derechos de explotación/distribuidor) y el licenciatario del programa informático (usuario consumidor/usuario profesional o empresa), para utilizar el software cumpliendo una serie de términos y condiciones establecidas en sus cláusulas.
+```note
+Una **licencia de software** es un contrato entre el licenciante (autor/titular de los derechos de explotación/distribuidor) y el licenciatario del programa informático (usuario consumidor/usuario profesional o empresa), para utilizar el software cumpliendo una serie de términos y condiciones establecidas en sus cláusulas.
+```
 
 Cuando compramos o bajamos de Internet un programa, al instalarlo solemos aceptar sin leer (*mala costumbre*) un contrato que especifica el tipo de **Licencia** de uso del software, en inglés **EULA** o *End User License Agreement*: licencia por la cual el uso de un producto sólo está permitido para un único usuario (el comprador). Es un acuerdo unilateral puesto que el usuario no tiene más opción que aceptar o rechazar el contenido del mismo.
 
@@ -241,8 +249,10 @@ Algunos tipos de licencias de **software libre**:
 
 - **Licencias MIT** (**CC0**) - Licencia de Instituto Tecnológico de Massachusetts. Es una licencia con casi ninguna limitación de uso o modificación y que no tiene restricción en el uso de software pudiendo tener variantes privativas del mismo. Software libre no significa *no comercial*.
 
-El **software comercial**  se basa en que para usarse hay que realizar un pago. Puede existir software libre y propietario de este tipo. 
+![](media/23ec0eaa562ac6f1ed4e469b8907a4d8.jpeg)
 
+
+El **software comercial** se basa en que para usarse hay que realizar un pago. Puede existir software libre y propietario de este tipo. 
 
 Un programa libre debe estar disponible para uso comercial, desarrollo comercial y distribución comercial. El desarrollo comercial del software libre ha dejado de ser inusual; el software comercial libre es muy importante.
    
@@ -264,3 +274,8 @@ Las licencias de **dominio público** (como la **CC-0**) son licencias que otorg
 No se requiere ningún permiso o licencia para usar trabajos del dominio público, así como aquellos con un copyright expirado.
 
 ![](media/986ed41efd72225fb2cdbe2c6dcc759f.png)
+
+![](media/cuadro_resumen.png)
+
+
+![](media/dbd29cf8de14860ca5a64ac44a50cc36.jpeg)

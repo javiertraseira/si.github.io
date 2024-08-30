@@ -10,13 +10,19 @@ En este tema analizaremos los distintos **sistemas de numeración** que se usan 
 
 ## Sistemas de numeración
 
->   📌Se define un **sistema de numeración **como el conjunto de símbolos y reglas que se utilizan para representar cantidades o datos numéricos.
+```note
+Se define un **sistema de numeración **como el conjunto de símbolos y reglas que se utilizan para representar cantidades o datos numéricos.
+```
 
-Estos sistemas se caracterizan por la *base* a la que hacen referencia. La **base **de un sistema de numeración se refiere al número de símbolos que componen dicho sistema.
+Estos sistemas se caracterizan por la *base* a la que hacen referencia. 
+
+```note
+La **base** de un sistema de numeración se refiere al número de símbolos que componen dicho sistema.
+```
 
 >   Los humanos utilizamos en el día a día un sistema de numeración en base 10 (como nuestros dedos), compuesto por 10 símbolos diferentes (del 0 al 9).
 
-![TN](/media/TN.jpg)
+![](/media/TN.png)
 
 Así para el **sistema decimal en base 10**, aplicando el *Teorema Fundamental de la Numeración* visto anteriormente, las cifras que componen un número son las cantidades que están multiplicando a las distintas potencias de diez (10, 100, 1000, 10000, etc.)
 
@@ -39,7 +45,7 @@ Principales <u>sistemas de codificación numérica</u> usados en informática:
     
 -   **Hexadecimal** (abreviado como *hex*). Es un sistema de numeración en **base 16**. Usa 16 símbolos diferentes, del 0 al 9 y los dígitos valores (o letras) A, B, C, D, E y F.
 
-El sistema que maneja internamente un ordenador es el **binario**, pero, en ocasiones, por comodidad en el manejo de los datos, se suele utilizar el octal y el hexadecimal, ya que mucha de la información que nos muestra el sistema operativo, como direcciones de memoria, se expresa en hexadecimal.
+> El sistema que maneja internamente un ordenador es el **binario**, pero, en ocasiones, por comodidad en el manejo de los datos, se suele utilizar el octal y el hexadecimal, ya que mucha de la información que nos muestra el sistema operativo, como direcciones de memoria, se expresa en hexadecimal.
 
 ### Binario
 
@@ -133,13 +139,12 @@ Es necesario saber interpretar el código binario para poder entender las operac
 
 Por extensión, el ordenador utiliza los sistemas de numeración de base 8 y base 16 (por ser múltiplos del sistema binario) para mostrarnos información relativa a algunos procesos que realiza. A la hora de realizar la comunicación entre dispositivos se utiliza así mismo el código binario (base 2)
 
-Debido a la estructura de 64 bits de un microprocesador las direcciones de memoria se expresan a menudo en hexadecimal. Por ejemplo, para no tener que escribir *111111010100000000000010101100* podemos escribir *3F5000AC* en hexadecimal.
+> Debido a la estructura de 64 bits de un microprocesador las direcciones de memoria se expresan a menudo en hexadecimal. Por ejemplo, para no tener que escribir *111111010100000000000010101100* podemos escribir *3F5000AC* en hexadecimal.
 
 - Un procesador y un bus de **32 bits** permite especificar a la CPU <img src="https://render.githubusercontent.com/render/math?math=2^32=4.294.967.296">  direcciones de memoria distintas, lo cual a su vez genera un límite de 4GB en el dispositivo.
 
 - Un procesador y un bus de **64 bits** permite especificar a la CPU <img src="https://render.githubusercontent.com/render/math?math=2^64"> direcciones (lo que se traduce en un rango de valores desde 0 hasta 18.446.744.073.709.551.615 de direcciones o 18 exabytes )
 
-  
 
 ![](media/bsod.jpg)
 
@@ -154,7 +159,7 @@ Debido a la estructura de 64 bits de un microprocesador las direcciones de memor
 
 ###  Operaciones matemáticas con potencias
 
-Repaso de las operaciones básicas con potencias:
+- Repaso de las operaciones básicas con potencias:
 
 <img src="/media/potencias.png" style="zoom:67%;" />
 
@@ -316,7 +321,9 @@ Debido a que ambos sistemas se relacionan directamente con el sistema binario, l
 
 ## Sistemas de codificación
 
+```note
 Bit es el acrónimo *Binary digit* (‘dígito binario’). Un bit es un dígito del sistema de numeración binario. Las unidades de almacenamiento tienen por símbolo bit.
+```
 
 >   El **bit** es la unidad mínima de información empleada en informática, en cualquier dispositivo digital, o en la teoría de la información. Con él, podemos representar dos valores cuales quiera, como verdadero o falso, abierto o cerrado, blanco o negro, norte o sur.
 
@@ -347,9 +354,9 @@ Diferentes tipos de información poseen diferentes codificaciones, pero las más
 - Otros:
   Cifrado de clave única, cifrado de clave pública, hash.
 
-### Codificaciones alfanuméricas
-
->   📌Se denomina **alfabeto** al **conjunto de caracteres** para representar una lengua cualquiera.
+```note
+Se denomina **alfabeto** al **conjunto de caracteres** para representar una lengua cualquiera.
+```
 
 - **Código de caracteres:**
   Código numérico asignado a cada carácter de un alfabeto:
@@ -363,9 +370,13 @@ Diferentes tipos de información poseen diferentes codificaciones, pero las más
    - **UTF-32**: Código de longitud fija: 4 bytes eficiente con planos que no son BMP.
   
 
-#### Código ASCII
+## Codificación alfanuméricas
 
->   💡 El código **ASCII** (*American National Standard Code for Information Interchange*) es una codificación alfanumérica usada para el intercambio de información basada en el alfabeto latino del inglés.
+### ASCII
+
+```note
+El código **ASCII** (*American National Standard Code for Information Interchange*) es una codificación alfanumérica usada para el intercambio de información basada en el alfabeto latino del inglés.
+```
 
 El conjunto de caracteres de **ASCII** fue creado como estándar en 1967. Fue diseñado en un principio usando 8 bits (1 byte), dejando un bit libre para el control de errores, por lo que puede representar <img src="https://render.githubusercontent.com/render/math?math=2^7=128"> caracteres *(abecedario, cifras, puntuación y caracteres de control*).
 
@@ -384,15 +395,14 @@ El código ASCII se divide básicamente en:
 ![](media/tabla_ascii.jpg)
 
 
+### ASCII extendido (8bits)
 
 >   💡Debido a que 8 bits no son suficientes para representar todos los alfabetos del mundo, continuaron apareciendo variantes ASCII de 8 bits incompatibles entre sí. Estas variantes se llaman a veces ASCII extendido, sin ser parte del estándar ANSI.
 
 Hay varios conjuntos de **ASCII extendido**, cada uno de los cuales contiene codificaciones para muchos lenguajes:
 
--   **Windows code pages**, usado en aplicaciones gráficas Windows.
-
+-   **Windows code pages**, usado en aplicaciones gráficas
 -   **OEM code pages**, usando en aplicaciones de consola Windows.
-
 -   **ISO-8859** es un estándar ISO para codificación en 8 bits. Tiene 16 partes. La primera se llama *ISO-8859-1*, también conocida como *Latin-1*, que cubre la mayoría de lenguajes de Europa occidental.
 
 En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es válido para representar alfabetos asiáticos, porque contienen miles de caracteres.
@@ -400,7 +410,6 @@ En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es vá
 -   **Codificación de la tabla ASCII extendida (8 bits):**
 
 ![](media/ascii_extendida.jpg)
-
 
 
 >   Para traducir al código ASCII cualquier texto, sólo es necesario buscar el código hexadecimal de cada símbolo y escribir su equivalente binario, recordando que cada carácter siempre se codifica a 8 bits.
@@ -420,20 +429,29 @@ En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es vá
 
 
 
-#### UNICODE
+### UNICODE
 
 > 💡 **UNICODE** es un consorcio internacional nacido en **1991** que define normas de internacionalización (I18N): Códigos de caracteres (Unicode), símbolos, librerías software, formatos…
 >     [http://www.unicode.org](http://www.unicode.org/)
 
-Es un código de caracteres internacionalizado. Es el resultado más conocido del consorcio. Puede representar la gran mayoría de lenguas presentes y pasadas.
+Es un código de caracteres internacionalizado. Es el resultado más conocido del consorcio. 
+
+Puede representar la gran mayoría de lenguas presentes y pasadas.
 
 - Unicode asigna un **código numérico** a cada carácter utilizando 16 bits.
+
+En Unicode existen distintas formas de codificar un mismo carácter según el formato. Existen los siguientes formatos UTF-8, UTF-16 y UTF-32.
+
+- **UTF-8** Usa símbolos de longitud variable de 1 a 4byts. Usa 1 byte para representar caracteres en el set ASCII, dos bytes para caracteres en otros bloques alfabéticos y tres bytes para el resto del BMP. Para los caracteres complementarios se utilizan 4 bytes.
+- **UTF-16** utiliza 2 bytes para cualquier carácter en el BMP y 4 bytes para los caracteres complementarios.
+- **UTF-32** emplea 4 bytes para todos los caracteres.
+
 
 - Los caracteres se agrupan a su vez en **planos**
 
     ► Cada plano por tanto se codifica en 2 bytes 2 bytes (16 bits): 2^16 =**64536** caracteres
     
--   Planos más importantes:
+- Planos más importantes:
 
    -   **BMP **(Basic Multilingual Plane) Agrupa los símbolos más habituales de la mayoría de lenguas actuales.
 
@@ -450,11 +468,12 @@ Es un código de caracteres internacionalizado. Es el resultado más conocido de
 ![](media/planos_unicode.jpg)
 
 
-
 -   Los caracteres en Unicode se escriben usando el formato **U+xxxx** donde las xxxx son de cuatro a seis dígitos en sistema de numeración **hexadecimal**.
 -   A partir de *Unicode 7.0* el rango válido de puntos de código va de 0 a 10FFFF16. El hexadecimal se usa por conveniencia en lugar del binario, porque es más fácil recordar. La versión más actual es la 12.0 (marzo 2019) con soporte para 136690 caracteres.
 -   Por ejemplo, Unicode asigna el número 65 a la letra a latina mayúscula. El punto de código correspondiente es **U+0041** porque 65 decimal = *0x41*hexadecimal.
 -   Unicode es **compatible** con codificaciones anteriores ya que los 256 primeros caracteres de Unicode coinciden con los caracteres de *ISO-8859-1*. Esto hace que la mayoría de texto en uso requiera solo un byte por carácter.
+-   UTF-8 y UTF-16 son codificaciones de amplitud variable. Esto significa que si un carácter se puede representar con un sólo byte, UTF-8 empleará sólo un byte. Si requiere dos bytes, usará dos, y así sucesivamente.
+
     
 
 **Unicode BMP: subconjunto ASCII (Basic Latin)**
@@ -462,9 +481,7 @@ Es un código de caracteres internacionalizado. Es el resultado más conocido de
 ![](media/unicode_bmp.png)
 
 
-
 - [ ]  Buscar en el **mapa de caracteres de Windows** los valores hexadecimales de los siguientes caracteres de texto Unicode:
-
 
 
 | **Carácter Unicode** | **Valor hexadecimal** |
@@ -483,14 +500,7 @@ Es un código de caracteres internacionalizado. Es el resultado más conocido de
 
 ### Codificaciones numéricas
 
-#### Código BCD
-
->   💡 En sistemas de computación el código **BCD** (Binary-Coded Decimal) o Decimal codificado en binario es un estándar para representar números decimales en el sistema binario, en donde cada dígito decimal es codificado **con una secuencia de 4 bits**.
-
-![](media/codigo_bcd.jpg)
-
-
-#### Codificación de números negativos
+#### Representación de números negativos
 
 Es evidente que si se dispone únicamente de los dos símbolos 0 y 1 usando un código binario natural sólo es posible representar números enteros y positivos.
 
@@ -502,7 +512,7 @@ Para representar números con signo existen varias posibilidades que veremos a c
 1.  **Complemento a uno**
 2.  **Complemento a dos**
 
-##### 1. Signo y magnitud
+##### Signo y magnitud
 
 Partiendo de que la forma de operar en un sistema digital es a través de un conjunto definido de bits, por ejemplo grupos de 8 bits (un byte), el enfoque es reservar 1 bit (normalmente el primero) para indicar el signo. Normalmente se asocia un 0 al signo “+” y un 1 al signo “-“. El resto de los bits del grupo indica la magnitud.
 
@@ -514,7 +524,7 @@ Se debe tener en cuenta los siguientes aspectos importantes:
 - A la hora de hacer operaciones debemos tratar de forma separada el signo, es decir, debemos procesar por una parte los signos y por otra las magnitudes.
 - El cero está representado dos veces: 00000000 y 10000000, lo cual es poco eficiente.
 
-##### 2. Complemento a uno
+##### Complemento a uno
 
 Otra forma de representación es utilizar el **complemento a uno** para representar los números negativos. Se reserva igualmente el primer bit para representar el signo y el resto de bits se usan para representar:
 
@@ -527,7 +537,7 @@ Así el numero 3 se representa igualmente por **00000011** y el número -3 se re
 
 Las operaciones son más fáciles que con la representación “signo y magnitud” pero adolece igualmente del problema de la doble representación del 0. En efecto, tenemos que 00000000 y 11111111 lo representan.
 
-##### 3. Complemento a dos
+##### Complemento a dos
 
 Un enfoque que solventa algunos de los problemas de los anteriores es la representación de número negativo en **complemento a dos**. 
 Al igual que en  el caso anterior, el primer bit le reservamos para el signo y el resto de bits se usan para representar:
@@ -542,10 +552,17 @@ Así, el número 3 se representa igualmente por 00000011 y el número -3 se repr
 
 En este caso, el 0 (decimal) sólo tiene una única representación 00000000 y las operaciones aritméticas se pueden realizar mediante sumadores.
 
-#### Codificación de números reales: coma flotante
+#### Código binario BCD
+
+>   💡 En sistemas de computación el código **BCD** (Binary-Coded Decimal) o Decimal codificado en binario es un estándar para representar números decimales en el sistema binario, en donde cada dígito decimal es codificado **con una secuencia de 4 bits**.
+
+![](media/codigo_bcd.jpg)
 
 
->   💡 La representación en **coma flotante **es una forma de notación científica basada en el estándar **IEE754** usada en los ordenadores con la cual se pueden representar números reales extremadamente grandes (como π) y pequeños de una manera muy eficiente y compacta, y con la que se pueden realizar operaciones aritméticas.
+#### Codificación números reales: coma flotante (IEE754)
+
+
+>   💡 La representación en **coma flotante** es una forma de notación científica basada en el estándar **IEE754** usada en los ordenadores con la cual se pueden representar números reales extremadamente grandes (como π) y pequeños de una manera muy eficiente y compacta, y con la que se pueden realizar operaciones aritméticas.
 
 En ciencia se utiliza habitualmente la **notación científica decimal** en la que se basa, donde cada número lleva asociada una mantisa y un exponente.
 
