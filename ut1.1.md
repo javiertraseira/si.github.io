@@ -4,8 +4,9 @@
 
 Según el Diccionario de la Real Academia Española se define a la **informática** como:
 
-{: .highlight } 
+```note
 Conjunto de conocimientos científicos y técnicas que hacen posible el tratamiento automático de la información por medio de dispositivos digitales, denominados ordenadores o computadoras.
+```
 
 
 Su aparición como ciencia se debe a la presentación del primer ordenador en el año 1936 denominado **Z1** y usado como arma de cálculo durante la 2ª Guerra Mundial.
