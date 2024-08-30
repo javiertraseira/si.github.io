@@ -1,8 +1,3 @@
----
-title: Introducción a los sistemas informáticos: hardware
-nav_order: 1
----
-
 # UT1.1 Introducción a los sistemas informáticos: hardware
 
 ## Informática
