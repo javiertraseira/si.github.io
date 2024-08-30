@@ -105,9 +105,9 @@ Un ordenador se distingue de otros dispositivos similares, como una calculadora 
 
 Para que los componentes electrónicos de un ordenador sean capaces de funcionar y realizar un proceso determinado, es necesario ejecutar un conjunto de órdenes o instrucciones.
 
-```tip
+{: .highlight } 
 Se denomina **programa** al conjunto de **instrucciones** ordenadas y adecuadas para llevar a cabo un determinado proceso.
-```
+
 
 Cuando un programa está compuesto por varios, forma lo que se denomina como **aplicación informática**.
 
