@@ -5,7 +5,7 @@ remote_theme: just-the-docs/just-the-docs@v0.4.0.rc1
 
 callouts:
   highlight:
-    color: yellow
+    color: blue
   important:
     title: Important
     color: blue

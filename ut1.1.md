@@ -4,7 +4,7 @@
 
 Según el Diccionario de la Real Academia Española se define a la **informática** como:
 
-{: .note } 
+{: .highlight } 
 Conjunto de conocimientos científicos y técnicas que hacen posible el tratamiento automático de la información por medio de dispositivos digitales, denominados ordenadores o computadoras.
 
 
@@ -87,7 +87,7 @@ Campos fundamentales de las **ciencias de la computación**:
 
 ## El ordenador
 
-{: .note } 
+{: .highlight } 
 Un **ordenador** o computadora es una máquina electrónica que sirve para procesar información digital.
 
 
@@ -100,7 +100,7 @@ Estos componentes electrónicos necesitan de otros componentes no físicos que l
 
 ![partes_si](media/partes_si.jpg)
 
-{: .note } 
+{: .highlight } 
 Un ordenador se distingue de otros dispositivos similares, como una calculadora no programable, es que es una máquina de propósito general, es decir, puede realizar tareas muy diversas, de acuerdo a las posibilidades de sus programas y el hardware.
 
 Para que los componentes electrónicos de un ordenador sean capaces de funcionar y realizar un proceso determinado, es necesario ejecutar un conjunto de órdenes o instrucciones.
@@ -113,7 +113,7 @@ Cuando un programa está compuesto por varios, forma lo que se denomina como **a
 
 El **software básico** para hacer funcionar cualquier ordenador se denomina **sistema operativo (SO)**
 
-{: .note } 
+{: .highlight } 
 El **sistema operativo (SO)** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
 
 
@@ -129,7 +129,7 @@ La conexión entre los diferentes subsistemas o componentes de un SI se realiza 
 
 ## El Sistema Informático
 
-{: .note } 
+{: .highlight } 
 Un sistema informático está formado a su vez por el hardware del equipo, el software que lo ejecuta y el personal humano que lo controla y programa.
 
 
@@ -137,7 +137,7 @@ Un sistema informático está formado a su vez por el hardware del equipo, el so
 
 ### Hardware
 
-{: .note } 
+{: .highlight } 
 Se denomina **hardware** a todas las partes tangibles de un ordenador o computadora: sus componentes eléctricos, electrónicos, electromecánicos, así como sus periféricos asociados, cables, baterías o carcasas y cajas.
 
 
@@ -311,7 +311,7 @@ La **evolución** del hardware desde el SXX a la actualidad ha sido tecnológica
 
 ## La Ley de Moore
 
-{: .note } 
+{: .highlight } 
 La **ley de Moore** dice que aproximadamente cada dos años se duplica el número de **transistores** en un procesador.
 
 
