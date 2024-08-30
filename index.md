@@ -1,5 +1,5 @@
 # Módulo de Sistemas Informáticos (1º DAM)
 
-Contenido del curso 20-21
+Contenido del curso 24-25
 
 
