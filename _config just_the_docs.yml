@@ -1,0 +1,27 @@
+title: SI
+lang: es
+description: Sistemas Informáticos (1ºSI)
+remote_theme: just-the-docs/just-the-docs@v0.4.0.rc1
+
+callouts:
+  highlight:
+    color: blue
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: info
+    color: blue
+  warning:
+    title: Warning
+    color: red
+
+translate:
+ note: info
+ search: buscar
+
+plugins:
+  - jekyll-block-ial
