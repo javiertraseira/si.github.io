@@ -1,12 +1,22 @@
 title: SI
 lang: es
-remote_theme: carlosperate/jekyll-theme-rtd
+description: Sistemas Informáticos (1ºSI)
+remote_theme: rundocs/jekyll-rtd-theme
 
-# Theme settings:
-repo_url: "https://github.com/carlosperate/jekyll-theme-rtd"
-edit_on_github: true
-github_docs_folder: true
-sticky_navigation: true
-prev_next_buttons_location: bottom
-search_enabled: true
-hljs_style: github-gis
+translate:
+ note: info
+ search: buscar
+ search_docs: buscar..
+ searching: buscando
+ not_found: No encontrado
+ search_results_found: Resultados Encontrados
+ this: este
+ is_under_the_terms_of: esta_bajo_los_terminos_de
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
