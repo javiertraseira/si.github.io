@@ -124,7 +124,7 @@ El **firmware** es otro elemento importante entre software y hardware dentro de 
 <img src="media/firmware.jpg" alt="firmware" style="zoom:67%;" />
 
 
-La conexión entre los diferentes subsistemas o componentes de un SI se realiza utilizando una **interfaz.**
+La conexión entre los diferentes subsistemas o componentes de un SI se realiza utilizando una **interfaz**.
 
 ![interfaz](media/interfaz_si.png)
 
