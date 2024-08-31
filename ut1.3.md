@@ -10,14 +10,15 @@ En este tema analizaremos los distintos **sistemas de numeración** que se usan 
 
 ## Sistemas de numeración
 
-{: .note } 
+```note
 Se define un **sistema de numeración** como el conjunto de símbolos y reglas que se utilizan para representar cantidades o datos numéricos.
+```
 
 Estos sistemas se caracterizan por la *base* a la que hacen referencia. 
 
-{: .note } 
+```note
 La **base** de un sistema de numeración se refiere al número de símbolos que componen dicho sistema.
-
+```
 
 >   Los humanos utilizamos en el día a día un sistema de numeración en base 10 (como nuestros dedos), compuesto por 10 símbolos diferentes (del 0 al 9).
 
@@ -320,9 +321,9 @@ Debido a que ambos sistemas se relacionan directamente con el sistema binario, l
 
 ## Sistemas de codificación
 
-{: .note } 
+```note
 Bit es el acrónimo *Binary digit* (‘dígito binario’). Un bit es un dígito del sistema de numeración binario. Las unidades de almacenamiento tienen por símbolo bit.
-
+```
 
 >   El **bit** es la unidad mínima de información empleada en informática, en cualquier dispositivo digital, o en la teoría de la información. Con él, podemos representar dos valores cuales quiera, como verdadero o falso, abierto o cerrado, blanco o negro, norte o sur.
 
@@ -353,9 +354,9 @@ Diferentes tipos de información poseen diferentes codificaciones, pero las más
 - Otros:
   Cifrado de clave única, cifrado de clave pública, hash.
 
-{: .note } 
+```note
 Se denomina **alfabeto** al **conjunto de caracteres** para representar una lengua cualquiera.
-
+```
 
 - **Código de caracteres:**
   Código numérico asignado a cada carácter de un alfabeto:
@@ -373,9 +374,9 @@ Se denomina **alfabeto** al **conjunto de caracteres** para representar una leng
 
 ### ASCII
 
-{: .note } 
+```note
 El código **ASCII** (*American National Standard Code for Information Interchange*) es una codificación alfanumérica usada para el intercambio de información basada en el alfabeto latino del inglés.
-
+```
 
 El conjunto de caracteres de **ASCII** fue creado como estándar en 1967. Fue diseñado en un principio usando 8 bits (1 byte), dejando un bit libre para el control de errores, por lo que puede representar <img src="https://render.githubusercontent.com/render/math?math=2^7=128"> caracteres *(abecedario, cifras, puntuación y caracteres de control*).
 
@@ -714,9 +715,9 @@ En informática se utiliza habitualmente para medir de cantidades de informació
 
 Un ordenador o cualquier sistema de control basado en un microprocesador no puede interpretar señales analógicas, ya que sólo utiliza señales digitales como bien sabemos. Es necesario traducir, o transformar en señales binarias, lo que se denomina <u>proceso de digitalización o conversión</u> de señales analógicas a digitales.
 
-{: .note } 
+```note
 La conversión **analógica-digital** (CAD) o **digitalización** consiste en la transcripción de señales analógicas en señales digitales, con el propósito de facilitar su procesamiento (codificación, compresión, etc.) y hacer la señal resultante la digital más inmune al ruido y otras interferencias.
-
+```
 
 <img src="media/digitalizacion.jpg" style="zoom:80%;" />
 
@@ -732,9 +733,9 @@ La conversión **analógica-digital** (CAD) o **digitalización** consiste en la
     
 5.  Es posible aplicar técnicas de compresión de datos sin pérdidas o técnicas de compresión con pérdidas basados en la codificación perceptual mucho más eficientes que con señales analógicas.
 
-{: .note } 
+```note
 Una imagen en **mapa de bits**, es una estructura o fichero de datos digital que representa una matriz de píxeles o puntos de color, que se puede visualizar en un monitor o cualquier otro dispositivo de representación.
-
+```
 
 A las imágenes en mapa de bits se las suele definir por su altura y anchura (en píxeles) y por su **profundidad de color** (en bits por píxel), que determina el número de colores distintos que se pueden almacenar en cada punto individual, y por lo tanto la calidad del color de la imagen.
 
