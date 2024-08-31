@@ -86,7 +86,7 @@ Dicha arquitectura consta de los siguientes <u>bloques</u>:
 
 - Esquema más completo del **flujo de información**:
 
-![von_neumann](media/arquitectura_von_neumann.jpg)
+![von_neumann](media/arquitectura_von_neumann.png)
 
 
 
