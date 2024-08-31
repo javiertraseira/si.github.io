@@ -2,7 +2,7 @@ title: SI
 lang: es
 description: Sistemas Informáticos (1ºSI)
 
-remote_theme: https://github.com/Appdynamics/jekyll-rtd-theme 
+remote_theme: https://github.com/JV-conseil/jekyll-theme-read-the-docs
 
 translate:
  note: info
