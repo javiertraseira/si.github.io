@@ -14,6 +14,9 @@ translate:
  this: este
  is_under_the_terms_of: esta_bajo_los_terminos_de
 
+theme: 
+  favicon: https://cdn.geotribu.fr/img/internal/charte/geotribu_logo_64x64.png
+
 plugins:
   - jemoji
   - jekyll-avatar
