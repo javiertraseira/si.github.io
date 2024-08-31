@@ -128,6 +128,9 @@ La conexión entre los diferentes subsistemas o componentes de un SI se realiza 
 
 ![interfaz](media/interfaz_si.png)
 
+Una interfaz en informática por tanto es la unión que se establece entre dos dispositivos o sistemas independientes para establecer una comunicación y funcionar de forma conjunta. Como concepto, la interfaz es un intérprete o traductor entre dos dispositivos o entre elementos de un mismo dispositivo.
+
+
 
 ## El Sistema Informático
 
