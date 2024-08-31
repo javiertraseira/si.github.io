@@ -68,7 +68,7 @@ Las características de esta arquitectura son:
 - Cada celda de memoria de la máquina se identifica con un número único, llamado **dirección**.
 - Cada **programa** se ejecuta de forma secuencial comenzando por la primera instrucción. Para cambiar esta secuencia se usan comandos de control.
 
-Dicha arquitectura consta de los siguientes <u>**bloques**</u>:
+Dicha arquitectura consta de los siguientes <u>bloques</u>:
 - Unidad Central del Procesamiento (**CPU**)
   - Unidad de Control (**UC**)
   - Unidad Aritmético Lógica (**ALU**)
@@ -130,7 +130,7 @@ $$
 
 ### Unidad de Control (UC)
 
-Las funciones de la **Unidad de Control (UC) **son las siguientes:
+Las funciones de la **Unidad de Control (UC)** son las siguientes:
 
 -   Administra los recursos del ordenador, es decir, la memoria, los dispositivos de entrada, de salida y los de almacenamiento.
 -   Selecciona e interpreta las **instrucciones** del programa cargado y se encarga de que sean ejecutadas.
@@ -248,7 +248,7 @@ Representación de la **estructura física** de las celdas:
 La memoria RAM es básicamente una tabla, que contiene la dirección (o lugar) donde está cierto dato y el contenido del propio dato. La memoria dispone de un **registro de direcciones** y de un **registro de datos de intercambio de memoria**. En el *registro de direcciones* se almacena la dirección en la
 que se almacenará o leerá un dato, y en el *registro de intercambio de memoria* se almacena ese dato leído o que se almacenará.
 
-#### 2. La memoria principal interna: ROM
+#### La memoria principal interna: ROM
 
 ```note
 La memoria **ROM** o memoria de solo lectura contiene programas especiales (**firmware**) que sirven para cargar e iniciar el arranque del ordenador.
@@ -281,7 +281,9 @@ Existen diferentes niveles de caché denominados *L1, L2 y L3*.
 
 ###  Registros CPU
 
-Dentro de la CPU hay una memoria interna compuesta por un conjunto de registros de muy alta velocidad. Este elemento es necesario para transferir datos entre los diversos registros y la ALU, ya que ésta en realidad sólo opera con datos de la memoria interna de la CPU. Los registros de la CPU se clasifican en:
+Dentro de la CPU hay una memoria interna compuesta por un conjunto de registros de muy alta velocidad. Este elemento es necesario para transferir datos entre los diversos registros y la ALU, ya que ésta en realidad sólo opera con datos de la memoria interna de la CPU. 
+
+Los registros de la CPU se clasifican en:
 
 - **Registros visibles al usuario:** Permiten al programador de lenguaje de máquina o ensamblador minimizar las referencias a memoria principal optimizando el uso de los registros.
 
