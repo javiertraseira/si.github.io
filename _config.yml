@@ -6,6 +6,7 @@ remote_theme: https://github.com/JV-conseil/jekyll-theme-read-the-docs
 
 translate:
  previous: anterior
+ Next: Siguiente
  note: info
  search: buscar
  search_docs: buscar..
