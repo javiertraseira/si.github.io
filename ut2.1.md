@@ -77,14 +77,15 @@ Dicha arquitectura consta de los siguientes <u>bloques</u>:
 - Unidad de Entrada/Salida
 - Buses
 
-- **De forma esquemática:**
+
+**De forma esquemática:**
 
 ![von_neumann_esquematico](media/von_neumann_esquematico.png)
 
 ![esquema_von_neumann](media/esquema_von_neumann.png)
 
 
-- Esquema más completo del **flujo de información**:
+**Esquema más completo del flujo de información:**
 
 ![von_neumann](media/arquitectura_von_neumann.png)
 
