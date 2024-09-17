@@ -244,7 +244,6 @@ Se la puede considerar como Licencia de software libre con protección heredada.
     -  **No Comercial** (**NC**).- Se puede copiar, distribuir, exhibir y representar la obra y hacer obras derivadas pero sin fines comerciales.
     -  **No Derivadas** (**ND**).- En este caso podemos copiar, distribuir, exhibir y representar copias literales de la obra pero no producir obras derivadas.
     -  **Compartir Igual** (**SA**) -El usuario tiene el derecho de distribuir obras derivadas pero siempre con una licencia idéntica a la de la obra original.
-    -  **Dominio público (CC0)** - Liberar una obra renunciando a todos sus derechos.
     
     
 ![](media/1de27f98de5390429fb01adbc544ee22.jpeg)
