@@ -171,15 +171,19 @@ Es un movimiento más ‘**pragmático**’, que se enfoca más en los beneficio
 
 ![](media/081baa59bfc621dadfc7baa92280bc27.jpg)
 
-### Licencias de software propietario
+### Software propietario
 
 El software propietario es aquel que sin permiso del propietario queda prohibida la copia, redistribución o modificación como hemos visto. Para poder usar se suele pedir permiso a la organización que lo desarrollo. Generalmente para su disponibilidad hay que pagar bajo unos derechos de autor (un **Copyright**).
 
 En conclusión, los propietarios son los que establecen los derechos de uso, distribución, redistribución, copia, modificación, cesión y en general cualquier otra consideración que se estime necesaria. Los fabricantes de programas sometidos a este tipo de licencias por lo general ofrecen servicios de soporte técnico y actualizaciones durante el tiempo de vida del producto, también regulan el número de copias que pueden ser instaladas e incluso los fines concretos para los cuales puede ser utilizado.
 
-### Tipos de licencias de software propietario
+## Licencias de software propietario
+
+### Tipos licencias de software propietario
 
 Tipos de licencias de software propietario:
+
+- **Licencias de usuario final**: Es el tipo más común de licencia en software propietario. Define los derechos y responsabilidades del usuario final en el acuerdo EULA, incluyendo las restricciones de uso, instalación y la prohibición de ingeniería inversa, redistribución o modificación del software.
 
 - **Licencias OEM**: se trata de un tipo de licencia que supedita su venta a que forme parte de un equipo nuevo, estando prohibido venderlo si no es bajo esta condición.
     
@@ -189,7 +193,9 @@ Tipos de licencias de software propietario:
     
 - **Alquiler o suscripción**: El cada vez más habitual modelo de suscripción. El tipo más común es el conocido como Software como servicio (SaaS). Estas son cada vez más habituales, especialmente en las implementaciones cloud. Con este modelo de pago de licencias, la empresa paga una cantidad bastante menor de coste inicial. Algunos proveedores permiten que el número de licencias usadas cambie de mes en mes, otros requieren que las licencias se alquilen por periodos de tiempo más largos.
 
-- **Otro tipo de licencias especiales**: Por ejemplo, las licencias de educación, empresariales, desarrollo o de sectores específicos como el militar. También las licencias shareware o freeware.
+- **Otro tipo de licencias especiales**: Por ejemplo, las licencias de educación, empresariales, desarrollo o de sectores específicos como el militar. También las licencias shareware, demos o freeware.
+
+## Licencias de software libre
 
 ### Tipos licencias de software libre
 
@@ -197,57 +203,72 @@ Podemos clasificar las licencias de software en diferentes tipos, ya que no toda
 
 - **Licencias libres:** se basan en las cuatro libertades vistas anteriormente
 
-   - Licencias **permisivas**: sin condiciones en la distribución.
-   - Licencias **recíprocas** (o copyleft): Imponen algunas condiciones en la redistribución.
+   - Licencias **recíprocas** (o copyleft): requieren que cualquier software derivado se distribuya bajo la misma licencia.
+   - Licencias **permisivas**: más flexibles que las anteriores. Permiten redistribuir el software con o sin modificaciones, incluso bajo una licencia diferente.
 
-- **Licencias semi-libres**: restringen alguna de las cuatro libertades vistas anteriormente.
+- **Licencias semi-libres**: permiten la distribución y modificación del software, pero con ciertas restricciones que limitan su uso en ciertos contextos, como el uso comercial o la redistribución en ciertas condiciones.
 
-Algunos tipos de licencias de **software libre**:
+### Licencias libres recíprocas
 
-- **Licencias GPL (GNU General Public License).** Se la puede considerar como Licencia de software libre con protección heredada. Es una licencia que permite a su desarrollador conservar sus derechos como autor, pero permitiendo su libre distribución modificación y uso con una serie de restricciones:
+- **Licencias GPL (General Public License).** 
+Se la puede considerar como Licencia de software libre con protección heredada. Creada por la Free Software Foundation (FSF), es una de las licencias más usadas y estrictas en cuanto a copyleft:
 
-    -   El nuevo software o modificación debe tener la misma licencia.
+    -   El nuevo software o modificación deberá tener la misma licencia.
     -   El uso de partes en otro software también obliga a hacer uso de la misma licencia.
     -   Gratuito para el programador (salvo gastos de copia o distribución) pero no dice nada que establece restricciones sobre lo que se puede cobrar por distribuir una copia.
     
         ![](media/gpl_logo.png)
 
 
--  El caso de licencia GPL más destacada es Licencia Pública General de GNU (**GNU GPL**) en la que autor conserva los derechos de autor (copyright), y permite la redistribución y modificación bajo términos diseñados para asegurarse de que todas las versiones modificadas del software permanecen bajo los términos de la propia licencia.
+- **Licencia GNU.** 
+ El caso de licencia GPL más destacada es Licencia Pública General de GNU (**GNU GPL**) en la que autor conserva los derechos de autor (copyright), y permite la redistribución y modificación bajo términos diseñados para asegurarse de que todas las versiones modificadas del software permanecen bajo los términos de la propia licencia.
 
     ![](media/gnugpl_logo.png)
+
+### Licencias libres permisivas
 
 -  **Licencias BSD (Berkeley Software Distribution).** Es un tipo de licencia conocida por ser menos “restrictiva” lo que permite que desarrolladores puedan modificar, distribuir e incluso vender el software derivado.
 
    ![](media/0a2b39a8862349d551c17c4b1a83fc11.png)
 
 
--   **Licencias Creative Commons**: Una de las más conocidas a nivel internacional, esta licencia posibilita un modelo legal de distribución y uso de contenidos basada en 4 condiciones principales que pueden ser combinadas para hacer licencias <u>mixtas</u> combinando características:
+-  **Licencia MIT** Muy permisiva, permite a los usuarios usar, modificar y redistribuir el software, incluso en productos propietarios, siempre y cuando se mantenga el aviso de copyright original.
+
+-  **Licencia Apache** Ofrece más protección legal que la licencia MIT o BSD, incluyendo cláusulas sobre patentes. Permite la modificación y redistribución del software bajo otras licencias, siempre que se mantengan los avisos de derechos de autor y licencias.
+
+### Licencias semi-libres 
+
+-   **Licencias Creative Commons**: Una de las más conocidas; esta licencia posibilita un modelo legal de distribución y uso de contenidos basada en 4 condiciones principales que pueden ser combinadas para hacer licencias <u>mixtas</u> (libres o semilibres) combinando características:
     
     -  **Atribución** (**BY**).- Se conceden derechos de copia, distribución, exhibición y derivación siempre y cuando se reconozca y cite la obra de la forma especificada por el autor o el licenciante.
-   
     -  **No Comercial** (**NC**).- Se puede copiar, distribuir, exhibir y representar la obra y hacer obras derivadas pero sin fines comerciales.
-   
     -  **No Derivadas** (**ND**).- En este caso podemos copiar, distribuir, exhibir y representar copias literales de la obra pero no producir obras derivadas.
-   
     -  **Compartir Igual** (**SA**) -El usuario tiene el derecho de distribuir obras derivadas pero siempre con una licencia idéntica a la de la obra original.
-
     -  **Dominio público (CC0)** - Liberar una obra renunciando a todos sus derechos.
     
     
-
 ![](media/1de27f98de5390429fb01adbc544ee22.jpeg)
 
 - La siguiente licencia **CC-BY-SA** significa que se es libre para:
     - *Compartir:* copiar y redistribuir el material en cualquier medio o formato.
     - *Adaptar*: remezclar, transformar y crear a partir del material
     - Para cualquier propósito, *incluso comercialmente.*
-    - El licenciante no puede revocar estas libertades si usted sigue los términos de la licencia. Bajo los siguientes términos:
+    - El licenciante no puede revocar estas libertades si usted sigue los términos de la licencia. 
+    
+    Bajo los siguientes términos:
         - **Atribución (BY)** Usted debe reconocer el crédito de una obra de manera adecuada, proporcionar un enlace a la licencia, e indicar si se han realizado cambios . Puede hacerlo en cualquier forma razonable, pero no de forma tal que sugiera que tiene el apoyo del licenciante o lo recibe por el uso que hace.
         - **Compartir Igual (SA)** Si usted mezcla, transforma o crea nuevo material a partir de esta obra, usted podrá distribuir su contribución siempre que use la misma licencia que la obra original.
 
 
-- **Licencias MIT** (**CC0**) - Licencia de Instituto Tecnológico de Massachusetts. Es una licencia con casi ninguna limitación de uso o modificación y que no tiene restricción en el uso de software pudiendo tener variantes privativas del mismo. Software libre no significa *no comercial*.
+### Dominio público
+
+Las licencias de **dominio público** (como la **CC-0**) son licencias que otorgan derechos de dominio público o actúan como exenciones. Se utilizan para hacer que los trabajos con derechos de autor sean utilizables por cualquier persona sin condiciones, al tiempo que se evitan las complejidades de la atribución o la compatibilidad de licencias que se producen con otras licencias.
+
+No se requiere ningún permiso o licencia para usar trabajos del dominio público, así como aquellos con un copyright expirado.
+
+![](media/986ed41efd72225fb2cdbe2c6dcc759f.png)
+
+## Resumen licencias de software
 
 ![](media/23ec0eaa562ac6f1ed4e469b8907a4d8.jpeg)
 
@@ -266,14 +287,6 @@ Un programa libre debe estar disponible para uso comercial, desarrollo comercial
 |               | **Shareware** Se prueba y luego se paga. No se puede modificar. |
 |               | **Adware** Uso gratuito de software a cambio de una gran cantidad de publicidad.
  |
-
-### Dominio público
-
-Las licencias de **dominio público** (como la **CC-0**) son licencias que otorgan derechos de dominio público o actúan como exenciones. Se utilizan para hacer que los trabajos con derechos de autor sean utilizables por cualquier persona sin condiciones, al tiempo que se evitan las complejidades de la atribución o la compatibilidad de licencias que se producen con otras licencias.
-
-No se requiere ningún permiso o licencia para usar trabajos del dominio público, así como aquellos con un copyright expirado.
-
-![](media/986ed41efd72225fb2cdbe2c6dcc759f.png)
 
 ![](media/cuadro_resumen.png)
 
