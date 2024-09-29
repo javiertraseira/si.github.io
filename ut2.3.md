@@ -20,6 +20,8 @@ En la actualidad, este tipo de elementos está siendo empleado para desarrollos 
 
 ## Componentes electrónicos
 
+### El transistor
+
 ```note
 Un **transistor** es un dispositivo semiconductor utilizado como interruptor en un circuito electrónico. Posee tres conexiones: **E**misor, **B**ase y **C**olector.
 ```
@@ -51,6 +53,8 @@ Los **transistores bipolares** son un tipo de transistor formado por la unión d
 
 ![](media/825b51ad7a02ddf6223537c989ee79f9.png)
 
+### Fotolitografía
+
 ```note
 La **fotolitografía** es una técnica que permite construir e integrar chips electrónicos sumamente pequeños y que actualmente ha derivado en *nanolitografía*.
 ```
@@ -64,12 +68,16 @@ Para reducir el tamaño de los transistores, se utilizan obleas de silicio de na
 
 ![](media/2aa96bf9536d7ca1466a7e6dda85001a.png)
 
+### El diodo
+
 El **diodo** es otro componente electrónico **semiconductor** que tiene la propiedad de permitir el paso del flujo eléctrico únicamente en un sentido entre sus dos bornes; para su construcción, se utiliza principalmente silicio o germanio.
 
 Una combinación de cuatro diodos, dispuestos en la forma adecuada, permite crear un puente de diodos, conocido como **puente rectificador** y utilizado para convertir la corriente alterna (que llega al hogar u oficina) en corriente continua (empleada por aparatos electrónicos).
 
 ![](media/344b53d390f075a0769e7c745fe0a3ce.jpeg)
 ![](media/c40181e8a221e471f8bae6ca3a7a3e18.png)
+
+### Fabricantes componentes
 
 En la actualidad encontrar cuatro grandes potencias que se dedican a la fabricación de chips electrónicos y los problemas de la cadena de suministros que conlleva su escasez:
 
