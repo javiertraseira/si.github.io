@@ -321,7 +321,7 @@ Existen diversas categorías de **puertos** según su valor:
 | **SSH** (terminal remoto encriptado)       | TCP           | 22            |
 | **Telnet** (terminal remoto sin encriptar) | TCP           | 21            |
 | **DNS** (nombres de dominio)               | UDP y TCP     | 53            |
-| **HTTP** (páginas web sin encriptar)       | TCP           | 89            |
+| **HTTP** (páginas web sin encriptar)       | TCP           | 80            |
 | **HTTPS** (páginas web encriptadas)        | TCP           | 443           |
 | **SMTPS** (email encriptado)               | TCP           | 465           |
 | **POP** (descarga de correo)               | TCP           | 110           |
@@ -329,7 +329,7 @@ Existen diversas categorías de **puertos** según su valor:
 | **IMAP** (descarga de correo)              | TCP           | 143           |
 | **IMAPS** (descarga de correo encriptado)  | TCP           | 993           |
 | **SMB** (compartición de archivos)         | TCP           | 445           |
-| **DHCP** (configuración automática de red) | TCP           | 67            |
+| **DHCP** (configuración automática de red) | UDP           | 68            |
 
 ### 4. Capa de aplicación
 

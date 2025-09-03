@@ -1,4 +1,4 @@
-# UT3.1 Gestión del almacenamiento en los SO
+# UT3.2 Gestión del almacenamiento en los SO
 
 ## Contenido y debate introductorio
 
@@ -271,11 +271,11 @@ Esto soluciona el problema de una posible corrupción en el disco ante un posibl
 -  **Sistemas de archivos de disco:** 
 
 |         |   |
-|---------------------|----------------------------|
-| Unix/Linux          | ext2, ext3, ext4, reiserFS |
-| Sistemas Windows    | FAT32, NTFS, ReFS          |
-| Mac                 | HFS, HFS+, APFS            |
-| Unidades extraíbles | extFAT                     |
+|---------------------|-------------------------------------|
+| Unix/Linux          | ext2, ext3, ext4, , Btrfs, reiserFS |
+| Sistemas Windows    | FAT32, NTFS, ReFS                   |
+| Mac                 | HFS, HFS+, APFS                     |
+| Unidades extraíbles | extFAT                              |
 
 
 -   **Sistemas de archivos de red:**

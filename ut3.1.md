@@ -384,10 +384,101 @@ Los programadores tienen a su vez acceso a tipos específicos de interfaces llam
 
 Un SDK (Software Development Kit) es un conjunto de herramientas, bibliotecas, documentación y ejemplos de código que permiten a los desarrolladores crear software o aplicaciones que interactúan con un sistema operativo, hardware o plataforma específica. Se utiliza como un medio de comunicación entre las aplicaciones creadas por el desarrollador y el sistema operativo moderno, facilitando la integración con sus características y funciones.
 
+## Gestión de procesos
 
-## Modos de explotación	
+### Hilos (threads)
 
-![](media\explota_SO.png)
+```note
+💡 Se denomina **hebra** o **hilo** a un punto de ejecución cualquiera en un proceso. Un proceso tendrá siempre una hebra, en la que corre el propio programa, pero puede tener más hebras.
+```
+
+Un proceso clásico es aquel que solo posee una **hebra**.
+
+[^1]: Si por ejemplo ejecutamos un procesador de textos como Word, con un solo documento abierto, el programa Word convertido en proceso estará ejecutándose en un único espacio de memoria (con acceso a archivos, galerías de imágenes, corrector ortográfico..). Este proceso, de momento, tendrá una hebra. Si en esta situación, sin cerrar Word abrimos un nuevo documento, Word no se volverá a cargar como proceso. Simplemente el programa, convertido en proceso, tendrá a su disposición **dos hebras **o hilos diferentes, de tal forma que el proceso sigue siendo el mismo (el original). Word se está ejecutando una sola vez y el resto de documentos de texto que abramos serán hilos o hebras del proceso principal, que es el propio procesador de textos.
+
+![hebras_hilos](media/hebras_hilos.png)
+
+### Estados y transiciones de los procesos	
+
+Existen **tres estados** para los procesos (o hilos correspondientes):
+
+-   **En ejecución:** El procesador está ejecutando instrucciones del proceso
+    cargado en ese momento (tiene su atención y prioridad)
+
+-   **Preparado, en espera o activo:** El proceso está preparado para ser
+    ejecutado y esperando su turno para ser atendido por la CPU.
+    
+-   **Bloqueado:** El proceso ha entrado en un estado de bloqueo que puede
+    darse por causas múltiples (acceso a un mismo fichero, errores..)
+    
+    [^2]: En algunas biografías pueden utilizarse también los estados **nuevo** y **terminado** .
+    
+    
+
+------
+
+Una vez que un programa se ha lanzado y se ha convertido en proceso, puede atravesar varias fases o **estados** hasta que termina.
+
+![](media/transiciones.jpg)
+
+Los cambios de estado en los que se puede encontrar un proceso es lo que se denomina **transiciones**:
+
+- **Transición A**. Ocurre porque el proceso que está en ejecución necesita algún elemento, señal, dato, para poder continuar ejecutándose.
+
+- **Transición B**. Ocurre cuando un proceso ha utilizado el tiempo asignado por la CPU y deja paso al siguiente proceso.
+
+- **Transición C**. Ocurre cuando el proceso que está preparado pasa a estado de ejecución en la CPU. 
+
+- **Transición D**. Ocurre cuando el proceso pasa a preparado, es decir, al recite la orden o señal que estaba esperando en estado de bloqueado.
+
+![estados_procesos](media/estados_procesos.png)
+
+En el siguiente diagrama observamos tres procesos (*o hilos*) pasando de estado de ejecución a quedar en espera o bloqueados:
+
+![diagrama_procesos](media/diagrama_procesos.jpg)
+
+Del que un proceso cambie de estado en un momento u otro se encarga el **planificador de procesos del sistema operativo.**
+
+```note
+💡 El **planificador** de un sistema operativo se encarga de asignar **prioridades** a los diferentes procesos para llevar a cabo su ejecución en el menor tiempo y de la forma más óptima posible.
+```
+
+Mediante técnicas que veremos a continuación, se consigue indicar a la CPU del ordenador que procesos deben ejecutarse en qué momento concreto y los diferentes estados que deben ir adoptando. Ello se lleva cabo mediante **algoritmos de planificación**.
+
+Como hemos visto, cualquier proceso, pasará por diferentes estados y el cambio de un estado a otro no es trivial y tanto la forma como el tiempo para hacerlo marcarán la eficiencia del sistema. 
+
+```note
+Un **cambio de contexto** consiste en interrumpir la ejecución de un proceso para comenzar o seguir con otro.
+```
+
+![cambio_contexto](media/cambio_contexto.png)
+
+
+### Bloque de control de procesos	
+
+```note
+💡 La información de un proceso que el sistema operativo necesita para controlarlo se  guarda en un **bloque de control de procesos o BCP**. 
+```
+
+En el **BCP** cada proceso almacena información como:
+
+- Nombre del proceso
+- **Identificador del nombre e identificador del proceso**. A cada proceso se le asigna un identificador denominado **PID**. Si tiene un proceso padre se identificará a su vez con su **PPID**.
+- **Estado actual del proceso**: Ejecución, preparado o bloqueado.
+- **Prioridad del proceso**. Se la asigna el planificador o el usuario de forma manual.
+- **Ubicación y tamaño usado en memoria**. Dirección de memoria en la que está cargado el proceso y espacio utilizado.  
+- **Recursos utilizados**. Otros recursos hardware y software para poder ejecutarse.
+
+
+| BCP básico de un proceso |
+| ------------------------ |
+| Nombre del proceso       |
+| PID del proceso y PPID   |
+| Estado del proceso       |
+| Prioridad del proceso    |
+| Ubicación en memoria     |
+| Tamaño en memoria        |
+| Recursos                 |
 
 
 ##  Conceptos de servicios y procesos
@@ -408,3 +499,53 @@ Los **procesos** son gestionados por el sistema operativo y están formados por:
 Un **proceso** es la instancia en memoria de un programa ejecutable (un archivo ejecutable .exe o binario) que se ejecuta. Una aplicación puede tener varios procesos que se ejecutan simultáneamente. Por ejemplo, algunos navegadores modernos como Google Chrome o Firefox, ejecutan varios procesos a la vez (cada uno de los cuales representa una pestaña).
 
 Un **servicio** es también un proceso, pero que se ejecuta en segundo plano y no interactúa con nosotros de forma directa como un programa o aplicación. En sistemas Windows, los servicios casi siempre se ejecutan como una instancia del proceso *svchost*, también identificado como host de servicio (En Linux systemd) 
+
+
+
+## Interrupciones y excepciones
+
+Las interrupciones y las excepciones son mecanismos que tienen los sistemas operativos para gestionar situaciones que requieren atención inmediata o especial, interrumpiendo el flujo normal de ejecución de las instrucciones de un programa. 
+
+A pesar de que ambos conceptos están relacionados con la alteración del flujo de un programa, se diferencian tanto en su origen como en la forma en que son manejados. 
+
+### Interrupciones
+
+```note
+💡 Una **interrupción** es una señal que obliga al SO a tomar el control del procesador para estudiarla y tratarla.
+```
+
+Las interrupciones son un mecanismo que permite que el hardware comunique eventos y es fundamental en sistemas multitarea y en el manejo de dispositivos de entrada/salida. A cada momento se producen miles de interrupciones manejadas con total normalidad por el SO.
+
+Por ejemplo, si un usuario pulsa una tecla en un teclado, o si un paquete de datos llega a una tarjeta de red, se genera una interrupción de hardware. El sistema operativo detiene temporalmente la ejecución del programa actual, gestiona el evento (por ejemplo, leyendo el valor de la tecla pulsada), y luego vuelve a continuar la ejecución del programa en el punto en que fue interrumpido, dando la impresión de que todo funciona a la vez (multitarea).
+
+<img src="media/interrupciones_so.png" alt="interrupciones_so" style="zoom:80%;" />
+
+
+### Excepciones
+
+```note
+💡 Una **excepción** es un evento que ocurren durante la ejecución de las instrucciones de un programa, como resultado de una operación que genera una condición anómala o un **error**.
+```
+
+A diferencia de las interrupciones, que son provocadas por señales externas, las excepciones son generadas internamente por el procesador como respuesta a situaciones inesperadas durante la ejecución de un programa o aplicación (que puede ser el propio SO).
+
+Es el proceso o el propio programa el que intenta llevar a cabo el manejo y control de dicho error abortando su ejecución.
+
+
+<img src="media/exception.png" alt="exception" style="zoom:50%;" />
+
+
+### Comparativa entre interrupciones y excepciones
+
+
+
+|                      **Interrupciones**                      |                       **Excepciones**                        |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| Las interrupciones se presentan inesperadamente y sin relación con el proceso en ejecución. Son parte intrínseca del funcionamiento de cualquier sistema. | Las excepciones se producen como efecto directo de una instrucción concreta del proceso que se esta ejecutando. |
+| El SO atiende la interrupción y a continuación continúa con al ejecución del proceso con la que estaba. | Aparecen por defectos de programación y errores graves. Son fallos no recuperables. |
+| Si se producen varias interrupciones simultáneamente, sólo se tratará una, quedando bloqueadas el resto. |          Las excepciones se producen de una en una.          |
+
+
+
+
+
