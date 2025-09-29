@@ -87,19 +87,26 @@ Entre 1974 y 1982 se crearon gran cantidad de redes entre las que destacaron:
 -  Bitnet (1981): Unía las universidades americanas usando sistemas IBM.
 -  Eunet (1982): Unía Reino Unido, Escandinavia y Holanda.
 
-En aquél momento el mundo de las redes era un poco caótico, a pesar de que ARPANET seguía siendo el ‘estándar’. EN 1981, ARPANET adoptó el protocolo **TCP/IP** y en aquel momento se creó **Internet** (*International Net*).
+A principios de los 80 se comenzaron a desarrollar los ordenadores de forma exponencial. La red siguió creciendo rápidamente y, con la llegada de la *World Wide Web* en 1990, se convirtió en una herramienta accesible al público general.
 
-A principios de los 80 se comenzaron a desarrollar los ordenadores de forma exponencial. El crecimiento era tan veloz que se temía que las redes se bloquearan debido al gran número de usuarios y de información transmitida, hecho causado por el fenómeno del e-mail. La red siguió creciendo exponencialmente.
+Hoy en día, Internet es una **infraestructura global** que conecta miles de millones de dispositivos en todo el mundo. Soporta servicios esenciales como correo electrónico, redes sociales, comercio electrónico, almacenamiento en la nube, videoconferencias o streaming. 
+
 
 ### Historia de la web
 
-El concepto de **WWW** fue diseñado por Tim Berners-Lee y científicos del **CERN** en 1990 en Ginebra. Estos científicos estaban interesados en poder buscar y mostrar fácilmente documentación a través de Internet. Los científicos del CERN diseñaron un navegador/editor y le pusieron el nombre de **World Wide Web**. En 1991 dicha tecnología fue presentada al público a pesar de que el crecimiento en su utilización no fue muy espectacular, a finales de 1992 solamente había 50 sitios web en el mundo, y en 1993 había 150.
+La **World Wide Web (WWW)**, o simplemente la web, es el sistema que nos permite acceder a páginas con texto, imágenes, vídeos y enlaces a través de un **navegador**. 
+
+La web fue diseñada por Tim Berners-Lee y científicos del *CERN* en 1990 en Ginebra. Estos científicos estaban interesados en poder buscar y mostrar fácilmente documentación a través de Internet. 
+En 1993 Mark Andreesen, del *National Center for SuperComputing Applications* (NCSA) de Illinois publicó el **Mosaic X**, un navegador fácil de instalar y de usar. Sus creadores fundaron a su vez una empresa llamada Netscape en Silicon Valley.
 
 ![](media/1d3d8631393d66366a3728d0886db82c.png)
 
-En 1993 Mark Andreesen, del *National Center for SuperComputing Applications* (NCSA) de Illinois publicó el **Mosaic X**, un navegador fácil de instalar y de usar. Sus creadores fundaron a su vez una empresa llamada Netscape en Silicon Valley.
 
-A partir de la publicación de la tecnología **WWW** y de los navegadores se comenzó a abrir Internet a un público más amplio: actividades comerciales, páginas personales, redes sociales junto la explosión de equipos cada vez más potentes y portables.
+A partir de la publicación de la tecnología **WWW** y de los navegadores se comenzó a abrir Internet a un público más amplio: actividades comerciales, páginas personales, redes sociales junto la explosión de equipos cada vez más potentes y portables. 
+
+La WWW no es lo mismo que Internet; es una de sus aplicaciones más populares, la que hace posible navegar por páginas web tal y como la usamos hoy en día.
+
+### Evolución de Internet
 
 ¿Qué pasa en un minuto en **Internet** en 2024?
 
@@ -321,7 +328,9 @@ Es la capacidad que posee una red para hallarse disponible y completamente activ
 ![](media/755541bd19a935494ec237c499d0eb22.png)
 
 
-## Modelo cliente-servidor
+## Modelos de organización en las redes
+
+### Modelo cliente-servidor
 
 El **modelo cliente-servidor** es un concepto fundamental en las redes de computadoras. En este modelo, se distingue entre dos tipos de roles principales: el cliente y el servidor, cada uno con funciones específicas y complementarias.
 
@@ -334,6 +343,16 @@ Es el dispositivo o software que realiza solicitudes para acceder a un servicio 
 Es el dispositivo o software que responde a las solicitudes de los clientes, proporcionando los recursos o servicios solicitados. Un servidor web, por ejemplo, responde con páginas HTML, imágenes u otros contenidos a los clientes que lo solicitan.
 
 ![](media/2fc70c14a00bf7f9324daa0f5cd6ef61.jpg)
+
+### Modelo entre pares de iguales (P2P)
+
+En el modelo **Peer-to-Peer (P2P)** no existe un servidor central que controle la red, sino que todos los equipos actúan al mismo tiempo como clientes y servidores. 
+
+- Esto significa que cada equipo puede ofrecer y solicitar recursos directamente a los demás, compartiendo archivos, ancho de banda o potencia de cálculo sin depender de un único punto.
+- Este enfoque hace que las redes P2P sean más flexibles y resistentes a fallos, ya que la caída de un equipo no afecta al funcionamiento global, aunque también dificulta la seguridad y el control de la información.
+
+![](media/modelo_p2p.png)
+
 
 ## Servicios web
 
