@@ -106,11 +106,21 @@ A partir de la publicación de la tecnología **WWW** y de los navegadores se co
 
 La WWW no es lo mismo que Internet; es una de sus aplicaciones más populares, la que hace posible navegar por páginas web tal y como la usamos hoy en día.
 
+
 ### Evolución de Internet
 
 ¿Qué pasa en un minuto en **Internet** en 2024?
 
 ![Gráfico, Diagrama  Descripción generada automáticamente](media/e2fb04468abba87bfcaa450c16d0ef11.jpeg)
+
+## Servicios web
+
+```note
+Un **servicio web** es cualquier software que se pone a su disposición a través de Internet y utiliza un formato estandarizado (como XML o JSON) para la solicitud y la
+respuesta de una interacción con la interfaz de programación de aplicaciones (API).
+```
+
+![](media/web_service.jpg)
 
 ## Criterios de clasificación
 
@@ -354,11 +364,3 @@ En el modelo **Peer-to-Peer (P2P)** no existe un servidor central que controle l
 ![](media/modelo_p2p.png)
 
 
-## Servicios web
-
-```note
-Un **servicio web** es cualquier software que se pone a su disposición a través de Internet y utiliza un formato estandarizado (como XML o JSON) para la solicitud y la
-respuesta de una interacción con la interfaz de programación de aplicaciones (API).
-```
-
-![](media/web_service.jpg)
