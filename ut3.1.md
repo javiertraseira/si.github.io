@@ -198,17 +198,13 @@ Las partes de un SO se estructuran de la siguiente forma **jerárquica**:
 - Sistema Operativo
 - Hardware
 
-```note
-🔔 La comunicación entre los distintos niveles se realiza mediante las llamadas **interfaces**.
-```
-
-Un mismo sistema operativo puede trabajar en múltiples plataformas hardware, por lo que debe poder adaptarse a cada una de ellas.	
+> La comunicación entre los distintos niveles se realiza mediante **interfaces**, que permiten que software y hardware interoperen sin necesidad de conocer los detalles de implementación.
 
 Si dejamos al margen los antiguos sistemas operativos monolíticos, actualmente todos los sistemas operativos se organizan en **capas**.
 
 En la actualidad la mayoría de los sistemas operativos son sistemas operativos en red y que trabajan en multitarea.
 
-Estos sistemas operativos pueden funcionar en varias plataformas de hardware gracias a la abstracción de hardware que se hace (como Linux, Windows, Android)
+Estos sistemas operativos pueden funcionar en varias plataformas de hardware gracias a la **abstracción de hardware** uno de sus roles clave (como Linux, Windows, MacOS y Android)
 
 La **jerarquía o arquitectura** de los sistemas operativos (SO) que veremos en unidades posteriores puede verse de la siguiente forma ampliada:
 
@@ -222,11 +218,10 @@ El sistema Operativo está formado por:
 Las **funciones** principales que realiza todo sistema operativo son las siguientes:
 
 1. **Control y ejecución de programas**
-   Para ello, acepta los trabajos, administra la manera en que se realizan, les asigna los recursos y los
-   conserva hasta cerrarse.
+   Para ello, acepta los trabajos, administra la manera en que se realizan, les asigna los recursos y los conserva hasta cerrarse.
 
 2. **Administración de hardware, red y periféricos**
-   Coordinando y manipulando los dispositivos conectados al ordenador.
+   Coordina y manipula los componentes internos y dispositivos conectados al equipo.
 
 3. **Gestionar de ficheros, usuarios y permisos**
    Adjudica los permisos de acceso a los usuarios y a los archivos de un ordenador.
@@ -240,149 +235,187 @@ Las **funciones** principales que realiza todo sistema operativo son las siguien
 6. **Control de seguridad**
    Proporciona seguridad tanto para los usuarios como para el software y la información almacenada en los sistemas.
 
-## Conceptos SO
-
-Algunos **conceptos clave** usados por los Sistemas Operativos son:
-
--   **Usuario:** Toda aquella persona que trabaja en el sistema.
-
--   **Sesión:** Periodo de tiempo durante el cual un usuario interactúa con el sistema.
-
--   **Programa:** Código ejecutable. Se trata de un concepto estático.
-
--   **Proceso:** Programa en ejecución y en memoria. Concepto dinámico.
-
--   **Fichero:** Unidad lógica de almacenamiento de datos.
-
--   **Programas del sistema:** Ofrecen un entorno proporcionado por el SO para el desarrollo y ejecución de programas.
-
--   **Interfaz de usuario:** Permite dar instrucciones al SO a través de diversas formas.
-
-### Servicios y procesos
-
-Para llevar a cabo las funciones descritas anteriormente un Sistema Operativo hace uso de un tipo de aplicaciones especiales denominadas **servicios** (o demonios) funcionando en segundo plano.
-
-```note
-💡 Un **servicio**(o demonio) es un tipo de aplicación cargado por el sistema operativo que normalmente se ejecutan en **segundo plano** y que permiten llevar a cabo funciones básicas de éste.
-```
-
-Muchos de los **servicios** (también llamados demonios o *daemons *en Linux) son esenciales para el funcionamiento de muchas de las aplicaciones y del propio Sistema Operativo.
-
-Si estos programas, es decir, los servicios, no estuvieran ejecutándose, muchas aplicaciones no funcionarían o algo tan frecuente como el acceso a Internet no sería posible.
-
-Los **procesos** son otro importante concepto manejado por el sistema operativo, que veremos en la próximas unidades en profundidad:
-
-```note
-💡 Un **proceso** son el conjunto de instrucciones de un programa que se encuentra en ejecución en ese momento (van a procesarse en la CPU)
-```
-
-Los procesos son gestionados por el sistema operativo y están formados por:
-
--   Las **instrucciones** de un programa destinadas a ser ejecutadas por el microprocesador.
-
--   Su **estado de ejecución** en un momento dado, esto es, los valores de los registros de la unidad central de procesamiento para dicho programa.
-
--   Su **memoria de trabajo**, es decir, la memoria que ha reservado y su contenido.
-
-### Diferencias entre servicios y procesos
-
-- Un **proceso** es la instancia en memoria de un programa ejecutable (un archivo ejecutable **.exe** o binario) que se ejecuta. Una aplicación puede tener varios procesos que se ejecutan simultáneamente. Por ejemplo, algunos navegadores modernos como Google Chrome o Firefox, ejecutan varios procesos a la vez (cada uno de los cuales representa una pestaña).
-
-- Un **servicio** es también un proceso, pero que se ejecuta en segundo plano y no interactúa con nosotros de forma directa como un programa o aplicación. En sistemas Windows, los servicios casi siempre se ejecutan como una instancia del proceso **svchost**, también identificado como host de servicio (En Linux *systemd*).
 
 ## Gestión de los recursos	
 
 ### La Memoria
 
+La gestión de la memoria es una de las funciones más importantes del sistema operativo, ya que garantiza que los programas y dispongan del espacio necesario para ejecutarse correctamente sin interferir entre ellos.
+
 La parte del sistema operativo que gestiona la memoria se denomina **administrador de memoria**.
 
 ```note
-💡  El **administrador de memoria** es una parte crítica del sistema operativo que se encarga de reservar espacio en la memoria para los nuevos procesos (programas o servicios) y liberarla cuando estos ya no se sigan utilizando así como el intercambio de datos entre memoria y disco duro.
+💡  El **administrador de memoria** es una parte crítica del sistema operativo que se encarga de reservar espacio en la memoria para los nuevos procesos (programas o servicios) y liberarla cuando estos ya no se sigan utilizando así como el intercambio de datos entre memoria y almacenamiento secundario.
 ```
 
-La gestión de la memoria es importante cuando trabajamos en sistemas operativos multitarea (cualquier SO moderno) ya que trabajan con varios **procesos** a la vez.
-
-![](media\jerarquia_memoria.png)
-
-El **administrador de memoria** proporcionará por tanto protección y **uso compartido** , es decir, debe proporcionar un espacio de memoria para cada proceso que lo necesite y controlar que ningún otro proceso trabaje en zonas de memoria que no le correspondan produciendo colisiones o inconsistencias
-en los datos.
-
-Un error o colisión de zona de memoria provocará un fallo en cascada del SO provocando un cuelgue del sistema.
-
-> Por ejemplo, imagina un sistema de control de temperatura de una habitación con dos procesos. Uno de ellos se encarga de leer la temperatura de un sensor; el otro, a partir de dicha temperatura y del valor deseado, controla un generador de frío/calor. En función de estas condiciones, el primer proceso leerá la temperatura y la depositará en una posición de la memoria a la que el segundo proceso deberá tener también acceso.
-
-
-### Procesador
+En los sistemas operativos modernos, que son **multitarea**, se ejecutan varios programas al mismo tiempo. Esto hace que la gestión de memoria sea muy importante, ya que el sistema debe decidir cómo repartir los recursos entre todos los procesos activos de forma eficiente y segura.
 
 ```note
-💡 Un **proceso** tal y como vimos anteriormente consiste en un programa en ejecución gestionado en memoria por el administrador de memoria y que se va a mandar a ejecutar al **procesador** o CPU.
+Cuando un programa se abre, se carga en memoria y entonces se convierte en lo que denomina como un **proceso**.
 ```
 
-Cualquier programa que se esté ejecutando en un ordenador se convierte en un proceso, ya que desde ese momento el programa, denominado **proceso** , se puede **ejecutar** , se pueda **detener** o se puede **bloquear** , entre otras muchas cosas.
+El **administrador de memoria** proporcionará por tanto protección y **uso compartido** , es decir, debe proporcionar un espacio de memoria para cada proceso que lo necesite y controlar que ningún otro proceso trabaje en zonas de memoria que no le correspondan produciendo colisiones o inconsistencias en los datos. Un error o colisión de zona de memoria provocará un fallo en cascada del SO provocando un cuelgue del sistema.
+
+La memoria se divide a su vez en particiones de tamaño fijo o variable, a las que se asigna cada proceso según las necesidades del sistema y según se van cargando.
+
+Los errores de gestión de memoria, o en espacios protegidos por parte del SO, suelen derivar en cuelgues graves del sistema que dan como resultado los famosos BSOD (Blue Screen of The Dead) en SO como Windows o kernel panics en Linux.
+
+![](media\bsod.png)
+
+Un programa cargado en memoria se organiza en varias zonas con diferentes propósitos:
+
+![](media\memory_areas.png)
+
+- Código (text): instrucciones ejecutables
+- Datos estáticos/globales: variables permanentes.
+- Heap: memoria dinámica, crece hacia arriba.
+- Pila (stack): variables locales, argumentos y direcciones de retorno; crece hacia abajo desde las direcciones altas. 
+
+Entre heap y stack queda un espacio libre para evitar que colisionen.
+
+### Memoria virtual
+
+Todos los dispositivos cuentan con una determinada cantidad de memoria RAM, pero esta es limitada y muchas veces resulta insuficiente para los requerimientos del sistema. Además en varios dispositivos si una app o programa lleva tiempo sin usarse se envía a disco para ahorrar batería.
+
+```note
+La memoria virtual es una técnica de gestión de la memoria que permite que un sistema operativo disponga, tanto para el software como para sí mismo, de mayor cantidad de memoria que la que está disponible físicamente.
+```
+
+Fotheringam diseño este método en 1961 pensando en la posibilidad que, al cargar un programa en memoria, este fuera muy grande y así que creó una técnica de forma que solo una parte del proceso que se estaba ejecutando estaría en memoria, y el resto quedaría en los discos de almacenamiento secundario, en un sitio llamado **espacio de intercambio**.
+
+![](media\virtual_memory.png)
+
+> Cuando se cargan muchos procesos a la vez el equipo se ralentiza puesto que tiene que pasar mucha información del disco a memoria RAM y los sistemas de almacenamiento secundario, que son mucho más lentos que la memoria.
+
+En teléfonos móviles y tablets, la memoria RAM suele ser más limitada en comparación con los  PCs. Android, iOS y otros sistemas operativos móviles aprovechan la memoria virtual para manejar aplicaciones en segundo plano sin que consuman toda la RAM disponible. 
+
+Además, en dichos dispositivos es crucial mantener el consumo de **batería** bajo, con lo cual los procesos que no se utilizan por demasiado tiempo se guardan en la memoria virtual.
+
+
+### El procesador (procesos)
+
+Un **proceso**, tal y como vimos anteriormente, consiste en un programa en ejecución gestionado en memoria por el administrador de memoria y que se va a mandar a ejecutar al procesador o CPU.
+
+```note
+Cualquier programa que se esté ejecutando en un ordenador se convierte en un proceso, ya que desde ese momento el programa, denominado **proceso** , se puede **ejecutar** , se pueda **detener** o se puede **bloquear** , entre otras muchos estados.
+```
 
 Existen dos tipos de procesos:
 
--   **Procesos de usuario** : creados por cualquier usuario del sistema y que se ejecutan en modo usuario
+-   **Procesos de usuario** : creados por cualquier usuario del sistema y que se ejecutan en **modo usuario**. Se tiene acceso limitado a los recursos del sistema.
+-   **Procesos del Sistema Operativo** : creados por el SO o sus servicios y que se ejecutan en **modo privilegiado** o **modo supervisor**. Los procesos se ejecutan teniendo acceso directo a toda la memoria y recursos hardware de la máquina.
 
--   **Procesos del Sistema Operativo** : creados por el SO o sus servicios y que se ejecutan en modo privilegiado o modo kernel.
+
+![](media\user_kernel_mode.png)
+
 
 ![](media\processor_modes.png)
 
 Durante la ejecución de un proceso, este **compite** con el resto de los procesos que se están ejecutando de forma concurrente en el sistema por el uso de los recursos hardware (ya sea la CPU o la gráfica)
 
+```note
 El reparto de los recursos del sistema entre los distintos procesos y su ejecución **concurrente** se conoce como **multiprogramación** y es gestionada en el **núcleo o kernel** del sistema operativo.
+```
 
->   Un programa no es un proceso, sino que se convierte en tal en el momento en que se pone en **ejecución**. La aplicación WordPad, por ejemplo, cuando no se está ejecutando no deja de ser un archivo sin más. Y cuando se ejecuta, el archivo *WORDPAD.EXE *sigue estando almacenado donde estaba originalmente. Lo que ocurre es que al ejecutar el programa, las instrucciones necesarias	pasan a la memoria principal. En este momento, cuando al programa está en ejecución, cuando se convierte en proceso, pero no antes.
-
-Cuantas más instrucciones sea capaz de procesar un procesador, mayor será la velocidad en el sistema, debido a que los procesos esperarán menos tiempo a que dicha CPU los atienda y asigne recursos.
+>   Un programa no es un proceso, sino que se convierte en tal en el momento en que se pone en **ejecución**. La aplicación Visual Studio, por ejemplo, cuando no se está ejecutando no deja de ser un archivo sin más. Y cuando se ejecuta, el archivo *vscode.exe *sigue estando almacenado donde estaba originalmente. Al ejecutarse el programa, las instrucciones necesarias pasan a la memoria principal y ser procesadas por la CPU.
 
 ####	Núcleo o kernel del SO
 
 ```note
->  🔔 La parte crítica de un sistema operativo encargada de gestionar los procesos entre sí se denomina **núcleo** o **kernel**.
+>  La parte crítica de un sistema operativo encargada de gestionar los recursos básicos de un SO se denomina **núcleo** o **kernel**.
+
 ```
 
 El núcleo o kernel se encarga del manejo de las interrupciones, la asignación del trabajo al procesador y el proporcionar una vía de comunicación entre los distintos procesos.
 
-El núcleo tiene un submódulo denominado “**planificador**” el cual se encarga de asignar tiempo del procesador a los procesos, de acuerdo a una cierta política de planificación que varia de un sistema operativo a otro. El **administración de memoria** visto anteriormente también se controla desde el núcleo del SO.
+- El núcleo tiene un submódulo denominado “**planificador**” el cual se encarga de asignar tiempo del procesador a los procesos, de acuerdo a una cierta política de planificación que varia de un sistema operativo a otro. El **administración de memoria** visto anteriormente también se controla desde el núcleo del SO.
+- La administración de **memoria** vista anteriormente también se controla desde el núcleo del SO.
+
 
 ###  Gestión E/S
 
-```note
-> 💡 La otra tarea fundamental de cualquier sistema operativo es la gestión de cualquier unidad periférica (ya sea de *entrada*, *salida*, *mixta* o de *comunicación*) que se conecte al ordenador o dispositivo.
-```
+La otra tarea fundamental de cualquier sistema operativo es la gestión de cualquier **unidades periféricas** (ya sean de *entrada*, *salida*, *mixta* o de *comunicación*) que se conecten al ordenador o dispositivo.
 
-Recordemos de la unidad anterior, que la comunicación de los diferentes periféricos de E/S se lleva a cabo a nivel de hardware a través de los **chipsets** de la placa base, los cuales comunican dichos componentes con la CPU y la memoria a través de buses internos.
+> Recordemos que la comunicación de los diferentes periféricos de E/S se lleva a cabo a nivel de hardware a través del chipset de la placa base, el cual comunica dichos componentes con la CPU y la memoria a través de buses internos.
+
 
 ```note
->  📌 El sistema operativo se encarga de atender todas las particularidades de los dispositivos de E/S como su velocidad de operación, una técnica es la salida es el uso de **spoolers,** también llamadas colas.
+>  El sistema operativo se encarga de atender todas las particularidades de los dispositivos de E/S como su velocidad de operación, una técnica es la salida es el uso de **spoolers,** también llamadas colas.
 ```
 
 Los datos de salida se almacenan de forma temporal en una cola situada en un dispositivo de almacenamiento masivo (**spool**) hasta que el dispositivo periférico requerido se encuentre libre, para evitar que el programa quede retenido porque el periférico no esta listo.
 
-#### Interfaces de usuario
+![](media\spool.png)
+
+## Interfaces de usuario
 
 ```note
-💡 Las **interfaces de usuario** o *shell* son el medio de comunicación entre  el usuario, el hardware y el software a través del SO.
+Una **interfaz de usuario (UI)** es el punto de interacción entre el usuario y un sistema o dispositivo, a través del cual una persona puede comunicarse y controlar el software o hardware. 
 ``` 
 
-Las interfaces se clasifican en:
+Su principal objetivo es facilitar el uso y la interacción con un sistema de manera eficiente y con diversos objetivos según quien la esté utilizando. 
 
--   **Interfaz tipo texto (CLI)**. Si el SO es de tipo texto, todas las órdenes que el usuario introduzca y las respuestas que el SO dé se introducirán o visualizarán mediante cadenas de caracteres.
+### Tipos de interfaces
 
--   **Interfaz tipo gráfico (GUI)**. Hoy en día, la mayoría de los sistemas operativos utiliza medios de comunicación entre máquina y ordenador de  tipo gráfico.
+- **Interfaz tipo gráfico (GUI)**. Hoy en día, la mayoría de los sistemas operativos utiliza medios de comunicación entre máquina y ordenador de  tipo gráfico.
 
--   **Interfaz mixta** . Hoy en día, la mayoría de los sistemas operativos utilizan ambas interfaces para comunicarse con el usuario.
+- **Interfaz tipo texto (CLI)**. La primera forma de interacción con ordenadores. Las CLI utilizan comandos de texto para ejecutar funciones.
 
--   **Interfaz natural (NUI)**. Las interfaces naturales utilizan voz, biometría o realidad virtual/aumentada para una interacción más natural con la tecnología.
+- **Interfaz mixta** . Las interfaces mixtas combinan elementos gráficos y de texto, ofreciendo una experiencia híbrida.
+
+- **Interfaz natural (NUI)**. Las interfaces naturales utilizan voz, biometría o realidad virtual/aumentada para una interacción más natural con la tecnología.
 
 ![](media\ui_modes.png)
 
-#### Interfaces del programador
+### Interfaces del programador
 
 Los programadores tienen a su vez acceso a tipos específicos de interfaces llamadas API para comunicarse con el SO o con un programa a través de dicho SO.
 
-Un SDK (Software Development Kit) es un conjunto de herramientas, bibliotecas, documentación y ejemplos de código que permiten a los desarrolladores crear software o aplicaciones que interactúan con un sistema operativo, hardware o plataforma específica. Se utiliza como un medio de comunicación entre las aplicaciones creadas por el desarrollador y el sistema operativo moderno, facilitando la integración con sus características y funciones.
+Un **SDK** (Software Development Kit) es un conjunto de herramientas, bibliotecas, documentación y ejemplos de código que permiten a los desarrolladores crear software o aplicaciones que interactúan con un sistema operativo, hardware o plataforma específica. Se utiliza como un medio de comunicación entre las aplicaciones creadas por el desarrollador y el sistema operativo moderno, facilitando la integración con sus características y funciones.
+
+![](media\sdk_api.png)
+
+Los SDK (Software Development Kit) van relacionados con la definición de API (Application Programming Interface) y a veces son conceptos que se confunden:
+
+- Un **SDK** es un un conjunto completo de herramientas, documentación, ejemplos de código y entornos de desarrollo que permiten a los programadores crear aplicaciones para una plataforma o sistema específico.
+
+- Una **API** (Application Programming Interface): Una API es una interfaz que permite la comunicación entre diferentes piezas de software. La API actúa como un intermediario, facilitando el acceso a determinadas funcionalidades.
+
+
+
+##  Servicios y procesos
+
+### Procesos
+
+Los **procesos** son otro importante concepto manejado por el sistema operativo, que veremos en la próximas unidades en profundidad:
+
+```note
+Un **proceso** son el conjunto de instrucciones de un programa que se encuentra en ejecución en ese momento (van a procesarse en la CPU)
+```
+
+Los **procesos** son gestionados por el sistema operativo y están formados por:
+- Las **instrucciones** de un programa destinadas a ser ejecutadas por el microprocesador.
+- Su **estado de ejecución** en un momento dado, esto es, los valores de los registros de la unidad central de procesamiento para dicho programa.
+- Su **memoria de trabajo**, es decir, la memoria que ha reservado y su contenido.
+
+### Servicios
+
+Para llevar a cabo las funciones descritas anteriormente un Sistema Operativo hace uso de un tipo de aplicaciones especiales denominadas servicios (o demonios) funcionando en segundo plano.
+
+```note
+Un **servicio** (o demonio) es un tipo de proceso cargado por el sistema operativo que normalmente se ejecuta en segundo plano y que permite llevar a cabo funciones básicas de éste.
+```
+
+Muchos de los servicios (también llamados demonios o daemons en Linux) son esenciales para el funcionamiento de muchas de las aplicaciones y del propio Sistema Operativo.
+
+Si estos programas, es decir, los servicios, no estuvieran ejecutándose, muchas aplicaciones no funcionarían o algo tan frecuente como el acceso a Internet no sería posible.
+
+
+### Diferencias entre servicios y procesos:
+
+Un **proceso** es la instancia en memoria de un programa ejecutable (un archivo ejecutable .exe o binario) que se ejecuta. Una aplicación puede tener varios procesos que se ejecutan simultáneamente. Por ejemplo, algunos navegadores modernos como Google Chrome o Firefox, ejecutan varios procesos a la vez (cada uno de los cuales representa una pestaña).
+
+Un **servicio** es también un proceso, pero que se ejecuta en segundo plano y no interactúa con nosotros de forma directa como un programa o aplicación. En sistemas Windows, los servicios casi siempre se ejecutan como una instancia del proceso *svchost*, también identificado como host de servicio (En Linux systemd) 
 
 ## Gestión de procesos
 
@@ -402,21 +435,15 @@ Un proceso clásico es aquel que solo posee una **hebra**.
 
 Existen **tres estados** para los procesos (o hilos correspondientes):
 
--   **En ejecución:** El procesador está ejecutando instrucciones del proceso
-    cargado en ese momento (tiene su atención y prioridad)
+- **En ejecución:** El procesador está ejecutando instrucciones del proceso cargado en ese momento (tiene su atención y prioridad)
 
--   **Preparado, en espera o activo:** El proceso está preparado para ser
-    ejecutado y esperando su turno para ser atendido por la CPU.
+- **Preparado, en espera o activo:** El proceso está preparado para ser ejecutado y esperando su turno para ser atendido por la CPU.
     
--   **Bloqueado:** El proceso ha entrado en un estado de bloqueo que puede
-    darse por causas múltiples (acceso a un mismo fichero, errores..)
+- **Bloqueado:** El proceso ha entrado en un estado de bloqueo que puede darse por causas múltiples (acceso a un mismo fichero, errores..)
     
     [^2]: En algunas biografías pueden utilizarse también los estados **nuevo** y **terminado** .
     
     
-
-------
-
 Una vez que un programa se ha lanzado y se ha convertido en proceso, puede atravesar varias fases o **estados** hasta que termina.
 
 ![](media/transiciones.jpg)
@@ -433,41 +460,16 @@ Los cambios de estado en los que se puede encontrar un proceso es lo que se deno
 
 ![estados_procesos](media/estados_procesos.png)
 
-En el siguiente diagrama observamos tres procesos (*o hilos*) pasando de estado de ejecución a quedar en espera o bloqueados:
+![estados_procesos](media/estados_procesos1.png)
 
-![diagrama_procesos](media/diagrama_procesos.jpg)
 
-Del que un proceso cambie de estado en un momento u otro se encarga el **planificador de procesos del sistema operativo.**
-
-```note
-💡 El **planificador** de un sistema operativo se encarga de asignar **prioridades** a los diferentes procesos para llevar a cabo su ejecución en el menor tiempo y de la forma más óptima posible.
-```
-
-Mediante técnicas que veremos a continuación, se consigue indicar a la CPU del ordenador que procesos deben ejecutarse en qué momento concreto y los diferentes estados que deben ir adoptando. Ello se lleva cabo mediante **algoritmos de planificación**.
-
-Como hemos visto, cualquier proceso, pasará por diferentes estados y el cambio de un estado a otro no es trivial y tanto la forma como el tiempo para hacerlo marcarán la eficiencia del sistema. 
+### Bloque de control de procesos (BCP)	
 
 ```note
-Un **cambio de contexto** consiste en interrumpir la ejecución de un proceso para comenzar o seguir con otro.
-```
-
-![cambio_contexto](media/cambio_contexto.png)
-
-
-### Bloque de control de procesos	
-
-```note
-💡 La información de un proceso que el sistema operativo necesita para controlarlo se  guarda en un **bloque de control de procesos o BCP**. 
+💡 La información de un proceso que el sistema operativo necesita para controlarlo se guarda en un **bloque de control de procesos o BCP**. 
 ```
 
 En el **BCP** cada proceso almacena información como:
-
-- Nombre del proceso
-- **Identificador del nombre e identificador del proceso**. A cada proceso se le asigna un identificador denominado **PID**. Si tiene un proceso padre se identificará a su vez con su **PPID**.
-- **Estado actual del proceso**: Ejecución, preparado o bloqueado.
-- **Prioridad del proceso**. Se la asigna el planificador o el usuario de forma manual.
-- **Ubicación y tamaño usado en memoria**. Dirección de memoria en la que está cargado el proceso y espacio utilizado.  
-- **Recursos utilizados**. Otros recursos hardware y software para poder ejecutarse.
 
 
 | BCP básico de un proceso |
@@ -480,26 +482,10 @@ En el **BCP** cada proceso almacena información como:
 | Tamaño en memoria        |
 | Recursos                 |
 
-
-##  Conceptos de servicios y procesos
-
-Los **procesos** son otro importante concepto manejado por el sistema operativo, que veremos en la próximas unidades en profundidad:
-
-```note
-Un **proceso** son el conjunto de instrucciones de un programa que se encuentra en ejecución en ese momento (van a procesarse en la CPU)
-```
-
-Los **procesos** son gestionados por el sistema operativo y están formados por:
-- Las **instrucciones** de un programa destinadas a ser ejecutadas por el microprocesador.
-- Su **estado de ejecución** en un momento dado, esto es, los valores de los registros de la unidad central de procesamiento para dicho programa.
-- Su **memoria de trabajo**, es decir, la memoria que ha reservado y su contenido.
-
-### Diferencias entre servicios y procesos:
-
-Un **proceso** es la instancia en memoria de un programa ejecutable (un archivo ejecutable .exe o binario) que se ejecuta. Una aplicación puede tener varios procesos que se ejecutan simultáneamente. Por ejemplo, algunos navegadores modernos como Google Chrome o Firefox, ejecutan varios procesos a la vez (cada uno de los cuales representa una pestaña).
-
-Un **servicio** es también un proceso, pero que se ejecuta en segundo plano y no interactúa con nosotros de forma directa como un programa o aplicación. En sistemas Windows, los servicios casi siempre se ejecutan como una instancia del proceso *svchost*, también identificado como host de servicio (En Linux systemd) 
-
+Los procesos se marcan en su creación con un número único llamado identificador de proceso (**PID**). Salvo el proceso raíz, todos los procesos llevan dos números:
+- El *PID* que lo identifica a él.
+- El *PPID* que identifica a su padre.
+Después de que un proceso genera un hijo, ambos continúan ejecutándose desde el punto en el que se hizo su creación.
 
 
 ## Interrupciones y excepciones
@@ -511,7 +497,7 @@ A pesar de que ambos conceptos están relacionados con la alteración del flujo 
 ### Interrupciones
 
 ```note
-💡 Una **interrupción** es una señal que obliga al SO a tomar el control del procesador para estudiarla y tratarla.
+Una **interrupción** es una señal que obliga al SO a tomar el control del procesador para estudiarla y tratarla.
 ```
 
 Las interrupciones son un mecanismo que permite que el hardware comunique eventos y es fundamental en sistemas multitarea y en el manejo de dispositivos de entrada/salida. A cada momento se producen miles de interrupciones manejadas con total normalidad por el SO.
