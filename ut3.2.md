@@ -118,7 +118,7 @@ Al ser dispositivos de almacenamiento <u>no volátil</u>, no pierden la informac
 Cualquier tipo de **disco de almacenamiento** *(HDD, SSD, DVD..)* consta de una estructura física y otra lógica como ya hemos intuido:
 
 - La **estructura física** se crea cuando se construye el disco en la fábrica y es el fabricante quien indica sus características según el dispositivo que se trate (como número de caras, sectores del disco…)
-- La **estructura lógica** se crea cuando un usuario procede a **formatear** o dar formato al disco.
+- La **estructura lógica** se crea cuando un usuario procede a crear particiones o dar **formato** al disco o a dichas particiones.
 
 ### Formateo 
 
@@ -141,13 +141,13 @@ Las operaciones de organización del espacio de disco se llevan a cabo mediante 
 
 ![](media\organizacion_espacio.png)
 
-###  Estructura física HDD
+###  Estructura física de un HDD
 
 La **estructura física** de un disco duro tiente: platos, caras, cabezas, pistas y sectores:
 
 -   **Caras:** Cada disco puede tener una o dos caras. Hoy en día todos tienen como mínimo dos caras. Dependiendo el nº de **platos** que el disco el nº de caras oscila entre 4 y 30.
 -   **Pistas**: Las pistas son los círculos concéntricos en los que se divide  cada cara. Generalmente se habla de **cilindros,** ya que los discos tienen más de un plato. Un cilindro sería al conjunto de pistas iguales de todos los platos.
-- **Sectores o bloques físicos:** es la cantidad de información que se lee o se escribe de una vez en una sola operación de lectura (normalmente 512kb)
+- **Sectores o bloques físicos:** es la cantidad de información que se lee o se escribe de una vez en una sola operación de lectura (normalmente 4 KB)
 - Se llama **clúster** a un conjunto contiguo de sectores. La información es leída y escrita a su vez por **cabezas** de lectura/escritura.
 
 <img src="media\cara_pistas_sectores.jpg" style="zoom: 67%;" />  <img src=" \media\estructura_hdd.jpg" style="zoom:50%;" />
@@ -160,16 +160,40 @@ La **estructura física** de un disco duro tiente: platos, caras, cabezas, pista
 
 ### Estructura física SSD
 
-```tip
-Las memorias de estado sólido (flash) almacenan los datos en una matriz de celdas de memoria mediante transistores de puerta flotante. La velocidad del almacenamiento flash es lo que le dio el nombre: escribe datos y realiza operaciones de I/O aleatorias a la velocidad del flash.
-```
+Las memorias de **estado sólido** (*flash*) almacenan los datos en una matriz de celdas de memoria mediante transistores de puerta flotante. Se llama memoria flash porque el proceso de escritura o borrado se hace en bloques grandes como ‘un flash de cámara’.
 
-Dicho almacenamiento se lleva a cabo usando dos tipos de tecnología: la memoria *NAND* y la memoria *NOR*, denominadas así por el tipo de puerta lógica que usan los transistores que forman parte de estos chips de memoria.
+Dicho almacenamiento se lleva a cabo usando dos tipos de tecnología ya vistos: la memoria NAND y la memoria NOR, denominadas así por el tipo de puerta lógica que usan los transistores que forman parte de estos chips de memoria. 
 
 ![](media\discos_ssd.png)
 
+Al no quedar corriente cuando se apaga el equipo, las memorias flash NAND y NOR almacenan la información atrapando o liberando electrones dentro de una *puerta flotante aislada*. Esta carga eléctrica permanece aun sin alimentación, lo que permite que sean memorias **no volátiles**. 
 
-### Estructura lógica
+Las operaciones de lectura, escritura y borrado se basan en modificar la capacidad de conducción del transistor mediante el *túnel cuántico de Fowler–Nordheim*, un fenómeno que permite que los electrones atraviesen un óxido aislante cuando se aplica cierto voltaje.
+
+En cada ciclo de borrado, el óxido que rodea la puerta flotante se deteriora ligeramente, volviéndose poroso con el tiempo. Por ello, estos sistemas tienen una vida útil limitada, que suele situarse entre 3.000 y 100.000 ciclos de escritura según el tipo de celda.
+
+
+
+### Estructura lógica de disco (MBR / GPT)
+
+Para usar un disco, primero necesitamos una estructura lógica de disco o esquema de organización, el cual se ha de crear antes de realizar cualquier otra operación.
+
+Existen dos tipos destacables:
+
+- **MBR** (Master Boot Record)
+    - Ubicado en el primer sector del disco (cabeza 0, cilindro 0, sector 1).
+    - Contiene:
+        - Código de arranque → cargado por la BIOS/UEFI
+        - Tabla de particiones (máximo 4 particiones primarias)
+    
+
+- **GPT** (GUID Partition Table)
+    - Asociado a sistemas UEFI modernos.
+    - Permite discos de más de 2 TB
+    - Permite muchas particiones (128 o más)
+    - Más seguro: Guarda copias de la tabla de particiones al inicio y al final del disco.
+
+
 
 ```note
 En cuanto a la **estructura lógica**, cuando se compra un disco, este ha sido sometido en fábrica a un formateo de bajo nivel, listo para aplicar ahora otro formateo lógico.
