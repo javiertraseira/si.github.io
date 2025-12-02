@@ -173,7 +173,6 @@ Las operaciones de lectura, escritura y borrado se basan en modificar la capacid
 En cada ciclo de borrado, el óxido que rodea la puerta flotante se deteriora ligeramente, volviéndose poroso con el tiempo. Por ello, estos sistemas tienen una vida útil limitada, que suele situarse entre 3.000 y 100.000 ciclos de escritura según el tipo de celda.
 
 
-
 ### Estructura lógica de disco (MBR / GPT)
 
 Para usar un disco, primero necesitamos una estructura lógica de disco o esquema de organización, el cual se ha de crear antes de realizar cualquier otra operación.
@@ -194,67 +193,88 @@ Existen dos tipos destacables:
     - Más seguro: Guarda copias de la tabla de particiones al inicio y al final del disco.
 
 
-
-```note
-En cuanto a la **estructura lógica**, cuando se compra un disco, este ha sido sometido en fábrica a un formateo de bajo nivel, listo para aplicar ahora otro formateo lógico.
-```
-
-En el caso de un disco duro el SO almacena la información teniendo en cuenta la estructura física y lógica del disco. La estructura lógica de un HDD es la siguiente:
-
-1. Sector de arranque o boot *(MBR)*.
-2. Tabla de asignación de particiones y tabla maestra de archivos  (*FAT,NTFS,ext*)
-3. Directorio raíz (C:\\ o **/**)
-4. Área de datos (ficheros y directorios).
-
-![](media\disco_logico.jpg)
-
-#### Sector de arranque
-
-```tip
-El **Sector de arranque** es el primer sector de todo disco duro (*cabeza 0, cilindro 0, sector 1*). En él se almacena la tabla de particiones y un pequeño programa de inicialización llamado **MBR** (Master Boot Record) o registro maestro de arranque. Se carga desde el BIOS.
-```
-
-El *MBR* es el encargado de leer la tabla de particiones y ceder el control del arranque al sistema operativo que tengamos instalado. Si no existiese partición activa, disco o estuviera dañado mostraría un error de “sistema operativo no encontrado”.
-
-![](media\sector_arranque.jpg)
-
-#### Tabla maestra de archivos
-
-En cada partición existe una tabla maestra de asignación de archivos llamada generalmente **FAT** (*File Allocation Table* ). La FAT es un índice con los datos contenidos en el disco duro. En ella se indica dónde comienza cada archivo o fichero, donde termina, cuántos sectores ocupa, etc.
-
-En realidad cuando se borra un archivo no se está borrando como tal (a menos que se formatee). En su lugar lo que se hace es borrar su entrada del índice de la tabla de asignación de archivos (lo que viene a ser lo mismo, al final). Al no aparecer en el índice no se podrá encontrar, pero existen herramientas para intentar recuperar dicho archivo que todavía existe físicamente grabado, siempre y cuando no se sobrescriba el sitio en el que estaba grabado (y que ahora figura como vacío en la tabla).
-
-![](media\tabla_fat.png)
-
-
-💡 *Nota*: En la actualidad en vez de FAT se utilizan los sistemas *NTFS* en Windows o *Ext* en Linux como veremos más adelante.
-
-
 ### Particionado
 
 ```note
 Las **particiones** de disco sirven para delimitar el espacio del disco que estemos utilizando de forma lógica.
 ```
 
-Esto quiere decir que podemos dividir un disco duro en, por ejemplo, dos particiones (dos unidades lógicas dentro de una misma unidad física) y trabajar como si tuviésemos dos discos duros con su propio SO.
+Esto quiere decir que podemos dividir un disco en varias particiones lógicas y trabajar como si tuviésemos dos discos con su propio SO o para espacios de almacenamiento compartimentados.
 
-El particionado es utilizado para instalar varios SO dentro de un mismo disco y para crear particiones con datos e información relevante que queremos mantener a salvo.
+El particionado se usa para delimitar datos entre particiones o para instalar varios SO dentro de un mismo disco. En muchos SO, como en Android o en iOS el particionado viene marcado de fábrica y es necesario para el funcionamiento de dichos sistemas.
 
-Existen tres tipos diferentes de particiones:
+Existen dos tipos de particionado que veremos a continuación:
+- Particionado MBR
+- Particionado GPT
 
--   Partición **primaria** (máximo de 4 en MBR)
--   Partición **extendida**.
--   Unidad o **partición lógica.**
+#### Particionamiento MBR
 
-Las **particiones** pueden ser **primarias o lógicas**. Las particiones lógicas se definen dentro de una partición primaria especial denominada  **partición extendida**. De esta forma podríamos compartimentar un disco duro de la siguiente forma:
+Sistema clásico de organización del disco que permite crear tres tipos diferentes de particiones:
+- Partición **primaria**. Solo en ellas se pueden instalar un SO.
+- Partición **extendida**.
+    - Partición **lógica** (dentro de la extendida)
+
+Máximo de **4 particiones primarias** y tamaño de **2TB** por partición o disco.
+
+Las **particiones** pueden ser **primarias o lógicas**. Las particiones lógicas se definen dentro de una partición primaria especial denominada  **partición extendida**. 
+
+De esta forma podríamos compartimentar un disco duro de la siguiente forma:
 
 ![](media\particionado.jpg)
+
+
+#### Particionamiento GPT
+
+El sistema llamado **GPT** (o tabla de particiones GUID) es más moderno que MBR y  es el que usan la mayoría de equipos actuales.
+- Permite discos de más de **2 TB** y muchas más particiones (128 o más)
+- Los datos críticos para el funcionamiento del sistema se almacenan en **particiones** en lugar de hacerlo en sectores ocultos o no particionados.
+- Los discos GPT incluyen **tablas de partición principales redundantes** y de copia de seguridad a fin de mejorar la integridad de la estructura de datos de la partición.
+
+![](media\gpt_partitions.png)
+
+
+### Formateo de un disco
+
+```note
+La operación de **dar formato** a una unidad consiste en aplicar un proceso por el que se prepara la superficie o elementos físicos de un disco para recibir datos por primera vez, o en caso de ya haber datos, borrarlos para partir de cero.
+```
+
+Es un proceso que se hace de **fábrica** en todos los dispositivos nuevos. El efecto que causa la acción de formatear cualquier unidad es perder la información que contuviese, solo recuperable bajo ciertas condiciones y con programas específicos.
+
+Para asegurarse que esta información no pueda recuperarse por ningún método, se debe aplicar un **formateo a bajo nivel** y repetirlo varias veces.
+
+Tipos de formateo:
+
+- **Formato rápido o de alto nivel**: Se trata de un formato realizado de forma rápida y parcial, que se caracteriza por editar los sistemas de archivos en cada sector del disco haciendo que los elimine. Se asigna un sistema de archivos (el índice del disco). De esta manera, se puede tener de nuevo el espacio completo del disco duro, aunque los archivos aún existan; después de un tiempo, y con el almacenamiento de nuevos datos, se reescribirán los anteriores, haciéndolos irrecuperables.
+
+- **Formateo de bajo nivel o físico**: consiste en el borrado lento y minucioso de todos los sectores en los que se divide el disco, dejándolos sin datos. El proceso conlleva una gran lentitud por la rigurosidad con la que se tiene que realizar. Sólo se recomienda cuando un disco presenta inconsistencias en sus sectores, o si queremos asegurarnos de que los datos **no se puedan recuperar**.
+
+### Formateo lógico de partición
+
+Una vez se crea una partición se debe de aplicar un **formateo lógico** a ésta, con la cual se elige el sistema de archivos (idioma) en el que guardarán los ficheros. 
+La estructura lógica de cada partición es la siguiente:
+- **Tabla de archivos** (*índice*) de la partición/sistema
+- El **directorio raíz**
+- El **área de datos** (definido por el sistema de archivos)
+Según el sistema operativo, se elegirá un determinado sistema de archivos, lo cual veremos a continuación.
+
+![](media\area_datos.png)
+
+![](media\formateo_logico.png)
+
+### Cabinas de discos
+
+```note
+Las cabinas de discos son sistemas de almacenamiento de datos formados por múltiples discos físicos. Suelen disponer de múltiples puertos para ofrecer alta disponibilidad basada en la existencia de múltiples alternativas. 
+```
+
+Del mismo modo suelen utilizar tecnologías **RAID** para ofrecer alta disponibilidad en el almacenamiento. Un **RAID** (*Redundant Array of Independent Disk*) es un grupo de discos que actúan colectivamente como un único sistema de almacenamiento, que, en la mayoría de los casos, soporta el fallo de uno de los discos sin perder información de modo que puedan operar con independencia.
 
 
 ## Los Sistemas de archivos
 
 ```note
-💡 El **sistema de archivos** es la parte del Sistema Operativo responsable de la administración y gestión de la información en memorias secundarias.
+El **sistema de archivos** es la parte del Sistema Operativo responsable de la administración y gestión de la información en memorias secundarias.
 ```
 
 Los **sistemas de archivos** (*file systems*) estructuran la información guardada en cualquier unidad lógicas de almacenamiento (ya sea física o lógica). Para que sea posible trabajar en una partición es necesario asignarle previamente un sistema de archivos, que como sabemos se denomina **formateo**.
@@ -284,7 +304,7 @@ Principales **funciones** del sistema de archivos:
 ### Journaling
 
 ```note
-💡 El **journaling** es un mecanismo que permite mantener la integridad de los datos de un disco ante un evento imprevisto que los pudiera corromper o perder.
+El **journaling** es un mecanismo que permite mantener la integridad de los datos de un disco ante un evento imprevisto que los pudiera corromper o perder.
 ```
 
 El journaling entra en acción únicamente cuando se escribe en un disco y actúa como si fuera un tipo de reloj de personal para todas las escrituras.
@@ -363,6 +383,11 @@ El sistema de archivos **ReFS** (Resistent File System) es el nuevo sistema de a
 
 ReFS se introdujo con Windows Server 2012 y las últimas versiones de Windows 10 y 11. Incluye tecnologías como Integrity stream y corrección de errores proactiva y mejoras específicas para cargas de trabajo virtualizadas y sensibles al rendimiento.
 
+#### Btrfs
+
+**Btrfs** (abreviación de B-tree File System) es el nuevo sistema de archivos para Linux diseñado con el objetivo de superar las limitaciones de ext4 y ofrecer una gestión avanzada de almacenamiento. 
+
+Introduce características como la toma de instantáneas (snapshots), la compresión transparente de datos, la verificación de integridad mediante sumas de comprobación y el soporte nativo de volúmenes múltiples y subvolúmenes, todo bajo un enfoque de Copy-on-Write (CoW) que mejora la fiabilidad ante fallos.
 
 ## Resumen
 
@@ -383,7 +408,7 @@ Existen distintas formas de hacer referencia a un fichero o directorio dentro de
 
 En los sistemas de archivos jerárquicos se declara la ubicación de cualquier fichero usando una cadena de texto llamada **ruta** (*path en inglés*)
 
-`C:\\Princip\\Docs\\Word\\practica4.docx`
+`C:\\Princip\\Docs\\Word\\practica4.odt`
 
 
 ```tip
@@ -479,3 +504,18 @@ En donde
 -   /wiki/Special:Search es la ruta de recurso.
 -   ?search=tren&go=Go es la cadena de búsqueda (opcional).
 
+## Cifrado de datos
+
+```note
+El **cifrado de datos** en discos es una técnica de seguridad empleada por los sistemas operativos modernos para proteger la información almacenada en dispositivos de almacenamiento, como discos duros, unidades de estado sólido (SSD) o incluso unidades extraíbles (USB).
+```
+
+Esta técnica convierte los datos legibles en un formato codificado, denominado texto cifrado, utilizando algoritmos criptográficos, de modo que solo las personas o sistemas con la clave adecuada puedan descifrar y acceder a los datos originales.
+
+Los sistemas operativos, como Windows, macOS o distribuciones de Linux, implementan cifrado de discos de forma nativa para asegurar la privacidad de los datos. Entre las herramientas más comunes están:
+- BitLocker (Windows)
+- FileVault (macOS)
+- LUKS (Linux)
+- File-Based Encryption (Android)
+
+![](media\cifrado.jpg)
