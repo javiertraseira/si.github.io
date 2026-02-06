@@ -1,4 +1,4 @@
-# UT5.3 Componentes físicos de una red
+# UT5.3 Medios de transmisión y componentes físicos de una red
 
 ## Medios de transmisión
 
