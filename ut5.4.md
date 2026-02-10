@@ -308,7 +308,7 @@ El **CIDR** (*Classless Inter-Domain Routing*) es una forma de representar y man
 
 En CIDR no existen clases A, B o C. El valor de la dirección IP no implica ninguna máscara implícita, como sucedía antes con los primeros bits de la dirección. Toda definición de una red IP debe ser acompañada de una definición de máscara que concrete la red.
 
-Por ejemplo, cuando hablamos en términos de CIDR no podemos decir que la dirección 172.17.25.12 pertenezca a la red 172.17.0.0 a menos que se especifique como 172.16.25.12**/16**.
+Por ejemplo, cuando hablamos en términos de CIDR no podemos decir que la dirección 172.17.25.12 pertenezca a la red 172.17.0.0 a menos que se especifique como 172.17.0.0**/16**.
 
 En CIDR ya no se utiliza el término clase de una red, ya no hay clases como tal, sino redes definidas por el **prefijo obligatorio** que acompaña a la dirección de red. CIDR da por tanto flexibilidad al subnetting permitiendo crear subredes más pequeñas o más grandes sin estar limitado por las clases tradicionales.
 
@@ -316,13 +316,14 @@ Así por ejemplo, hablando en términos de **subnetting**, podemos decir que la 
 
 Evidentemente existe una coincidencia entre las máscaras tradicionales de las clases de red IP y las equivalentes en CIDR como se muestra en la siguiente tabla:
 
-| **Clase** | **Bits de inicio** | **IP Subred** | **IP Broadcast** | **Máscara en decimal** | **CIDR** |
-|-----------|--------------------|---------------|------------------|------------------------|----------|
-| A         | 0000               | 0.0.0.0       | 127.255.255.255  | 255.0.0.0              | /8       |
-| B         | 1000               | 128.0.0.0     | 191.255.255.255  | 255.255.0.0            | /16      |
-| C         | 1100               | 192.0.0.0     | 223.255.255.255  | 255.255.255.0          | /24      |
-| D         | 1110               | 224.0.0.0     | 239.255.255.255  | 255.255.255.255        | /32      |
-| E         | 1111               | 240.0.0.0     | 255.255.255.254  | 255.255.255.255        | /64      |
+| **Clase** | **Uso**        | **CIDR real** | **¿Asignable a hosts?** | **Observaciones** |
+| --------- | -------------- | ------------- | ----------------------- | ----------------- |
+| A         | Redes grandes  | /8            | Sí                      | Histórica         |
+| B         | Redes medianas | /16           | Sí                      | Histórica         |
+| C         | Redes pequeñas | /24           | Sí                      | Histórica         |
+| D         | Multicast      | /4            | No                      | Grupos multicast  |
+| E         | Reservada      | /4            | No                      | Experimental      |
+
 
 Tabla de posibles valores de la **máscara de red** usando *CIDR*:
 
