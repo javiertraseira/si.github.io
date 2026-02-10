@@ -56,16 +56,17 @@ En general existen dos tipos de direcciones IPv4: las **públicas** y las **priv
 ![](media/7bd43d756278f84fec8ebff3ae46b64a.jpeg)
 
 Según su forma de asignación, vimos que las direcciones IP se subdividían en:
--   **Direcciones IP estáticas** se asignan de forma manual por el administrador de la red (en el caso de las privadas) o por la *IANA* en caso de las direcciones públicas.
--   **Direcciones IP dinámicas** son las que se utilizan de manera habitual para conectarse a Internet a través de nuestro *ISP*, en el caso de cliente finales usando direcciones públicas. Dicha asignación se borra tras cada sesión o cambia automáticamente a intervalos regulares, normalmente cada 24 horas. En el caso de una red interna que utilice direcciones IP privadas, las direcciones dinámicas de dicha red se asignarán mediante el protocolo *DHCP* que ya conocemos.
+-   **Direcciones IP estáticas** se asignan de forma manual por el administrador de la red en el caso de redes privadas. En el ámbito de direcciones públicas, la asignación no la realiza directamente el IANA, sino que se gestiona a través de los proveedores de servicios de Internet (ISP) y los registros regionales, y suele emplearse para servidores o servicios que requieren una dirección fija.
+-   **Direcciones IP dinámicas** son las que se asignan de manera automática y son las más habituales en los accesos a Internet de los clientes finales. En este caso, la dirección puede cambiar tras cada conexión o en intervalos de tiempo determinados. En redes internas que utilizan direcciones IP privadas, la asignación dinámica se realiza mediante el protocolo *DHCP*.
 
 ![](media/19e0b82b1b3719f67634af0db3e3f4b6.jpeg)
 
 ![](media/397872d8add4fd2103f939900a0f6cfa.jpeg)
 
-El organismo que regula la asignación de direcciones IPv4 tal y como hemos dicho es el **IANA**. El estado actual de disponibilidad de direcciones IPv4 es claramente insuficiente y está prácticamente agotado.
+El organismo encargado de coordinar la asignación global de direcciones IPv4 es el **IANA**. Actualmente, el espacio de direcciones IPv4 se encuentra prácticamente agotado, lo que ha impulsado el desarrollo y la adopción de IPv6. 
 
-IANA a su vez delega sus funciones en 5 organismos repartidos por los continentes:
+IANA delega la distribución de bloques de direcciones en los registros **regionales de Internet**, responsables de su gestión en cada zona geográfica.
+
 
 ![](media/c76d7b3d42c3e448985bbfc8f1b31c96.jpeg)
 
@@ -96,6 +97,8 @@ Para definir las porciones de red y de host de una dirección, los dispositivos 
 Hay 5 **clases de direcciones** IPv4, las cuales se identifican según sus bits más significativos y que definen sus bits dedicados a **red** y a **host**:
 
 ![](media/clases_direcciones_ipv4.png)
+
+> Las clases IPv4 ya no se utilizan en redes modernas, pero se estudian para entender el origen del direccionamiento y el funcionamiento del subnetting.
 
 ![](media/clases_direcciones_ipv4_1.png)
 
@@ -304,13 +307,14 @@ Las redes de clase A y B están claramente infrautilizadas. El subnetting coge p
 
 ### CIDR para el subnetting
 
-El **CIDR** (*Classless Inter-Domain Routing*) es una forma de representar y manejar direcciones IP y máscaras de manera más flexible, ya que las divisiones de clases de direcciones IP era muy ineficiente para aprovechar las escasas direcciones en IPv4.
+El **CIDR** (*Classless Inter-Domain Routing*) es un mecanismo para representar y gestionar direcciones IP de forma más flexible, ya que las divisiones tradicionales en clases (A, B y C) eran muy ineficientes para aprovechar el limitado espacio de direcciones IPv4.
 
-En CIDR no existen clases A, B o C. El valor de la dirección IP no implica ninguna máscara implícita, como sucedía antes con los primeros bits de la dirección. Toda definición de una red IP debe ser acompañada de una definición de máscara que concrete la red.
+Con CIDR desaparece el concepto de clase de red: el valor de una dirección IP por sí solo no implica ninguna máscara o tamaño de red, como ocurría en el direccionamiento por clases. Por este motivo, toda red IP debe definirse siempre junto a su **prefijo de red**, que indica cuántos bits identifican la parte de red.
 
-Por ejemplo, cuando hablamos en términos de CIDR no podemos decir que la dirección 172.17.25.12 pertenezca a la red 172.17.0.0 a menos que se especifique como 172.17.0.0**/16**.
+Por ejemplo, no es correcto afirmar que la dirección 172.17.25.12 pertenece a la red 172.17.0.0 si no se especifica el prefijo correspondiente, como en 172.17.0.0/16.
 
-En CIDR ya no se utiliza el término clase de una red, ya no hay clases como tal, sino redes definidas por el **prefijo obligatorio** que acompaña a la dirección de red. CIDR da por tanto flexibilidad al subnetting permitiendo crear subredes más pequeñas o más grandes sin estar limitado por las clases tradicionales.
+CIDR permite así una gran flexibilidad en el **subnetting**, posibilitando la creación de subredes de distintos tamaños sin estar limitado por las máscaras fijas de las clases tradicionales.
+
 
 Así por ejemplo, hablando en términos de **subnetting**, podemos decir que la red 172.17.11.25 con máscara 255.255.255.0 (que no es en realidad una red de clase C) es una subred (o subnet) de la red de clase B 172.17.0.0.
 
@@ -357,11 +361,10 @@ Tabla de posibles valores de la **máscara de red** usando *CIDR*:
 ## Creación de subredes: VLANs
 
 ```note
-Podemos definir una VLAN (Virtual LAN) como un método que nos permite crear distintas redes virtuales, separades entre sí, dentro de una misma red física sin
-hacer uso del direccionamiento.
+Podemos definir una VLAN (Virtual LAN) como un método que nos permite crear distintas redes virtuales, separades entre sí, dentro de una misma red física sin modificar el direccionamiento IP, pero cada VLAN suele asociarse a una subred diferente.
 ```
 
-Para ello es necesario el uso de **switches gestionables** que soporten VLANs para segmentar adecuadamente la red. También es importante que si se utilizan routers soporten VLAN, aunque la gestión de estas redes se lleve a cabo a nivel de capa 2.
+Para ello es necesario el uso de **switches gestionables** (y routers) que soporten VLANs para segmentar adecuadamente la red. 
 
 ![](media/vlans_diagram.png)
 
@@ -434,7 +437,7 @@ Esta clave es la que se utiliza para conectarse a una red con seguridad inalámb
 
 No obstante, y debido a sus vulnerabilidades y el diseño de esta clave estática, la WiFi Alliance la retiró oficialmente de uso en 2004.
 
-Es un método muy débil y prácticamente desuso, ya que es fácilmente descifrable con los equipos actuales (en apenas unos segundos).
+Es un método muy débil y que **ya no se utiliza**, ya que es fácilmente descifrable con los equipos actuales (en apenas unos segundos).
 
 ![](media/09344e2c831a559119db47694e7025d0.png)
 
