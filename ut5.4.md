@@ -191,9 +191,9 @@ Existen también las siguientes direcciones IPv4 **reservadas** especiales:
 -   Las direcciones (**0.0.0.0** a **0.0.0.255**) de uso interno para tablas de enrutamiento.
 -   La dirección de **loopback** (**127.0.0.1**) también llamado localhost es una dirección asignada por defecto a una tarjeta de red virtual que está presente en todos los ordenadores y actúa como un circuito cerrado. Cualquier paquete IP enviado por el ordenador por esta interfaz le será devuelto a esta.
 ![](media/32b1afd7c71532b8feda6ef403991120.png)
--   La dirección de difusión o **broadcast** es el envío de un mensaje a todos los ordenadores que se encuentran dentro de una misma red. Consiste en terminar una dirección en 255. *Pj* 172.10.255.**255**
+-   La dirección de difusión o **broadcast** es el envío de un mensaje a todos los ordenadores que se encuentran dentro de una misma red. Generalmente consiste en **terminar una dirección en 255** (en realidad, la última disponible como veremos) *Pj* 172.10.255.**255**
 ![](media/c3154ce9559882e9266084e0be5e2500.png)
--   Las direcciones 169.254.0.0 a 169.254.255.25 son reservadas para direcciones IP dinámicas DHCP que no fueron correctamente asignadas.
+-   Las direcciones 169.254.0.0 a 169.254.255.255 son reservadas para direcciones IP dinámicas DHCP que no fueron correctamente asignadas.
 
 Resumen de clases, rangos y tipos/usos (*público, privado, reservado*):
 
