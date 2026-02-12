@@ -126,11 +126,11 @@ Las siguientes son las máscaras para las direcciones clase A, B. y C:
 
 En una red de **clase A**, los primeros ocho bits de la dirección, o el primer punto decimal, son la parte de la red, y la parte restante es la del host.
 
-Hay **128** redes de clase A posibles.
+Hay **128** redes de clase A teóricas posibles.
 
-**0.0.0.0 a 127.0.0.0**
-
-Sin embargo, cualquier dirección que comience con *127* se denomina dirección de **loopback**, es decir, que apunta al propio host.
+**0.0.0.0 a 127.255.255.255**
+ 
+Sin embargo, el bloque 127.0.0.0/8 está reservado para direcciones de **loopback**, utilizadas para que un equipo se comunique consigo mismo.
 
 La **máscara de subred** predeterminada para la clase A era **255.0.0.0** (/8)
 
@@ -140,9 +140,9 @@ La **máscara de subred** predeterminada para la clase A era **255.0.0.0** (/8)
 
 En una red de **clase B**, los primeros 16 bits de la dirección son la parte de la red. Todas las redes de clase B tienen el primer bit a 1 y el segundo bit a 0.
 
-Si dividimos la dirección en octetos, nos queda que las direcciones **128.0.0.0** a **191.255.0.0** corresponden a redes de clase B. 
+Si dividimos la dirección en octetos, nos queda que las direcciones **128.0.0.0** a **191.255.255.255** corresponden a redes de clase B. 
 
-Hay 2^14 = **16.384** redes de clase B posibles.
+Hay 2^14 = **16.384** redes de clase B teóricas posibles.
 
 La **máscara de subred** predeterminada de la Clase B era **255.255.0.0** (/16)
 
@@ -152,9 +152,9 @@ La **máscara de subred** predeterminada de la Clase B era **255.255.0.0** (/16)
 
 En una red de **clase C**, los dos primeros bits están puestos a 1 y el tercero a 0. Eso hace que los primeros 24 bits de la dirección sean la parte de la red, y el resto, la del host.
 
-Las direcciones de red de clase C van desde **192.0.0.0** a **223.255.255.0**. 
+Las direcciones de red de clase C van desde **192.0.0.0** a **223.255.255.255**. 
 
-Hay más de 2 millones de redes (221) de clase C posibles.
+Hay más de 2 millones de redes (221) de clase C teóricas posibles.
 
 Su máscara será **255.255.255.0** (/24)
 
@@ -162,12 +162,12 @@ Su máscara será **255.255.255.0** (/24)
 
 ### Clase D
 
-Las direcciones de **clase D** se utilizan para aplicaciones de **multidifusión**.
-A diferencia de las clases anteriores, la Clase D no se utiliza para operaciones de red comunes.
+Las direcciones de **clase D** se utilizan para **multidifusión** (multicast). En este caso, la dirección IP no identifica una red ni un host individual, sino un grupo lógico de dispositivos que reciben tráfico simultáneamente.
 
-Las direcciones de clase D tienen los primeros tres bits a 1 y el cuarto bit establecido a 0. Las direcciones de clase D son direcciones de red de 32 bits, lo que significa que los valores que podemos encontrar en el rango 224.0.0.0 - 239.255.255.255 se utilizan para identificar grupos de multidifusión de forma única.
+Las direcciones de clase D se caracterizan porque sus cuatro primeros bits son 1110. Esto corresponde al rango comprendido entre 224.0.0.0 y 239.255.255.255.
+A diferencia de las clases A, B y C, las direcciones de clase D no se utilizan para asignación de redes ni de hosts. En su lugar, identifican grupos multicast a los que los dispositivos pueden suscribirse para recibir determinados datagramas enviados a esa dirección.
 
-No hay direcciones de host dentro del espacio de direcciones de clase D, puesto que todos los hosts dentro de un grupo comparten la dirección IP del grupo a la hora de recibir datagramas.
+Por tanto, dentro del espacio de direcciones de clase D no existen direcciones de red, de host ni de broadcast en el sentido tradicional.
 
 ### Clase E
 
@@ -193,12 +193,16 @@ Existen también las siguientes direcciones IPv4 **reservadas** especiales:
 
 -   Las direcciones (**0.0.0.0** a **0.0.0.255**) de uso interno para tablas de enrutamiento.
 -   La dirección de **loopback** (**127.0.0.1**) también llamado localhost es una dirección asignada por defecto a una tarjeta de red virtual que está presente en todos los ordenadores y actúa como un circuito cerrado. Cualquier paquete IP enviado por el ordenador por esta interfaz le será devuelto a esta.
-![](media/32b1afd7c71532b8feda6ef403991120.png)
+
+    ![](media/32b1afd7c71532b8feda6ef403991120.png)
+
 -   La dirección de difusión o **broadcast** es el envío de un mensaje a todos los ordenadores que se encuentran dentro de una misma red. Generalmente consiste en **terminar una dirección en 255** (en realidad, la última disponible como veremos) *Pj* 172.10.255.**255**
-![](media/c3154ce9559882e9266084e0be5e2500.png)
+
+    ![](media/c3154ce9559882e9266084e0be5e2500.png)
+
 -   Las direcciones 169.254.0.0 a 169.254.255.255 son reservadas para direcciones IP dinámicas DHCP que no fueron correctamente asignadas.
 
-Resumen de clases, rangos y tipos/usos (*público, privado, reservado*):
+**Resumen de clases, rangos y tipos/usos (*público, privado, reservado*):**
 
 |                | **Rango**   | **Tipo**        |           |
 |----------------|-------------|-----------------|-----------|
@@ -256,13 +260,20 @@ A la hora de estudiar la creación de **subredes**, podremos abordarlo de dos fo
 
 ## Creación de subredes: subnetting
 
-Hemos visto que con la máscara es posible identificar las direcciones que pertenecen a nuestra red. En ciertos casos, es posible segmentar una red en subredes las cuales pueden estar en contacto entre sí por medio de un **gateway**, lo cual es vital para un uso más eficiente y controlado de recursos.
+Hasta ahora hemos visto que la **máscara de subred **nos permite distinguir qué parte de una dirección IP identifica la red y qué parte identifica a los hosts.
 
-Es posible, por ejemplo, que tenga dos redes de servidores con 60 servidores cada una y se desee que estén visibles en Internet. Si se utilizan dos redes públicas de clase C se están desaprovechando los recursos de la empresa, ya que una red pública de clase C podría 254 equipos y en el ejemplo, la empresa solo requiere 60.
+Sin embargo, en redes medianas o grandes, no siempre interesa tener todos los equipos dentro de una única red. Por motivos de rendimiento, organización y seguridad, puede ser necesario dividir una red en varias subredes más pequeñas.
 
-Así por ejemplo para **192.168.3.0/24**, con 256 direcciones, podría dividirse en cuatro subredes, cada una de 64 direcciones (64×4=256). Las máquinas de cada subred pueden verse la una a la otra; sin embargo, para que una subred contacte a otra deberán pasar por un **gateway** o un **router** (común a todas las subredes).
+> A este proceso se le llama **subnetting**.
 
-El subnetting se logra **agregando bits 1 a la máscara de subred**, de modo de que se utilicen esos bits adicionales para determinar las subredes y se utilicen en cambio menos bits para determinar los hosts.
+**¿Por qué dividir una red?**
+Imaginemos que una empresa tiene:
+- 2 departamentos
+- 60 servidores en cada uno
+- Necesidad de que todos tengan acceso a Internet
+Si se asignara una red pública completa de clase C (por ejemplo, una red /24), esta permitiría hasta 254 hosts utilizables.
+Pero si solo necesitamos 60 equipos por departamento, estaríamos desperdiciando muchas direcciones IP. **El subnetting es lo que resuelve este problema.**
+
 
 ![](media/01a4cb689a1c7ed05058e70e9c92b3e9.png)
 
