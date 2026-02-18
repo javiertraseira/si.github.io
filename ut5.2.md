@@ -305,7 +305,7 @@ Este protocolo no estaría recomendado para realizar transferencia de datos, ya 
 | Fiabilidad                        | Alta                                    | Más baja                           |
 | Velocidad                         | Más baja                                | Alta                               |
 | Método de transferencia           | Los paquetes se envían en una secuencia | Los paquetes se envían en un flujo |
-| Nombre *PDU*                      | Datagrama                               | Segmento                           |
+| Nombre *PDU*                      | Segmento                                | Datagrama                           |
 | Detección y corrección de errores | Sí                                      | No                                 |
 | Control de congestión             | Sí                                      | No                                 |
 | Acuse de recibo                   | Sí                                      | Solo el *checksum*                 |
