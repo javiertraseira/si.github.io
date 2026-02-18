@@ -126,11 +126,11 @@ Las siguientes son las máscaras para las direcciones clase A, B. y C:
 
 En una red de **clase A**, los primeros ocho bits de la dirección, o el primer punto decimal, son la parte de la red, y la parte restante es la del host.
 
-Hay **128** redes de clase A posibles.
+Hay **128** redes de clase A teóricas posibles.
 
-**0.0.0.0 a 127.0.0.0**
-
-Sin embargo, cualquier dirección que comience con *127* se denomina dirección de **loopback**, es decir, que apunta al propio host.
+**0.0.0.0 a 127.255.255.255**
+ 
+Sin embargo, el bloque 127.0.0.0/8 está reservado para direcciones de **loopback**, utilizadas para que un equipo se comunique consigo mismo.
 
 La **máscara de subred** predeterminada para la clase A era **255.0.0.0** (/8)
 
@@ -140,9 +140,9 @@ La **máscara de subred** predeterminada para la clase A era **255.0.0.0** (/8)
 
 En una red de **clase B**, los primeros 16 bits de la dirección son la parte de la red. Todas las redes de clase B tienen el primer bit a 1 y el segundo bit a 0.
 
-Si dividimos la dirección en octetos, nos queda que las direcciones **128.0.0.0** a **191.255.0.0** corresponden a redes de clase B. 
+Si dividimos la dirección en octetos, nos queda que las direcciones **128.0.0.0** a **191.255.255.255** corresponden a redes de clase B. 
 
-Hay 2^14 = **16.384** redes de clase B posibles.
+Hay 2^14 = **16.384** redes de clase B teóricas posibles.
 
 La **máscara de subred** predeterminada de la Clase B era **255.255.0.0** (/16)
 
@@ -152,9 +152,9 @@ La **máscara de subred** predeterminada de la Clase B era **255.255.0.0** (/16)
 
 En una red de **clase C**, los dos primeros bits están puestos a 1 y el tercero a 0. Eso hace que los primeros 24 bits de la dirección sean la parte de la red, y el resto, la del host.
 
-Las direcciones de red de clase C van desde **192.0.0.0** a **223.255.255.0**. 
+Las direcciones de red de clase C van desde **192.0.0.0** a **223.255.255.255**. 
 
-Hay más de 2 millones de redes (221) de clase C posibles.
+Hay más de 2 millones de redes (221) de clase C teóricas posibles.
 
 Su máscara será **255.255.255.0** (/24)
 
@@ -162,12 +162,12 @@ Su máscara será **255.255.255.0** (/24)
 
 ### Clase D
 
-Las direcciones de **clase D** se utilizan para aplicaciones de **multidifusión**.
-A diferencia de las clases anteriores, la Clase D no se utiliza para operaciones de red comunes.
+Las direcciones de **clase D** se utilizan para **multidifusión** (multicast). En este caso, la dirección IP no identifica una red ni un host individual, sino un grupo lógico de dispositivos que reciben tráfico simultáneamente.
 
-Las direcciones de clase D tienen los primeros tres bits a 1 y el cuarto bit establecido a 0. Las direcciones de clase D son direcciones de red de 32 bits, lo que significa que los valores que podemos encontrar en el rango 224.0.0.0 - 239.255.255.255 se utilizan para identificar grupos de multidifusión de forma única.
+Las direcciones de clase D se caracterizan porque sus cuatro primeros bits son 1110. Esto corresponde al rango comprendido entre 224.0.0.0 y 239.255.255.255.
+A diferencia de las clases A, B y C, las direcciones de clase D no se utilizan para asignación de redes ni de hosts. En su lugar, identifican grupos multicast a los que los dispositivos pueden suscribirse para recibir determinados datagramas enviados a esa dirección.
 
-No hay direcciones de host dentro del espacio de direcciones de clase D, puesto que todos los hosts dentro de un grupo comparten la dirección IP del grupo a la hora de recibir datagramas.
+Por tanto, dentro del espacio de direcciones de clase D no existen direcciones de red, de host ni de broadcast en el sentido tradicional.
 
 ### Clase E
 
@@ -193,12 +193,16 @@ Existen también las siguientes direcciones IPv4 **reservadas** especiales:
 
 -   Las direcciones (**0.0.0.0** a **0.0.0.255**) de uso interno para tablas de enrutamiento.
 -   La dirección de **loopback** (**127.0.0.1**) también llamado localhost es una dirección asignada por defecto a una tarjeta de red virtual que está presente en todos los ordenadores y actúa como un circuito cerrado. Cualquier paquete IP enviado por el ordenador por esta interfaz le será devuelto a esta.
-![](media/32b1afd7c71532b8feda6ef403991120.png)
+
+    ![](media/32b1afd7c71532b8feda6ef403991120.png)
+
 -   La dirección de difusión o **broadcast** es el envío de un mensaje a todos los ordenadores que se encuentran dentro de una misma red. Generalmente consiste en **terminar una dirección en 255** (en realidad, la última disponible como veremos) *Pj* 172.10.255.**255**
-![](media/c3154ce9559882e9266084e0be5e2500.png)
+
+    ![](media/c3154ce9559882e9266084e0be5e2500.png)
+
 -   Las direcciones 169.254.0.0 a 169.254.255.255 son reservadas para direcciones IP dinámicas DHCP que no fueron correctamente asignadas.
 
-Resumen de clases, rangos y tipos/usos (*público, privado, reservado*):
+**Resumen de clases, rangos y tipos/usos (*público, privado, reservado*):**
 
 |                | **Rango**   | **Tipo**        |           |
 |----------------|-------------|-----------------|-----------|
@@ -236,7 +240,7 @@ Resumen general:
 | **Clase E** (reservada) | **1111**           | No definido         | No definido          | -              | No definido             | No definido                        | 240.0.0.0                 | 255.255.255.255      |
 
 
-## Creación de subredes
+## Subredes
 
 A menudo es necesario segmentar las redes suficientemente grandes en **subredes** más pequeñas, con lo que se crean grupos más pequeños de dispositivos y servicios con los siguientes fines:
 -   Controlar el tráfico mediante la contención del tráfico de broadcast en la subred.
@@ -256,13 +260,25 @@ A la hora de estudiar la creación de **subredes**, podremos abordarlo de dos fo
 
 ## Creación de subredes: subnetting
 
-Hemos visto que con la máscara es posible identificar las direcciones que pertenecen a nuestra red. En ciertos casos, es posible segmentar una red en subredes las cuales pueden estar en contacto entre sí por medio de un **gateway**, lo cual es vital para un uso más eficiente y controlado de recursos.
+Hasta ahora hemos visto que la **máscara de subred **nos permite distinguir qué parte de una dirección IP identifica la red y qué parte identifica a los hosts.
 
-Es posible, por ejemplo, que tenga dos redes de servidores con 60 servidores cada una y se desee que estén visibles en Internet. Si se utilizan dos redes públicas de clase C se están desaprovechando los recursos de la empresa, ya que una red pública de clase C podría 254 equipos y en el ejemplo, la empresa solo requiere 60.
+Sin embargo, en redes medianas o grandes, no siempre interesa tener todos los equipos dentro de una única red. Por motivos de rendimiento, organización y seguridad, puede ser necesario dividir una red en varias subredes más pequeñas.
 
-Así por ejemplo para **192.168.3.0/24**, con 256 direcciones, podría dividirse en cuatro subredes, cada una de 64 direcciones (64×4=256). Las máquinas de cada subred pueden verse la una a la otra; sin embargo, para que una subred contacte a otra deberán pasar por un **gateway** o un **router** (común a todas las subredes).
+> A este proceso se le llama **subnetting**.
 
-El subnetting se logra **agregando bits 1 a la máscara de subred**, de modo de que se utilicen esos bits adicionales para determinar las subredes y se utilicen en cambio menos bits para determinar los hosts.
+**¿Por qué dividir una red?**
+
+Imaginemos que una empresa tiene:
+
+- 2 departamentos
+- 60 servidores en cada uno
+- Necesidad de que todos tengan acceso a Internet
+
+Si se asignara una red pública completa de clase C (por ejemplo, una red /24), esta permitiría hasta 254 hosts utilizables.
+
+Pero si solo necesitamos 60 equipos por departamento, estaríamos desperdiciando muchas direcciones IP. **El subnetting es lo que resuelve este problema.**
+
+Pasos para aplicar el subnetting:
 
 ![](media/01a4cb689a1c7ed05058e70e9c92b3e9.png)
 
@@ -305,7 +321,7 @@ Las redes de clase A y B están claramente infrautilizadas. El subnetting coge p
 
 ![](media/32b1afd7c71532b8feda6ef403991120.jpeg)
 
-### CIDR para el subnetting
+### CIDR 
 
 El **CIDR** (*Classless Inter-Domain Routing*) es un mecanismo para representar y gestionar direcciones IP de forma más flexible, ya que las divisiones tradicionales en clases (A, B y C) eran muy ineficientes para aprovechar el limitado espacio de direcciones IPv4.
 
@@ -314,7 +330,6 @@ Con CIDR desaparece el concepto de clase de red: el valor de una dirección IP p
 Por ejemplo, no es correcto afirmar que la dirección 172.17.25.12 pertenece a la red 172.17.0.0 si no se especifica el prefijo correspondiente, como en 172.17.0.0/16.
 
 CIDR permite así una gran flexibilidad en el **subnetting**, posibilitando la creación de subredes de distintos tamaños sin estar limitado por las máscaras fijas de las clases tradicionales.
-
 
 Así por ejemplo, hablando en términos de **subnetting**, podemos decir que la red 172.17.11.25 con máscara 255.255.255.0 (que no es en realidad una red de clase C) es una subred (o subnet) de la red de clase B 172.17.0.0.
 
@@ -384,41 +399,82 @@ Una VLAN nos va a permitir *segmentar* una la red local en varias subredes más 
 ### Dominio de colisión
 
 ```note
-Un dominio de colisión es un segmento de red que comparte las comunicaciones con todos los equipos conectados a este y en la cual las tramas colisionan entre ellas.
+Un dominio de colisión es un conjunto de dispositivos que comparten el mismo medio físico de transmisión y donde pueden producirse colisiones si dos equipos transmiten al mismo tiempo.
 ```
+Una colisión ocurre cuando dos dispositivos intentan transmitir datos **simultáneamente** por el **mismo medio físico** (pj. el mismo cable Ethernet).
 
-Cuando un equipo transmite, lo hace para todos los dispositivos del segmento de red al que está conectado (cableado), con independencia de con cuál de ellos quiera comunicarse. El protocolo *CSMA/CD* en redes Ethernet gestiona estas colisiones.
+En redes Ethernet se utilizaba el protocolo CSMA/CD (*Carrier Sense Multiple Access with Collision Detection*) para detectar y gestionar estas colisiones.
 
--   Los equipos unidos a un **hub** o a un **repetidor** (capa 1) formarán un **dominio de colisión** (todo lo que se envía por un puerto se reenvía a todos)
--   Cualquier dispositivo de capa 2 o superior, en cambio, **limita los dominios de colisión**. Por ejemplo, cada toma o puerto de un **switch** formará un **dominio de colisión diferente** y dará lugar a tantos dominios de colisión como puertos tenga conectados. Los switches eliminan el problema de los dominios de colisión al segmentar el tráfico y asignar dominios de colisión individuales por puerto.
+**Hub o repetidor (capa 1)**
+- Todo lo que entra por un puerto sale por todos los demás.
+- Todos los equipos comparten el mismo medio.
+
+**Switch (capa 2)**
+- Cada puerto es un dominio de colisión independiente.
+- Permite comunicaciones simultáneas.
+- Reduce drásticamente las colisiones.
+
 
 ### Dominio de difusión
 
 ```note
-Un dominio de difusión (broadcast domain) es el área lógica en una red de computadoras en la que cualquier equipo host conectado a la red puede transmitir
-directamente a cualquier otro en dicho dominio sin precisar ningún dispositivo de encaminamiento o router.
+Un dominio de difusión es el conjunto de dispositivos que reciben un mensaje de broadcast enviado por cualquiera de los equipos en ese mismo dominio.
 ```
 
-Un switch, por defecto, permite que los paquetes de broadcast se propaguen a todos los puertos dentro de la misma VLAN. Sin embargo, un **router** segmenta los dominios de difusión, evitando que los paquetes de broadcast se propaguen más allá de su segmento de red.
+Un mensaje de **broadcast** es aquel que se envía **a todos los dispositivos** de una red local.
 
-Un dominio de difusión funciona con la última dirección IP de una subred tal y como ya hemos visto.
+Ejemplos:
+- Petición ARP o DHCP Discover
+- Dirección IP de broadcast (ej. 192.168.1.255 en una red /24)
 
-Se utilizan enrutadores (**routers**) para segmentar los **dominios de difusión**.
+**Switch (capa 2)**
+- Reenvía los paquetes broadcast a todos los puertos de la misma VLAN.
+- No separa dominios de difusión.
+
+**Router (capa 3)**
+- No reenvía paquetes broadcast entre redes.
+- Cada interfaz del router crea un dominio de difusión distinto.
+- Se utiliza para segmentar redes.
+
+
+### Dominios colisión vs difusión
 
 ![](media/84d2aec96fa087ebaff4025705dc50ac.jpeg)
 
 ![](media/0443fea484081b157a57647281e894ac.jpeg)
 
 
+| Característica             | Dominio de colisión             | Dominio de difusión           |
+| -------------------------- | ------------------------------- | ----------------------------- |
+| Nivel OSI relacionado      | Capa 1 y 2                      | Capa 2 y 3                    |
+| Qué ocurre                 | Choque de tramas                | Envío de mensaje a todos      |
+| Problema principal         | Interferencia física            | Exceso de tráfico broadcast   |
+| Se produce cuando          | Dos equipos transmiten a la vez | Se envía un paquete broadcast |
+| Lo separa                  | Switch (por puerto)             | Router (por interfaz)         |
+| Ejemplo típico             | Red con hub                     | Petición ARP o DHCP           |
+
+
+
+
 ## Seguridad en redes inalámbricas
 
-Hay que tener en cuenta que las redes WiFi son muy vulnerables a la interceptación de paquetes, a los ataques o a que usuarios no autorizados se aprovechen de la conexión. Por tanto, los administradores de red deben de implementar medidas de seguridad para prevenir un uso indebido de la red.
+Las redes inalámbricas presentan **riesgos de seguridad** superiores a las redes cableadas, ya que el medio de transmisión es el aire y cualquier dispositivo dentro del alcance puede capturar las señales emitidas. 
+Esto facilita ataques como:
+- Interceptación de tráfico (**sniffing**), 
+- Intentos de acceso no autorizado 
+- Ataques de fuerza bruta contra las credenciales.
 
-Una medida que no proporciona ningún tipo de seguridad, pero dificulta a ciertos usuarios conectarse, consiste en **ocultar el SSID**. Desde los puntos de acceso se difunde el SSID, para que los dispositivos dentro de la cobertura puedan conectarse. Esto se hace mediante broadcast o emisión del SSID. Si esta función se desactiva los ordenadores deberán configurar manualmente el SSID, por tanto, aquellos que no lo conozcan, puede que no detecten la red. Esto es fácilmente salvable ya que existen herramientas que detectan el *SSID* oculto, pero es un primer paso.
+Por este motivo, el administrador de red debe aplicar mecanismos de autenticación, cifrado y control de acceso que garanticen la confidencialidad e integridad de las comunicaciones.
 
 ![](media/3d36619e00f631280bdab4e219680437.jpeg)
 
-La medida de seguridad más utilizada consiste en encriptar o codificar la información de la red utilizando protocolos de seguridad inalámbricos.
+Una medida básica que no proporciona seguridad real es **ocultar el SSID**. El SSID es el identificador de la red inalámbrica que los puntos de acceso anuncian periódicamente. Si se desactiva su difusión, los dispositivos deberán de configurarlo manualmente. 
+
+Sin embargo, esta medida no impide que la red sea detectada mediante herramientas de análisis de tráfico, por lo que no debe considerarse un mecanismo de protección efectivo.
+
+## Protocolos de autentic. y cifrado
+
+La seguridad real en redes WiFi se basa en el uso de **protocolos de autenticación y cifrado**. A lo largo del tiempo se han desarrollado distintos estándares.
 
 Actualmente existen cuatro **protocolos de seguridad inalámbrica**:
 
@@ -443,9 +499,9 @@ Es un método muy débil y que **ya no se utiliza**, ya que es fácilmente desci
 
 ### WPA
 
-WiFi Alliance introdujo **WPA** en 2003, como reemplazo para WEP. Mientras que WEP proporciona la misma clave a cada sistema autorizado, en WPA se generan claves nuevas de manera **dinámica** con lo que dificulta su descifrado usando el protocolo **TKIP** y claves de 256 bits para el cifrado.
+WiFi Alliance introdujo **WPA** (Wi-Fi Protected Access) en 2003, como reemplazo para WEP. Mientras que WEP proporciona la misma clave a cada sistema autorizado, en WPA se generan claves nuevas de manera **dinámica** con lo que dificulta su descifrado usando el protocolo **TKIP** y claves de 256 bits para el cifrado.
 
-WPA no está exento de defectos ya que el protocolo *TKIP* se diseñó para implementarse en los sistemas con WEP a través de actualizaciones de firmware. Esto hizo que el WPA siguiera basándose en elementos fácilmente explotables.
+WPA no está exento de defectos ya que el protocolo *TKIP* se diseñó para implementarse en los sistemas con WEP a través de actualizaciones de firmware. Esto hizo que el WPA siguiera basándose en elementos fácilmente explotables, con lo cual hoy también **se considera inseguro**.
 
 ![](media/c962b6942e256e736ce6c36bcf131fae.png)
 
@@ -453,9 +509,9 @@ WPA no está exento de defectos ya que el protocolo *TKIP* se diseñó para impl
 
 El **WPA2** (acceso WiFi protegido 2) es la segunda generación del protocolo de seguridad inalámbrica de acceso WiFi protegido.
 
-Una de las ventajas del sistema WPA2 fue que introdujo el sistema de cifrado avanzado **AES** para sustituir al sistema TKIP, más vulnerable, usado en el protocolo WPA original.
+WPA2 supuso una mejora significativa al introducir el sistema de cifrado avanzado **AES** para sustituir al sistema TKIP, más vulnerable, usado en el protocolo WPA original. 
 
-El AES proporciona un cifrado potente y lo utiliza el gobierno de Estados Unidos para proteger los datos clasificados.
+WPA2 puede funcionar en modo personal (mediante contraseña compartida) o en modo empresarial, utilizando autenticación basada en 802.1X y servidores RADIUS.
 
 ![](media/8ec6d61f21ea2e49c2af32a4788e34a2.png)
 
@@ -463,23 +519,37 @@ El AES proporciona un cifrado potente y lo utiliza el gobierno de Estados Unidos
 
 El **WPA3** (acceso WiFi protegido 3) es el protocolo de seguridad inalámbrica más reciente, diseñado para cifrar datos mediante un tipo de cifrado frecuente y automático denominado *Perfect Forward Secrecy*.
 
+Sustituye el intercambio de claves por el protocolo **SAE** que protege frente a ataques de diccionario offline y proporciona mayor seguridad incluso con contraseñas débiles. También mejora la protección del tráfico en redes abiertas con cifrado individualizado.
+
 Es más seguro que su predecesor, WPA2, pero aún no se ha adoptado ampliamente. No todo el hardware es compatible automáticamente con WPA3, y usar este protocolo suele requerir costosas actualizaciones.
 
 ![](media/10f4b318394ac5836ad47d06e531462a.png)
 
 ![](media/836d75f33641c73a299b215db079f364.jpeg)
 
-Otra forma de mejorar la seguridad de redes inalámbricas sería mediante el uso **servidores de encriptación**, usualmente *Radius*. Estos servidores utilizan protocolos de autenticación y autorización, de esta manera es el servidor el que se encarga de distribuir claves diferentes entre los usuarios. Este método es el más seguro, pero también el de mayor coste.
+### Servidores de encriptación
+
+Otra forma de mejorar la seguridad de redes inalámbricas sería mediante el uso **servidores de encriptación**, usualmente *Radius*. 
+
+Estos servidores gestionan la autenticación, autorización y registro de accesos (AAA) de forma centralizada, permitiendo asignar credenciales individuales a cada usuario y mejorar el control de acceso a la red inalámbrica.
+
+Este método es el más seguro, pero también el de mayor coste.
+
+### Filtrado de direcciones MAC
 
 El **filtrado de direcciones MAC** es otra medida de seguridad adicional y se recomienda utilizarla como complemento de algunos de los métodos de encriptación. Consiste en configurar el punto de acceso o router de tal forma que tenga un listado de direcciones MAC de los equipos autorizados a conectarse a la red inalámbrica, para que aquellos equipos que no estén en la lista no puedan conectarse.
 
+Sin embargo, esta medida no es segura por sí sola, ya que las direcciones MAC pueden falsificarse mediante técnicas de suplantación.
+
 ![](media/9f68abcd582b79faec19e1f598d39f94.jpeg)
+
+### WPS
 
 Muchos routers traen de serie un botón con las siglas WPS. **WPS** (*Wifi Protected Setup*) es un sistema que tiene por funcionalidad al pulsarlo, la de ofrecer una forma fácil de conectarse a una WiFi escribiendo tan sólo un PIN de 8 dígitos, en lugar de la contraseña inalámbrica completa, y conectar rápidamente dispositivos a la red.
 
 ![](media/906561be12d5cbe50313cd05637a9f84.jpeg)
 
-WPS no obstante puede hacer insegura a la red WiFi ya que su PIN de tan solo 8 dígitos hace que, en el momento en que se pulsa el botón, sea vulnerable a un ataque por fuerza bruta.
+WPS no obstante puede hacer insegura a la red WiFi ya que su PIN de tan solo 8 dígitos hace que, en el momento en que se pulsa el botón, sea vulnerable a un ataque por fuerza bruta, con lo cual ya tampoco se utiliza y se recomienda desactivarlo.
 
 ## Direcciones IPv6
 
