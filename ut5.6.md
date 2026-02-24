@@ -118,7 +118,7 @@ Cada motor de búsqueda consiste de dos partes principales:
 
 ![](media/0628125bd0d887eb4f7ddde2f71cf633.png)
 
-### SEO
+### Posicionamiento SEO
 
 **SEO** (*Search Engine Optimization)* es la rama de la informática relacionada con el posicionamiento en los buscadores web. Es el conjunto de técnicas y estrategias centradas en optimizar el posicionamiento orgánico en buscadores de Internet.
 
@@ -211,12 +211,11 @@ Para compartir archivos en una red local se suelen utilizar **SMB** (Server Mess
 | **Compatibilidad**             | Windows, Linux, macOS (con Samba)                                                  | Linux, Unix, macOS, Windows (con software adicional)                 |
 | **Protocolo de transporte**    | TCP/IP, NetBIOS                                                                    | TCP/IP (originalmente también UDP)                                   |
 | **Seguridad**                  | Puede encriptar tráfico y autenticación robusta con Active Directory               | Mejor seguridad en NFSv4 con Kerberos, pero NFSv3 es menos seguro    |
-|  **Rendimiento**               | Más optimizado para entornos Windows, mayor sobrecarga por cifrado y autenticación | Mejor rendimiento en entornos Linux/Unix con menos sobrecarga        |
+| **Rendimiento**                | Más optimizado para entornos Windows, mayor sobrecarga por cifrado y autenticación | Mejor rendimiento en entornos Linux/Unix con menos sobrecarga        |
 | **Facilidad de configuración** | Fácil en entornos Windows, Samba lo hace posible en Linux                          | Más simple en Linux/Unix, pero requiere más configuración en Windows |
 | **Uso típico**                 | Compartición de archivos en redes Windows y entornos mixtos                        | Compartición de archivos en entornos Linux/Unix                      |
 
 ### Resumen de servicios
-
 
 | **Protocolo/Servicio** | **Seguridad**                        | **Uso Típico**                                                                  |
 |------------------------|--------------------------------------|---------------------------------------------------------------------------------|
@@ -227,9 +226,11 @@ Para compartir archivos en una red local se suelen utilizar **SMB** (Server Mess
 | NFS                    |                                      | Compartición de archivos en entornos Linux/Unix                                 |
 | P2P                    | Variable (depende del cifrado usado) | Transferencia distribuida de archivos, uso en torrents y redes descentralizadas |
 
-## Redes sociales, mensajería y VoIP
+## Otros servicios de red
 
-Sin duda las redes sociales y los servicios de mensajería intantánea son dos de los servicios más ampliamente utilizados y conocidos por la población mundial.
+### Redes sociales y mensajería 
+
+Las redes sociales y los servicios de mensajería intantánea son dos de los servicios más ampliamente utilizados y conocidos por la población mundial.
 
 Las **redes sociales** son plataformas o herramienta digitales que permite a los usuarios crear y compartir contenido rápidamente con una comunidad o público concreto con diversos fines.
 
@@ -243,8 +244,6 @@ La **mensajería instantánea** es otro servicio online de comunicación que per
 La Voz sobre Protocolo de Internet (**VoIP**) es una tecnología que permite la transmisión de señales de voz a través de la red. En lugar de utilizar las redes telefónicas tradicionales basadas en circuitos, VoIP aprovecha la infraestructura de Internet para transmitir llamadas de voz de manera eficiente y económica.
 
 En el proceso de VoIP, la voz se convierte en datos digitales que pueden ser transmitidos a través de redes IP. Esto se logra mediante el uso de **códecs** (codificadores-decodificadores) que comprimen la señal de voz para su transmisión eficiente.
-
-## Servicios de IA y Streaming
 
 ### Servicios de IA
 
