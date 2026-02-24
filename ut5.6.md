@@ -233,11 +233,13 @@ Un **dominio** es una unidad lógica administrativa que comparte:
 
 Un dominio puede contener distintos tipos de objetos:
 
-- Usuarios:Identidades individuales.
-- Grupos: Permiten asignar permisos de forma colectiva.
-- Equipos: Representación de dispositivos unidos al dominio.
-- Recursos: Impresoras, carpetas compartidas, servicios.
-- Unidades organizativas: Permiten estructurar jerárquicamente la organización.
+- **Usuarios**: Identidades individuales.
+- **Grupos**: Permiten asignar permisos de forma colectiva.
+- **Equipos**: Representación de dispositivos unidos al dominio.
+- **Recursos**: Impresoras, carpetas compartidas, servicios.
+- **Unidades organizativas**: Permiten estructurar jerárquicamente la organización.
+
+![](media/domain_objects.png)
 
 ### Unidades organizativas (OU)
 
