@@ -128,11 +128,130 @@ Cada motor de búsqueda consiste de dos partes principales:
 
 ## Servicios de Directorio en red
 
-Los **servicios de directorio (SD)** son sistemas de almacenamiento y recuperación de información jeráquica que organizan y gestionan los recursos y las entidades dentro de una red de ordenadores en una organización concreta (oficinas, centros de trabajo, etc.)
+```notes
+Los **servicios de directorio (SD)** en red es un sistema especializado de almacenamiento y consulta de información diseñado para gestionar identidades y recursos dentro de una red.
+```
 
-![](media/d08e439894e3a30b629bca717eddc7c0.png)
+Su función principal es:
 
-Estos servicios actúan como una **base de datos centralizada** que almacena información sobre usuarios, grupos, dispositivos, aplicaciones y otros recursos de red creando lo que se conocen como Dominios de computadoras a los cuales se les pueden asignar a su vez un conjunto de reglas de seguridad u organización unificadas.
+-   Centralizar la autenticación.
+-   Centralizar la autorización.
+-   Organizar los recursos de forma jerárquica.
+-   Facilitar la administración de redes medianas y grandes.
+
+En una red **pequeña** (por ejemplo 4–5 equipos):
+- Cada ordenador puede gestionar sus propios usuarios locales.
+- Los permisos se configuran manualmente.
+- No hay demasiada complejidad.
+
+En una red **empresarial**:
+- Decenas o cientos de equipos.
+- Usuarios que cambian de puesto.
+- Recursos compartidos.
+- Políticas de seguridad comunes.
+
+Gestionar usuarios de forma individual en cada equipo se vuelve:
+- Ineficiente.
+- Inseguro.
+- Difícil de mantener.
+
+> El servicio de directorio soluciona esto **centralizando** la gestión.
+
+Un servicio de directorio trabaja principalmente con tres elementos:
+
+**Identidad**
+Representación digital de una persona o equipo.
+
+**Autenticación**
+Proceso de verificación de identidad. 
+
+**Autorización**
+Proceso de concesión de permisos tras autenticación.
+
+El **flujo** típico es:
+1. Usuario introduce credenciales.
+2. El sistema verifica identidad.
+3. Se consultan los grupos del usuario.
+4. Se aplican permisos según pertenencia
+
+
+### Modelo X.500 y protocolo LDAP
+
+Los servicios de directorio modernos se basan en el estándar **X.500**, definido para organizar información jerárquica.
+
+Para acceder a esa información se utiliza el protocolo **LDAP** (Lightweight Directory Access Protocol) 
+
+LDAP es un protocolo que permite:
+
+-   Consultar información.
+-   Modificar objetos.
+-   Autenticar usuarios.
+-   Buscar recursos.
+
+| **Protocolo** | **Puerto** | **Seguridad** |
+|---------------|------------|---------------|
+| LDAP          | 389        | Sin cifrar    |
+| LDAPS         | 636        | cifrado TLS   |
+
+### Estructura jeráquica DIT 
+
+La estructura del directorio se denomina **DIT** (Directory Information Tree)
+
+Es un **árbol jerárquico** compuesto por:
+
+- *DC* → Componente de Dominio
+- *OU* → Unidad organizativa
+- *CN* → Nombre del objeto Así, por ejemplo:
+
+    CN=Juan Perez,OU=Profesores,DC=instituto,DC=local
+
+Esto significa:
+
+- Nombre del objeto: *Juan Perez*
+- Unidad organizativa: *Profesores*
+- Dominio: *instituto.local*
+
+> Al conjunto anterior se le denomina **DN** (*Distinguish Name*). El *DN* identifica de forma inequívoca un objeto dentro del directorio.
+
+### Dominio
+
+Un **dominio** es una unidad lógica administrativa que comparte:
+
+![](media/59055993f0afb9e1177c3e3be8b655c8.jpeg)
+
+-   Base de datos de usuarios.
+-   Políticas de seguridad.
+-   Infraestructura de autenticación. Todos los equipos unidos al dominio:
+-   Delegan autenticación en el controlador de dominio.
+-   Confían en la autoridad del dominio.
+
+![](media/domain_sample.png)
+
+> Para poner nombre a los dominios se usa el protocolo **DNS**. Cada dominio se identifica unívocamente con un nombre de dominio DNS, que debe ser el sufijo DNS principal de todos sus equipos miembros. Es decir, si el equipo equipo1 pertenece al *dominio ieszayas.org*, el nombre completo del equipo será *equipo1.ieszayas.org* y una impresora tendrá como nombre completo *impresora1.ieszayas.org*
+
+### Tipos de objetos del Dominio
+
+Un dominio puede contener distintos tipos de objetos:
+
+- Usuarios:Identidades individuales.
+- Grupos: Permiten asignar permisos de forma colectiva.
+- Equipos: Representación de dispositivos unidos al dominio.
+- Recursos: Impresoras, carpetas compartidas, servicios.
+- Unidades organizativas: Permiten estructurar jerárquicamente la organización.
+
+### Unidades organizativas (OU)
+
+Las Unidades Organizativas (OU) son contenedores lógicos que permiten:
+- Organizar objetos por departamentos.
+- Delegar administración.
+- Aplicar políticas diferenciadas.
+
+Ejemplo:
+- OU=Administración
+- OU=Servidores
+- OU=Usuarios
+
+![](media/de1eb5cf3930677e9baeae9d98215da1.png)
 
 ## Servicio de Acceso Remoto
 
