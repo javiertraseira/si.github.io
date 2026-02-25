@@ -52,7 +52,7 @@ Para unirnos a un grupo de trabajo basta con **cambiar** el nombre predeterminad
 
 ### Dominios
 
-Las redes basadas en **Dominios** son comunes en empresas y organizaciones, donde el proceso requiere que varios equipos sean controladas en red a través de un solo nodo llamado servidor de dominio.
+Las redes basadas en **Dominios** son comunes en empresas y organizaciones, donde el proceso requiere que varios equipos sean controladas en red a través de un solo nodo llamado servidor de dominio, los cuales veremos más adelante.
 
 ![](media/e30777ff1312573e77568ab30fc1de83.jpeg)
 
