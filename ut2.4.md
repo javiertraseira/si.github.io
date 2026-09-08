@@ -1,4 +1,4 @@
-# UT2.4 Circuitos combinacionales y secunciales
+# UT2.4 Circuitos combinacionales y secuenciales
 
 ## Circuitos digitales
 

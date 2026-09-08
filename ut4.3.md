@@ -149,4 +149,4 @@ Durante el proceso de instalación hay que **documentar** los pasos que se van r
 
 ![](media/a04d28a3ab03885be38d7c08b37df042.png)
 
-Durante el proceso de instalación de los SO indicados por el profesor haremos uso de una **ficha modelo de datos de instalación** que rellenaremos adecuadamente:
+Durante el proceso de instalación de los SO indicados por el profesor haremos uso de una **ficha modelo de datos de instalación** que rellenaremos adecuadamente.

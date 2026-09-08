@@ -1,12 +1,19 @@
-
 # UT4.4 SO Windows, GNU/Linux y otros
 
 ## SO libres y propietarios
 
-Recordemos las principales diferencias entre software libre y propietario de la UT1:
-- **Software libre** es el que otorga libertad de uso, copia y distribución a los usuarios. Su código puede ser totalmente abierto o estar sometido a ciertas normas según la licencia concreta de distribución.
-- **Software de propietario** es aquel cuyas condiciones de uso, copia y distribución están sometidas a normas o restricciones. Su código fuente es cerrado, es decir, no está disponible para el usuario (el propietario puede mostrarlo, pero esto no implica que pase a ser software libre en cuanto a su uso).
+En las anteriores unidades hemos trabajado con el mayor representante de **software propietario** actual; Microsoft y su sistema operativo Windows, entre otras tantas múltiples compañías conocidas.
 
+En contraposición a este tipo de desarrollos, en los cuales el código es privado y se basa en licencias de pago, existe el **software de código abierto** *(Open Source)* o el **software libre** (Free Software) como ya sabemos.
+
+El software libre defiende la libertad de modificación de los códigos de un programa y su libre distribución bajo otro tipo de licencia.
+
+![](media/fc3794aaae6aa8942cc6ff3de530aa55.png)
+
+Recordemos las principales diferencias entre software libre y propietario de la UT1:
+
+-   **Software libre** es el que otorga libertad de uso, copia y distribución a los usuarios. Su código puede ser totalmente abierto o estar sometido a ciertas normas según la licencia concreta de distribución.
+-   **Software de propietario** es aquel cuyas condiciones de uso, copia y distribución están sometidas a normas o restricciones. Su código fuente es cerrado, es decir, no está disponible para el usuario (el propietario puede mostrarlo, pero esto no implica que pase a ser software libre en cuanto a su uso).
 
 | **SOFTWARE LIBRE**                                                                                                                                                                                                   | **SOFTWARE PROPIETARIO**                                                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -15,9 +22,9 @@ Recordemos las principales diferencias entre software libre y propietario de la 
 | Los avances, modificaciones y descubrimientos tecnológicos son constantes y se encuentran en Internet de forma gratuita. “La principal meta del software libre es compartir los avances tecnológicos con los demás.” |  El futuro del software que adquirió el usuario solo depende de una empresa comercial.                                                                                |
 | Compatible tanto en software como en hardware, no obliga al usuario a cambiar de sistema operativo o equipo.                                                                                                         | Siendo creado con fines de lucro, las actualizaciones o mejoras al software quedan estipuladas bajo contrato.                                                         |
 
-![](media/esquema_so.png)
+![](media/628d335f170ae335994faba963e808a9.png)
 
-## SO Windows
+## Historia de SO Windows
 
  **Windows** es el sistema operativo desarrollado por *Microsoft Corporation*, para el uso en computadoras personales (PC) y servidores, acompañado de un conjunto de programas y un sistema de organización de archivos propio.
 
@@ -89,11 +96,11 @@ Con **Windows server 2016** Microsoft busca acercarse a su exitosa plataforma en
 
 ![](media/81265aafc3ac80796dea5c5c37058d3a.jpeg)
 
-**Cuadro resumen** 
-
 ![](media/ce2ab9ef5b2777a6c73d7bb1e7e045d8.png)
 
-## Versiones, ediciones y sus características
+
+## Versiones, ediciones y características de Windows
+
 
 ### Windows 10 Cliente (desktop)
 
@@ -134,7 +141,9 @@ Posee funciones concretas respecto a Home como:
 -   Cifrado Bitlocker
 -   Cliente Hyper-V (Para máquinas Virtuales)
 
-Tal y como se prometió en su concepción Windows 10 funciona como un SO como servicio con actualizaciones continuas y mejoras de por vida. Ello ha dado con las siguientes **actualizaciones** de Windows 10, que suele tener dos grandas actualizaciones al año, y que indican en su número de versión, su fecha de salida y mes:
+Windows 10 funciona como un SO como servicio con actualizaciones continuas. Ello ha dado con las siguientes actualizacionesde Windows 10, que suele tener dos grandas actualizaciones al año, y que indican en su número de versión, fecha y mes. 
+
+> Desde octubre de 2025 Windows 10 ha dejado de recibir mejoras y a partir de octubre de 2026 dejará de recibir también actualizaciones de seguridad.
 
 
 | Actualización/versión Windows 10 | Nombre clave            |
@@ -154,7 +163,6 @@ Tal y como se prometió en su concepción Windows 10 funciona como un SO como se
 | Versión 21H2                     | H2 update              |
 | Versión 22H1                     | H1 update              |
 | Versión 22H2                     | H2 update              |
-
 
 
 ### Windows 11 Cliente (desktop)
@@ -183,6 +191,7 @@ Desde su lanzamiento se ha dado con las siguientes actualizaciones de Windows 11
 | Versión 22H2                     | Sun Valley 2            |
 | Versión 23H2                     | Sun Valley 3            |
 | Versión 24H2                     | Hudson Valley           |
+| Versión 25H2                     | -           |
 
 
 ### Windows Server 
@@ -219,9 +228,7 @@ Para organizaciones que necesitan estabilidad a largo plazo y menor frecuencia d
 Por otro lado, una de las versiones más raras de Windows 10 que nunca usaremos nadie es la China Government Edition. Una edición creada por Microsoft para el gobierno chino. Es una versión realmente ligera y útil que cumple con las directrices de seguridad establecidas por el gobierno en este país.
 
 
-## SO GNU/Linux
-
-### Historia de Linux
+## Historia de Linux
 
 En la década de los 80, prácticamente todos los programas eran software privativo, lo que llevó a Richard Stallman a crear en 1983 el Proyecto **GNU** (*GNU is Not Unix*), un futuro **sistema operativo de software libre compatible con Unix** en contraposición al Unix de pago de la época y que estuviera conformado por programas de software libre.
 
@@ -256,7 +263,7 @@ La historia de Linux es la de un éxito de utilización en el mundo moderno actu
 ![](media/41531ed9d80c1870d433005766980bb9.png)
 <https://www.linuxfoundation.org/membership/members/>
 
-### Distribuciones Linux
+## Distribuciones Linux
 
 Linux, a diferencia de Windows, MacOS, Unix u otros sistemas basados en este, no es un sistema operativo como un todo como ya hemos indicado.
 
@@ -284,19 +291,19 @@ A grandes rasgos, estas son las opciones que ofrece GNU/Linux:
 -   D*istribuciones rolling release, de actualización continua*. Por ejemplo, Arch Linux o openSUSE Tumbleweed, que instalas una vez y lo que duren, siempre recibiendo los últimos paquetes.
 -   *Distribuciones half rolling release*, de actualización continua pero manteniendo cierta estabilidad en el software base. Por ejemplo, Manjaro, que instalas una vez y lo que duren, pero con márgenes de prueba antes de liberar actualizaciones.
 
-### Arquitectura Linux
+## Arquitectura Linux
 
 De forma global, la arquitectura de cualquier distribución basada en UNIX/Linux está basada en la siguiente estructura:
 
 - Un **kernel** o núcleo: parte que interacciona con el usuario (*Linux*) así como su sistema de archivos.
-- El **shell**: entorno gráfico o consola.
-- **Aplicaciones** de usuario: en el caso de las distribuciones Linux se trata generalmente de software que se instala gracias a un sistema centralizado de paquetería (modular)
+-   El **shell**: entorno gráfico o consola.
+-   **Aplicaciones** de usuario: en el caso de las distribuciones Linux se trata generalmente de software que se instala gracias a un sistema centralizado de paquetería (modular)
 
 ![](media/3a060ec50e4c81a77d2bfbc76b0c9684.png)
 
 De forma más detallada cualquier distribución escritorio Linux contendrá al menos:
 
--   Un núcleo o **kernel:** la última versión del kernel es la 6.12 ([www.kernel.org](http://www.kernel.org/))
+-   Un núcleo o **kernel:** la última versión del kernel es la 6.2 ([www.kernel.org](http://www.kernel.org/))
 -   **Un bootloader**: *Grub o Lilo*
 -   **Un servidor gráfico**: *X Windows System o Wayland*.
 -   **Entorno de escritorio**: Suele ser *GNOME* o *KDE*.
@@ -316,7 +323,7 @@ La **interfaz gráfica** (GUI) de cualquier distribución como vimos es diversa 
 
  ![](media/332861cde899a1963d64924e0b51f18a.png)
 
- ### Arquitectura Android
+ ## Arquitectura de Android
 
 Android es una pila de software de código abierto basada en Linux creada para una variedad amplísima variedad de dispositivos y caracterizada por utilizar los servicios de la empresa Google.
 
@@ -325,7 +332,8 @@ Android es una pila de software de código abierto basada en Linux creada para u
 
 ## MacOS
 
-Por otra parte, macOS es el sistema operativo propietario de Apple Inc., diseñado específicamente para su línea de computadoras Mac. 
-Se distingue por su interfaz elegante, funciones de seguridad sólidas y una integración excelente con el ecosistema móvil de Apple **iOS**.
+Por otra parte, **macOS** es el sistema operativo propietario de Apple diseñado específicamente para su línea de computadoras Mac.
 
-![](media/mac_os.png)  
+Se distingue por su interfaz elegante, funciones de seguridad sólidas y una integración excelente con el ecosistema móvil de Apple iOS.
+
+![](media/mac_history.png)

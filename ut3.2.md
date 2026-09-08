@@ -1,9 +1,5 @@
 # UT3.2 Gestión del almacenamiento en los SO
 
-## Contenido y debate introductorio
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/V7qg1WGSdvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 ## Unidades de almacenamiento secundario
 
 Al hablar de unidades de almacenamiento nos referimos a la memoria secundaria de almacenamiento permanente de la información.
@@ -29,10 +25,9 @@ Las unidades lógicas de un sistema, por tanto, pueden ser distintas de sus corr
 Las unidades **lógicas **utilizan una *nomenclatura* específica dependiente del sistema operativo utilizado:
 
 -   Sistemas **Windows**: Letras individuales para las unidades lógicas: ***A,C,D,E***..
--   Sistemas **Linux**: **hd** o **sd** (si es un disco *IDE* o *SATA*) seguido de:
--   Una letra para las unidades físicas: *sda, sdb, sdc*
--   Un número para las lógicas (particiones que veremos más adelante)
-    *sda1, sda2, sdb1 \| hda1..*
+-   Sistemas **Linux**: **hd**,**sd** (discos *IDE* o *SATA*), **vd** (disco virtual), **mvme**, seguido de:
+    -   Una letra para las unidades físicas: *sda, sdb, sdc*
+    -   Un número para las lógicas (particiones que veremos más adelante) *sda1, sda2, sdb1 \| hda1 \| vdc2 ..*
 
 ![](media\unidades_almacenamiento.png)
 
@@ -45,6 +40,21 @@ Listado en un supuesto equipo:
 - **C**\| (*sda*): Disco SSD 1
 - **D**\| (*sdb*): Disco duro 1
 - **E**\| (*sdc*): Disco duro 2
+
+
+### Nomenclaturas unidades lógicas linux
+
+
+| **Prefijo / Ejemplo**                | **Tipo de dispositivo**                                           | **Uso habitual / Explicación**                                                                                                                    |
+| ------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **sda, sdb, sdc, sda1, sdb3…** | Discos SATA, SCSI o USB (los más comunes)                         | Cada letra identifica un disco físico; los números, sus particiones. Es la nomenclatura estándar en la mayoría de sistemas modernos.              |
+| **hda, hdb, hda1…**            | Discos IDE (obsoletos)                                            | Usado en equipos antiguos con controladoras IDE. Se mantiene por compatibilidad histórica.                                                        |
+| **nvme0n1, nvme0n1p1**               | Unidades NVMe                                                     | Discos muy rápidos conectados por PCIe. La nomenclatura incluye disco (*0*), namespace (*n1*) y partición (*p1*).                                 |
+| **vda, vdb, vda1…**            | Discos virtuales Virtio (KVM/QEMU/Proxmox)                        | Discos paravirtualizados usados en máquinas virtuales, ofrecen mejor rendimiento que los simulados como sdX.                                      |
+| **loop0, loop1, loop0p1**      | Dispositivos loopback                                             | Permiten tratar un archivo como si fuera un disco. Común en imágenes ISO, AppImages y contenedores.                                               |
+| **md0, md1**                         | Discos RAID por software (mdadm)                                  | Representan arrays RAID creados con *mdadm*, como RAID 1, 5 o 10.                                                                                 |
+| **dm-0, dm-1**<br>*(device mapper)*  | Volúmenes gestionados por device-mapper (LVM) | Se generan dinámicamente para LVM, cifrado LUKS o sistemas multipath. Suelen aparecer como enlaces en `/dev/mapper/`.                             |
+
 
 
 ## Ficheros

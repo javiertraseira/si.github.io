@@ -154,7 +154,7 @@ Cuando se contrata este servicio se instala una antena en el exterior, que se co
 
 En redes de área personal (**WPAN**) se utiliza el estándar **802.15.1**, que deﬁne las redes **Bluetooth**. Estas redes emplean un topología **piconet**, que es una red de 2 a 7 dispositivos, donde uno de ellos es el maestro (encargado de establecer y gestionar las conexiones). Cuando comunicamos dos piconet, formamos una *scatternet*. Los dispositivos Bluetooth utilizan la banda de frecuencias de **2,4 GHz** y su cobertura está entre 1 y 100 metros.
 
-![](media/aed62f74b2d8c047108e6857a53bcd54.jpeg)![þÿ](media/37aaf6cb65efd02c37626cff0a235f35.png)![þÿ](media/c390d172ee2c0ce4b14669b4ac2e5f95.jpeg)
+![](media/aed62f74b2d8c047108e6857a53bcd54.jpeg)![þÿ](media/37aaf6cb65efd02c37626cff0a235f35.png)![](media/c390d172ee2c0ce4b14669b4ac2e5f95.jpeg)
 
 | **Versión**  | **Año lanzamiento** | **Características/Novedades**                                       |
 |--------------|---------------------|---------------------------------------------------------------------|
@@ -168,7 +168,7 @@ En redes de área personal (**WPAN**) se utiliza el estándar **802.15.1**, que 
 | 4.2          | 2014                | Mayor seguridad y soporte para IPv6.                                |
 | **5.0**      | 2016                | Rango aumentado (4x) y velocidad (2x) para BLE; mejor conexión IoT. |
 | 5.1          | 2019                | Funcionalidad de localización con mayor precisión.                  |
-| 5.2          | 2020                | LE Audio y soporte para canales Isochronous para audio mejorado.    |
+| 5.2          | 2020                | LE Audio, canales isócronos y soporte para audífonos inalámbricos (LC3).   |
 | 5.3          | 2021                | Optimización de energía y mejoras en la transmisión de datos.       |
 | 5.4          | 2023                | Soporte para conexiones masivas IoT y mejoras de seguridad.         |
 
@@ -184,7 +184,7 @@ Por ejemplo, los sensores de un hogar inteligente que utilizan muchas soluciones
 
 ### Tecnologías redes WWAN
 
-Las redes inalámbricas de área extensa (WWAN) están basadas en la tecnología aplicada a la telefonía móvil. Ha pasado por protocolos para redes llamadas 1G, 2G (GMS), 3G, 4G o LTE y por último el más reciente 5G.
+Las redes inalámbricas de área extensa (WWAN) están basadas en la tecnología aplicada a la telefonía móvil. Ha pasado por protocolos para redes llamadas 1G, 2G (GSM), 3G, 4G o LTE y por último el más reciente 5G.
 
 ![](media/c66371fe811551ca264f6654b7c71c19.jpeg)**1990s 1990s 2003 2009 2020**
 
@@ -244,7 +244,7 @@ Es utilizado para enviar mensajes de error e información operativa indicando, p
 
 ### Protocolo NAT
 
-**NAT** (*Network Address Translator*) es un protocolo encargado de traducir direcciones de red, también llamado enmascaramiento de IP o NAT. Se trata de un mecanismo utilizado por routers IP para cambiar paquetes entre dos redes que asignan mutuamente direcciones IP incompatibles. Consiste en convertir, en tiempo real, las direcciones utilizadas en los paquetes transportados.
+**NAT** (*Network Address Translator*) es un protocolo crucial, encargado de **traducir** direcciones de red, también llamado enmascaramiento de IP o NAT. Se trata de un mecanismo utilizado por routers IP para cambiar paquetes entre dos redes que asignan mutuamente direcciones IP incompatibles. Consiste en convertir, en tiempo real, las direcciones utilizadas en los paquetes transportados.
 
 Cada uno de los dispositivos que hay conectados en nuestra red tienen una **dirección IP única**. Aquí podemos mencionar ordenadores, móviles o cualquier otro equipo. El traductor de direcciones de red mediante *NAT* lo que hace es proporcionar una dirección IP pública a toda esa red, a todo el conjunto de equipos.
 
@@ -292,9 +292,12 @@ Funcionamiento del protocolo **TCP**:
 
 ### Protocolo UDP
 
-A diferencia de TCP, **UDP** *(User Datagram Protocol)* es un protocolo **no orientado a conexión** y no es tan confiable tal y como hemos visto. UDP no cuenta con posibilidad de realizar revisiones en búsqueda de errores o correcciones de transmisiones de datos. Sin embargo, hay ciertas aplicaciones en donde UDP es más factible de utilizar en vez de TCP. Un ejemplo de esto es una sesión de juegos en línea, en donde UDP permite que los paquetes de datos se descarten sin posibilidad de reintentos.
+A diferencia de TCP, **UDP** *(User Datagram Protocol)* es un protocolo **no orientado a conexión**, lo que significa que no establece una sesión previa entre emisor y receptor antes de comenzar la transmisión de datos. Tampoco garantiza la entrega, orden ni no duplicación de paquetes, por lo que se considera protocolo **no fiable**.
 
-Este protocolo no estaría recomendado para realizar transferencia de datos, ya que si algunos paquetes se pierden durante el proceso de transferencia, el resultado final es que el archivo se corrompería, y sería detectado por las capas superiores (capa de aplicación). Igualmente, para el escenario de juegos en línea o sesiones de *streaming* de vídeos, UDP sería el protocolo recomendado porque es el más rápido.
+Sin embargo, hay ciertas aplicaciones en donde UDP es más factible de utilizar en vez de TCP. Un ejemplo de esto es una sesión de juegos en línea, en donde UDP permite que los paquetes de datos se descarten sin posibilidad de reintentos.
+
+Por este motivo, **UDP no es recomendable para la transferencia de archivos**, ya que la pérdida de paquetes provocaría que el archivo resultante estuviera incompleto o corrupto y sería detectado por las capas superiores (capa de aplicación). En cambio, para el escenario de juegos online, streaming de vídeos o voz sobre IP, UDP sería el protocolo ideal porque es el más rápido.
+
 
 ![](media/ec9e872556a505d9128a04ae8c525fe9.jpeg)
 
@@ -305,7 +308,7 @@ Este protocolo no estaría recomendado para realizar transferencia de datos, ya 
 | Fiabilidad                        | Alta                                    | Más baja                           |
 | Velocidad                         | Más baja                                | Alta                               |
 | Método de transferencia           | Los paquetes se envían en una secuencia | Los paquetes se envían en un flujo |
-| Nombre *PDU*                      | Segmento                                | Datagrama                           |
+| Nombre *PDU*                      | Segmento                                | Datagrama                          |
 | Detección y corrección de errores | Sí                                      | No                                 |
 | Control de congestión             | Sí                                      | No                                 |
 | Acuse de recibo                   | Sí                                      | Solo el *checksum*                 |
@@ -318,9 +321,19 @@ Este protocolo no estaría recomendado para realizar transferencia de datos, ya 
 
 ![](media/b06cc06424a24b6527e6ec0f7564c9ca.png)
 
-### Protocolo HTTP
+### Capas de presentación y sesión
 
-**HTTP** el protocolo que permite que los navegadores y servidores web se comuniquen adecuadamente. Este es utilizado por navegadores web para solicitar archivos HTML de parte de los servidores remotos. Así mediante el servicio **WWW**, los usuarios podrán interactuar con dichos archivos mediante la visualización y navegación por páginas web que cuentan con imágenes, música, vídeos, texto, etc.
+En el modelo TCP/IP, las funciones de las capas de sesión y presentación del modelo OSI no aparecen como capas independientes. Sus funciones se integrarían dentro de la capa de aplicación del modelo TCP/IP.
+
+- Para la capa de **presentación** los protocolos y estándares más conocidos están TLS y SSL, que permiten cifrar las comunicaciones en Internet (por ejemplo en HTTPS), y formatos de representación de datos como **ASCII**, **UTF-8**, **JPEG**, **sockets**.
+
+- Para la capa de **sesión**, encargada de establecer, mantener y finalizar las sesiones de comunicación los protocolos asociados a esta capa serían **NetBIOS**, usado en redes Windows para la comunicación entre equipos, y **RPC**, que permite ejecutar procedimientos en sistemas remotos.
+
+
+
+### Protocolos HTTP y HTTPS
+
+**HTTP** y **HTTPS** es el protocolo que permite que los navegadores y servidores web se comuniquen adecuadamente. Este es utilizado por navegadores web para solicitar archivos HTML de parte de los servidores remotos. Así mediante el servicio **WWW**, los usuarios podrán interactuar con dichos archivos mediante la visualización y navegación por páginas web que cuentan con imágenes, música, vídeos, texto, etc.
 
 -   El protocolo **HTTP** tiene como base a **TCP**, el cual implementa un modelo de comunicación cliente-servidor.
 -   El protocolo **HTTPS** es actualmente el predominante, proporcionando seguridad y encriptado punto a punto (entre el cliente y el servidor). HTTPS utiliza el protocolo **TLS** (*Transport Layer Security*) que también utiliza TCP por encima.
@@ -442,7 +455,13 @@ El protocolo DNS utiliza un sistema jerárquico para crear una base de datos que
 
 ![](media/ddaa6da610a5fb73a8156bcb0bc5045c.jpeg)*Subdominio SLD TLD*
 
-Existe una **caché DNS local** que guarda un historial las direcciones IP de las webs que visitadas desde el equipo local. Si no tenemos guardada la dirección IP en la caché de nuestro navegador, habrá que realizar la petición a un servidor DNS, el cual a su vez si no la tiene se lo pasará al siguiente usando la estructura jerárquica vista.
+Para evitar repetir consultas constantemente, el sistema DNS utiliza **caché** en varios niveles:
+- Caché del sistema operativo
+- Caché del navegador
+- Caché del servidor DNS local (ISP o empresa)
+
+Si la IP ya está en caché y no ha caducado (TTL), la respuesta es inmediata, sin recorrer toda la jerarquía DNS.
+
 
 ![](media/3685e4f7acb67fdf62c84c2bb9d2781d.jpeg)
 
@@ -454,6 +473,18 @@ Los pasos concretos más detallados del funcionamiento de la resolución DNS los
 4.  Se enviará la resolución al servidor DNS local que se la enviará al equipo cliente local.
 
 ![](media/c7c9c1b21624a8a258f072f27f255639.jpeg)
+
+Además de los servidores DNS de los proveedores de Internet (ISP), existen proveedores DNS públicos, que ofrecen mayor rapidez, seguridad y fiabilidad.
+
+**Cloudflare (1.1.1.1)**
+Cloudflare ofrece uno de los servicios DNS públicos más conocidos.
+Características principales:
+- Dirección IPv4: 1.1.1.1
+- Dirección IPv6: 2606:4700:4700::1111
+- Muy rápido y con baja latencia
+- Enfocado en la privacidad (no vende datos de navegación)
+- Protección frente a ataques DNS (DNS spoofing, DDoS)
+
 
 ### Protocolo DHCP
 
@@ -509,19 +540,54 @@ Este protocolo funciona como capa adicional a los protocolos de la capa de acces
 
 ![](media/c53389ca5da7697453943f79a4b93e5f.png)![](media/a9ae651faa815cf412f475f9884c87d2.png)
 
+### Protocolos de impresión en red
+
+La impresión en red permite que varios dispositivos puedan enviar trabajos de impresión a una impresora compartida a través de una infraestructura TCP/IP.
+
+En entornos empresariales y domésticos, las impresoras pueden funcionar de tres formas:
+- Impresora local compartida (conectada por USB a un equipo que la comparte).
+- Impresora de red con IP propia.
+- Servidor de impresión dedicado.
+
+Desde el punto de vista del modelo TCP/IP, los protocolos de impresión se sitúan en la **capa de aplicación**, ya que utilizan TCP/IP como base para transportar los datos del trabajo de impresión.
+
+
+**IPP** (Internet Printing Protocol) es el protocolo utilizado en sistemas como **CUPS** (Linux) y muchas impresoras actuales.
+
+Utiliza por defecto el puerto 631 y sobre TCP. Puede funcionar sobre HTTP o HTTPS y se puede usar autenticación y cifrado.
+
+IPP permite:
+- Enviar trabajos de impresión
+- Consultar el estado de la impresora
+- Gestionar colas
+- Autenticación de usuarios
+- Cifrado mediante TLS
+
+
+![](media/ipp_protocol.png)
+
 ## IPsec
 
 ```note
-**IPsec** es un conjunto de reglas o protocolos de comunicación para configurar conexiones seguras a través de una red. 
+**IPsec** (Internet Protocol Security) es un conjunto de protocolos de seguridad diseñado para proteger las comunicaciones a nivel de la **capa de red**. 
 ```
 
-El conjunto de **IPsec**, se utiliza habitualmente para establecer túneles a través de redes IP, conocidas como **Redes Privadas Virtuales** (VPN).
+Su función principal es garantizar que los datos enviados a través de redes IP lo hagan de forma **segura**, incluso cuando se transmiten por redes públicas como Internet.
 
-Actua en la **capa 3 de red**, permite proteger a los protocolos de red, transporte y aplicación. Ello lo hace mucho más seguro y flexible que, por ejemplo HTTPS, que solamente protege a nivel de la capa de aplicación.
+IPsec se utiliza habitualmente para establecer **túneles seguros** entre dispositivos o redes a través de infraestructuras IP. Este tipo de conexión es la base de muchas Redes Privadas Virtuales (VPN).
 
 ![](media/75f2273086d23ab8849990fa5c56bb8c.png)
 
-Los servicios que proporciona **IPSec** son los siguientes:
+Una de las principales **ventajas** de IPsec es que, al actuar en la capa 3 de red, puede proteger de forma transparente a:
+
+- Protocolos de red (IP)
+- Protocolos de transporte (TCP, UDP)
+- Protocolos de aplicación (HTTP, FTP, SMTP, etc.)
+
+Esto lo hace más flexible y completo que otros mecanismos como HTTPS, que solo protegen el tráfico a nivel de la capa de aplicación.
+
+
+IPsec ofrece los siguientes **servicios de seguridad**:
 
 -   **Autenticación mutua**: Cada extremo de la comunicación verifica su identidad. Ya sea a través de contraseñas, *smart cards*, certificados, datos biométricos, etc.
 -   **Confidencialidad**: Todos los paquetes se encriptan para protegerlos de intercepciones de terceros no deseadas.
@@ -531,12 +597,17 @@ Los servicios que proporciona **IPSec** son los siguientes:
 
 ### VPN
 
-Una **VPN** (*Virtual Private Network*) es una tecnología que permite establecer una conexión segura entre dos o más puntos a través de una red pública (como internet).
+Una **VPN** (*Virtual Private Network*) es una tecnología que permite establecer una conexión segura entre dos o más puntos a través de una red pública como Internet.
 
 Las VPNs protegen la confidencialidad, integridad y autenticidad de los datos transmitidos en línea mediante el uso de técnicas de cifrado y autenticación.
 
 Una red privada virtual crea un **túnel de datos** seguro entre su máquina local y otro servidor VPN situado a miles de kilómetros. Cuando se conecta, este servidor VPN se convierte en el origen de todos sus datos. El proveedor de servicios de Internet (ISP) y otros terceros ya no podrán ver el contenido del tráfico en Internet. 
 
-Los protocolos VPN como **IPSec** codifican sus datos antes de enviarlos a través del túnel de datos.
+Una VPN no es un protocolo, sino una solución o tecnología que puede implementarse utilizando distintos protocolos de seguridad. 
+
+Cuando un equipo se conecta a una VPN:
+- Todo su tráfico se envía a través del túnel cifrado
+- El servidor VPN actúa como intermediario y origen del tráfico hacia Internet
+- El proveedor de servicios de Internet (ISP) y otros terceros no pueden ver el contenido de la comunicación.
 
 ![](media/30d4d57147d32eeaf02bb1e6291cf094.png)

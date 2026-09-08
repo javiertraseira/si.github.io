@@ -176,6 +176,15 @@ Finalmente, varias ﬁbras suelen agruparse en haces protegidos por una funda ex
 ![þÿ](media/4a5d85a3c21151f3d826aa52cf943a84.jpeg)
 ![þÿ](media/16c2577fb445d70b0358486f2ea87b6d.jpeg)
 
+
+### Tipos fibra óptica
+
+Según la trasmisión de la luz, existen de dos tipos de cables de fibra óptica:
+-   **Monomodo**: la ﬁbra es tan delgada que la luz se transmite en línea recta. El núcleo tiene un radio de 10 micrones y la cubierta, de 125 micrones.
+-   **Multimodo**: La luz se transmite por el interior del núcleo incidiendo sobre su superﬁcie interna, como si se tratara de un espejo. Las pérdidas de luz en este caso también son prácticamente nulas. El núcleo tiene un diámetro de 50 micrones y la cubierta, de *140 micrones*.
+
+![](media/f79db1a43faf4c8b937a5674552b33b7.png)
+
 ### Estructura y características
 
 
@@ -188,16 +197,10 @@ Finalmente, varias ﬁbras suelen agruparse en haces protegidos por una funda ex
 **Características de la fibra:**
 
 -   Pérdidas bajas en larga distancia.
+    - En fibra monomodo hasta 50km
+    - En fibra multimodo hasta 500m
 -   Muy alta capacidad de transmisión y ancho de banda
 -   La información se transmite por luz que rebota en el cable.
-
-### Tipos fibra óptica
-
-Según la trasmisión de la luz, existen de dos tipos de cables de fibra óptica:
--   **Monomodo**: la ﬁbra es tan delgada que la luz se transmite en línea recta. El núcleo tiene un radio de 10 micrones y la cubierta, de 125 micrones.
--   **Multimodo**: La luz se transmite por el interior del núcleo incidiendo sobre su superﬁcie interna, como si se tratara de un espejo. Las pérdidas de luz en este caso también son prácticamente nulas. El núcleo tiene un diámetro de 50 micrones y la cubierta, de *140 micrones*.
-
-![](media/f79db1a43faf4c8b937a5674552b33b7.png)
 
 ### Conectores fibra óptica
 
@@ -207,7 +210,7 @@ Según la trasmisión de la luz, existen de dos tipos de cables de fibra óptica
 
 ## Medios no guiados: transmisión inalámbrica
 
-La transmisión de información a través del aire se realiza utilizando **ondas electromagnéticas**. Se transmiten, reciben o propagan desde un punto de la Tierra a otro, a la atmósfera o al espacio.
+En los **medios no guiados**, la transmisión de la información se realiza sin cables, utilizando **ondas electromagnéticas** que se propagan a través del aire o del espacio.
 
 Este tipo de ondas se propaga por el espacio (independientemente de cuál sea su frecuencia) a la velocidad de la luz; a la particularidad que tiene este tipo de ondas de viajar por el espacio es a lo que se le denomina técnicamente como propagación de las ondas electromagnéticas.
 
@@ -222,12 +225,12 @@ Una onda electromagnética se define con tres parámetros:
 ### Espectro electromagnético
 
 ```note
-El espectro electromagnético es el conjunto de radiaciones electromagnéticas que se propagan a través del espacio en forma de ondas ordenadas en función de su energía (de izquierda a derecha, de menor a mayor energía).
+El **espectro electromagnético** es el conjunto de todas las ondas electromagnéticas, ordenadas según su frecuencia o energía (de izquierda a derecha, de menor a mayor energía).
 ```
 
 ![](media/espectro_electromagnetico.jpg)
 
-Para la **transmisión inalámbrica** nos vamos a fijar en el espectro relativo a los campos electromagnéticos, en las **ondas de radio** y las **microondas**.
+Para la **transmisión inalámbrica** nos vamos a fijar en el espectro relativo a los campos electromagnéticos, en las **ondas de radio** y **microondas** e **infrarrojos**
 
 ![](media/506415372baae38b07709b02a804adf9.jpeg)
 
@@ -238,8 +241,8 @@ Para la **transmisión inalámbrica** nos vamos a fijar en el espectro relativo 
 |            | VLF (Very Low Frequency)             | 3 - 30 kHz      | 100 – 10 km       | Geofísica, GPS          |
 |            | LF (Low Frequency)                   | 30 - 300 kHz    | 10 – 1 km         | Radiofaros              |
 |            | MF (Medium Frequency)                | 300 kHz - 3MHz  | 1 km – 100 m      | Radio AM                |
-|            | **HF** (Very High Frecuency)         | 30 – 300 MHz    | 10 – 1 m          | Radio FM, TV            |
-|            | VHF (High Frequency)                 | 3 – 30 MHz      | 100 – 10 m        | Radioaficionados        |
+|            | **VHF** (Very High Frecuency)         | 30 – 300 MHz    | 10 – 1 m          | Radio FM, TV            |
+|            | HF (High Frequency)                 | 3 – 30 MHz      | 100 – 10 m        | Radioaficionados        |
 | Microondas | **UHF** (Ultra High Frequency)       | 300 MHz – 3 GHz | 1 m – 10 cm       | Telefonía, 4G, TV, WiFi |
 |            | **SHF** (Super High Frequency)       | 3 – 30 GHz      | 10 – 1 cm         | WiFi, satélite, radar   |
 |            | **EHF** (Extremely High Frequency)   | 30 – 300 GHz    | 1 – 0,1 cm        | Satélite, militar, 5G   |
@@ -253,7 +256,7 @@ Para la **transmisión inalámbrica** nos vamos a fijar en el espectro relativo 
 Las **radioondas** u **ondas de radio** operan entre el **ELF** y **UHF** (entre *3hz a 300Mhz*)
 -   Se transmiten en todas las direcciones y se difractan por el terreno llegando lejos.
 -   Poco sensibles a inclemencias meteorológicas.
--   Ejemplo: submarinos, radio AM, radio FM y televisión.
+-   Ejemplo: submarinos, radio AM/ FM y televisión TDT.
 
 
 Las **microondas** operan entre el **UHF** y **EHF**
@@ -289,7 +292,15 @@ Las **microondas** operan entre el **UHF** y **EHF**
     -   Por haz directo: sin obstáculos entre emisor y receptor.
     -   Por haz difuso: con potencia para salvar obstáculos.
 
-### Infraestructura redes WiFi 
+## Infraestructura redes inalámbricas
+
+Tras estudiar los **medios no guiados** (radioondas, microondas e infrarrojos), es necesario analizar cómo se organizan y estructuran las redes inalámbricas en la práctica, siendo las redes WiFi el ejemplo más extendido en entornos domésticos, educativos y empresariales.
+
+Una **red WiFi** no está formada únicamente por dispositivos inalámbricos, sino que requiere una infraestructura compuesta por puntos de acceso, estaciones cliente y sistemas de distribución que permiten el acceso a la red cableada y a Internet.En los siguientes apartados se estudian los elementos, modos de funcionamiento y arquitecturas que forman una red WiFi.
+
+En cuanto a las **redes de telefonía móvil** están diseñadas para proporcionar cobertura en grandes áreas geográficas, garantizando la movilidad de los usuarios.
+
+### Infraestructura redes Wi-Fi 
 
 El **SSID** de una WiFi es una cadena alfanumérica de 32 caracteres de longitud, que sirve para identificar a la red.
 
@@ -308,7 +319,7 @@ A la hora de crear una red inalámbrica WiFi se utilizan dos alternativas:
 
     Estación que da conexión inalámbrica a las STAs asociadas.
 
--   **BSS***(Basic service set)*
+-   **BSS** *(Basic service set)*
 
     Conjunto de un AP con sus STAs asociados.
 
@@ -319,6 +330,17 @@ A la hora de crear una red inalámbrica WiFi se utilizan dos alternativas:
 -   **DS (Distribution system)**
 
     Es el sistema que interconecta BSS.
+
+Dentro de la infraestructura de las redes WiFi existen un tipo particular denominado **redes mesh** o malladas, las cuales utilizan varios puntos de acceso para trabajan de forma coordinada y ofrecer:
+
+- Una misma red WiFi (SSID único)
+- Redirección automática del tráfico
+- Mejor cobertura y estabilidad
+
+Son habituales en:
+- Viviendas grandes
+- Centros educativos
+- Oficinas
 
 ![](media/11c0623ae79492368129dfe4f11c8170.jpeg)
 
@@ -369,8 +391,9 @@ que conecta los diferentes distribuidores de ediﬁcio.
 
 ### Cableado horizontal
 
-
 ![](media/15be9b6745a3202b2a932823f3a0876e.jpeg)
+
+### Cableado horizontal y vertical
 
 ![](media/f9f39145a68644589afe9ae2894d74ef.jpeg)
 
@@ -399,6 +422,14 @@ Además, el suelo y el techo pueden tener una abertura para pasar todo el cablea
 
 > El interior de un armario rack tiene 4 bastidores que forman un armazón de **19 pulgadas de anchura**.  
 
+
+![](media/rack_schema.jpg)
+
+Dentro de los racks el **panel de parcheo** (patch panel) es donde termina el cableado que viene de las diferentes tomas de red (aulas, oficinas, puestos de trabajo, cámaras, etc.) y, mediante latiguillos, se conectan a los equipos activos del rack.
+
+Su uso aporta orden y una identificación clara de las conexiones permitiendo una mayor durabilidad de la instalación, ya que protege los puertos de los dispositivos y permite una gestión más segura y centralizada del cableado estructurado.
+
+
 ```note
 Los bastidores tienen agujeros cada 5 cm, esta distancia se llama unidad U, de modo que la altura de un armario se mide en unidades U Los elementos para racks también se miden en unidades U.
 ```
@@ -412,13 +443,13 @@ Podemos encontrar los siguientes tipos de racks:
 ![](media/2ee7d5e4691fe5e6d2b190ada868b389.png) 
 
 
-## Tarjeta o adaptador de red (NIC)
+## Interfaces de red: tarjetas y adaptadores
 
 ```note
-Una tarjeta o adaptador de red, conocida también como NIC (Network Interface Card), básicamente realiza la función de intermediario entre el ordenador y la red de comunicación.
+Una tarjeta o adaptador de red, conocida también como NIC (Network Interface Card), básicamente realiza la función de intermediario entre el dispotivo y la red de comunicación (interfaz de red).
 ```
 
-En dicha tarjeta se encuentran grabados los protocolos de comunicación de la red, en los niveles físico, enlace de datos y red.
+En la interfaz de red se encuentran grabados los protocolos de comunicación de la red, en los niveles físico, enlace de datos y red.
 
 Se conecta al ordenador a través de sus ranuras de expansión PCI o mediante un puerto USB, aunque la mayoría de los equipos disponen de esta tarjeta integrada directamente en la placa base.
 
@@ -448,8 +479,9 @@ Una tarjeta de red por lo general tiene dos indicadores luminosos (LEDs):
 -   **Controladores de LAN** (Sistemas Operativos en que funciona)
 
 **Modo de transmisión:**
+
 -   **Half duplex**: el canal de comunicación no se puede utilizar para enviar y recibir información simultáneamente.
--   **Full-duplex**: el canal de comunicación permite enviar y recibir información simultáneamente.
+-   **Full-duplex**: el canal de comunicación permite enviar y recibir información simultáneamente (lo habitual)
 
 **Conectores:**
 
@@ -649,10 +681,13 @@ Es un dispositivo que puede funcionar a todos los niveles de la capa OSI, aunque
 Sus principales funciones pueden ser:
 
 -   **Cortafuegos**: es un elemento de seguridad que controla el tráfico de datos entrante y saliente de una red, de acuerdo a unas **reglas** que establecen qué se puede admitir y qué no.
--   **Proxy**: es un elemento de seguridad que actúa como intermediario entre dos equipos. También funciona con reglas para regular el tráfico de datos, pero las reglas se hacen a nivel de equipo, en lugar de a nivel de la red completa.
+-   **Proxy**: Es un equipo que actúa como intermediario entre los equipos de una red interna e Internet. Cuando un usuario solicita acceder a un recurso (por ejemplo, una web), la petición se envía primero al proxy, que la procesa y la reenvía al servidor externo. Un proxy además:
+    - Registra la actividad de navegación de los usuarios.
+    - Guarda contenido en caché para mejorar el acceso.
+
 -   **VPN (Virtual Private Network):** la red privada virtual es una función que permite conectarse de forma segura a una LAN privada desde una red pública (Internet).
 
-Además, un Gateway puede realizar funciones de capas inferiores, comportándose como un switch o un router. A cambio de todas sus funcionalidades y flexibilidad, el retardo de propagación para la comunicación que atraviesa una pasarela es mucho mayor que en otros dispositivos ya vistos.
+Además, un Gateway puede realizar funciones de capas inferiores, comportándose como un switch o un router. No confundir con la puerta enlace predeterminada que veremos más adelante. 
 
 > No confundir con la puerta enlace predeterminada que veremos más adelante.
 
@@ -676,13 +711,13 @@ Muchos de los WAP pueden actuar como **repetidor** o **bridge**. Para ello, debe
 ![](media/fd8fddf56a99dc9beebeb3f46a8d0a83.jpeg)
 
 
-Los **puntos de acceso mesh** (o sistemas de redes mesh) son dispositivos de interconexión que forman una red **inalámbrica distribuida**, diseñada para proporcionar una cobertura Wi-Fi amplia y estable.
+Los **puntos de acceso mesh** (o sistemas de redes mesh), comentados previamente, son dispositivos de interconexión que forman una red **inalámbrica distribuida**, diseñada para proporcionar una cobertura WiFi amplia y estable.
 
 ![](media/5119d2ded7587f744fc7aa4e117c50c0.jpeg)
 
 A diferencia de los puntos de acceso WAP convencionales, que dependen de un único enrutador o repetidor, los sistemas mesh trabajan en conjunto para ofrecer una experiencia uniforme y sin interrupciones.
 
-Además de cara al usuario funcionan de forma transparente creando una única red Wifi con el mismo SSID y contraseña.
+Funcionan de forma transparente creando una única red WiFi con el mismo SSID y contraseña.
 
 Las redes mesh son capaces de redirigir el tráfico por la red de la forma óptima para disponer siempre de la mejor señal posible.
 

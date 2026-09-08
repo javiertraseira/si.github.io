@@ -58,15 +58,18 @@ Las redes basadas en **Dominios** son comunes en empresas y organizaciones, dond
 
 ### Dirección IP
 
-Una vez identificados los equipos en la red, tendremos que configurar el protocolo *TCP/ IP* para que los equipos puedan comunicarse entre ellos. Por defecto en Windows siempre que dispongamos de adaptador de red el protocolo TCP/IP, se instalará automáticamente e iniciarán los servicios de red correspondientes.
+Una vez identificados los equipos en la red, tendremos que configurar el protocolo TCP/ IP para que los equipos puedan comunicarse entre ellos. Por defecto en Windows se instalará el protocolo TCP/IP e iniciarán los servicios de red.
 
-Recordemos la distinción entre las IP públicas y las IP privadas en una red de ordenadores locales:
+Es importante antes de nada distinguir entre la IP pública y la IP privada en una red de ordenadores locales:
 
 -   Una **IP privada:** es la que utiliza cada dispositivo dentro de su red local dentro de los siguientes rangos para IPv4:
     -   De 10.0.0.0 a 10.255.255.255 (clase A)
     -   172.16.0.0 a 172.31.255.255 (clase B)
     -   192.168.0.0 a 192.168.255.255 (Clase C)
--   Una **IP pública**: Es la que tendrá asignada cualquier equipo o dispositivo conectado de forma directa a Internet (como nuestro router)
+-   Una **IP pública**: Es la que tendrá asignada cualquier dispositivo conectado de forma directa a Internet (como nuestro router)
+
+> ⚠️ Cuando Windows toma como dirección IP una que comienza por **169.254.x.x** significará que hay un fallo de comunicación entre tu equipo y el router, con lo cual **no se tendrá acceso a Internet**.
+
 
 ### PING
 
@@ -154,7 +157,6 @@ Permite conocer los paquetes que vienen desde un host (punto de red). También s
 
 ![](media/5f923b254775d5a962f3a06da7585062.png)
 
-# Configuración y comandos de red Windows
 
 El comando **NETSH** ofrece multitud de opciones a la hora de obtener información sobre la conexión de red, así como configurarla:
 
@@ -169,8 +171,6 @@ El comando **NETSH** ofrece multitud de opciones a la hora de obtener informaci�
 -   Para ver los nombres de las interfaces de red de nuestro sistema:
 
         NETSH interface show interface
-
-# Configuración y comandos de red Windows
 
 -   Para modificar la configuración de la red a una dirección estática:
 
@@ -191,84 +191,16 @@ El comando **NETSH** ofrece multitud de opciones a la hora de obtener informaci�
 
 | **Operaciones (Acciones)**                                                           | **Comando** | **Ejemplo uso**                                                                     |
 |--------------------------------------------------------------------------------------|-------------|-------------------------------------------------------------------------------------|
-| Nombre del equipo                                                                    | HOSTNAME    | HOSTNAME                                                                            |
-| Carpetas compartidas en red                                                          | NET SHARE   | NET SHARE                                                                           |
-| Verificar comunicación entre equipos                                                 | PING        | PING 192.168.1.21                                                                   |
-| Obtener direcciones MAC                                                              | GETMAC      | GETMAC                                                                              |
-| Tablas ARP del equipo                                                                | ARP         | ARP –A –N 192.168.1.5                                                               |
-| Obtener valores de configuración de interfaces de red y reasignar valores DHCP o DNS | IPCONFIG    | IPCONFIG /RENEW \*                                                                  |
-| Conocer si el DNS está resolviendo correctamente los nombres y las IPs               | NSLOOKUP    | NSLOOKUP [www.google.com](http://www.google.com/)                                   |
-| Mostrar estadísticas de la red y ver diagnósticos y análisis.                        | NETSTAT     | NETSTAT                                                                             |
-| Determina la ruta a un destino especificado                                          | TRACERT     | TRACERT [www.google.com](http://www.google.com/)                                    |
-|   Herramienta de **configuración avanzada** de red en línea                          |   NETSH     | NETSH interface ip show  NETSH interface ip set address name="Ethernet" source=dhcp |
-
-## Compartir recursosde una red Windows
-
-El principal motivo por el que crear redes donde hay varios equipos funcionando y utilizar SO en red, es para compartir recursos entre ellos. Las redes dan muchas posibilidades, pero básicamente en un grupo de trabajo lo que se comparten son carpetas y dispositivos tales como impresoras.
-
-Una vez configurada una red podemos utilizarla para trabajar de forma compartida con los **recursos** de los que dispongamos en ella:
-
--   Archivos
--   Carpetas
--   Impresoras
-
- ![](media/cdf238dc08f52e2ab8b69ed353a75ec4.png)![](media/3f2f88c77768679be19a9ed711ce5cf1.png)
-
-
-### Verifcaciones previas
-
-Para poder **compartir recursos** de un equipo en red y que lo puedan utilizar otros usuarios de dicha red, deberemos comprobar que:
-
--   Nuestro equipo deberá tener un **nombre diferente** a cualquier otro de la red.
--   Los equipos deberán pertenecer al mismo **grupo de trabajo** o un **Dominio**.
--   La dirección IP de cada equipo de la red local deberá ser distinta y tener todos la misma máscara de subred.
--   El usuario **administrador** de cada equipo deberá contar con contraseña y la cuenta del mismo deberá estar habilitada.
-
-### Compartir carpetas en red
-
-Para poder **compartir recursos** como **carpetas en red** debemos primeramente tener habilitado la **compartición de archivos e impresoras.**
-
-Para ello se deberá acceder desde opciones de uso compartido y habilitar y según el acceso que se le quiera dar a esos recursos:
-
--   **Privado** (perfil actual): para usuarios identificados dentro de una misma red local.
--   **Invitado o público**: para usuarios dentro de una misma red local no identificados.
--   **Todas las redes**: para usuarios dentro o fuera de una red local.
-
-![](media/4284f860d0914927c081188b1c795b39.png)
-![](media/af91b8642f32e08bb55c91bc6b03964b.png)
-
-![](media/f956e30dc5d2de65959bf5d623bdcc95.png)
-
-Para **compartir carpetas en red** y los ficheros que contiene, deberemos seleccionamos la carpeta o directorio que deseamos compartir en red y pulsar con el botón derecho del ratón seleccionando la opción de *Conceder acceso \> Usuarios específicos* o dentro de la pestaña *compartir* en *propiedades de la carpeta.*
-
-![](media/cba2afd47b2b5cb9b9638abc291f3ea0.jpeg)
-![](media/a20cfca38514044156950308d19a9280.png)
-
-Dentro del cuadro anterior deberemos elegir con que **equipos de nuestra red compartir la carpeta y su contenido**. Se puede compartir el contenido con todos los equipos conectados a nuestra red, seleccionando **Todos y Agregar**. Podemos asignarla dos niveles de permiso: *Lectura o Lectura y escritura.*
-
-![](media/032f9a0f770c2709a4316c811d67724a.png)
-
-También podemos establecer una serie de permisos a los usuarios que se conecten a la carpeta compartida para según que permiso, tener unas prioridades con los archivos o no.
-
-![](media/c267e968046a8ed5eae370cebff14998.jpeg)
-
-Al acceder a la carpeta compartida Windows pedirá un usuario y contraseña. Para configurar dicho comportamiento deberemos acceder desde el Panel de Control de nuestro equipo a las opciones del **Centro de redes y recursos compartidos**, y pulsar sobre *Cambiar configuración de uso compartido avanzado.*
-
-Dentro de las opciones que se abren dentro de campo Todas las redes, podemos marcar la opción de **Desactivar el uso compartido con protección por contraseña**. De esta manera evitaremos que Windows solicite un usuario y contraseña cuando intentemos acceder a las carpetas compartidas.
-
-![](media/a9339a2c4ad272dccffe0003973477fe.png)
-
-Para compartir carpetas en red desde la línea de comandos utilizaremos el comando *NET SHARE*.
-
-    NET SHARE \<sharename=drive:path\>
-
-Por ejemplo, para compartir una carpeta denominada recurso situada en la unidad C, en la ruta de acceso \\Usuarios\\miNombre, escriba:
-
-    NET SHARE myshare=C:\Users\Myname
-
-Usando el comando sin parámetros nos mostrará los elementos en red compartidos:
-
-![](media/0fbdc73ce06c7aa80826ce6951e0c65b.png)
+| Nombre del equipo                                                                    | HOSTNAME    | `HOSTNAME`                                                                          |
+| Carpetas compartidas en red                                                          | NET SHARE   | `NET SHARE`                                                                         |
+| Verificar comunicación entre equipos                                                 | PING        | `PING 192.168.1.21`                                                                 |
+| Obtener direcciones MAC                                                              | GETMAC      | `GETMAC`                                                                            |
+| Tablas ARP del equipo                                                                | ARP         | `ARP –A –N 192.168.1.5`                                                             |
+| Obtener valores de configuración de interfaces de red y reasignar valores DHCP o DNS | IPCONFIG    | `IPCONFIG /RENEW *`                                                               |
+| Conocer si el DNS está resolviendo correctamente los nombres y las IPs               | NSLOOKUP    | `NSLOOKUP [www.google.com](http://www.google.com/)`                                 |
+| Mostrar estadísticas de la red y ver diagnósticos y análisis.                        | NETSTAT     | `NETSTAT`                                                                           |
+| Determina la ruta a un destino especificado                                          | TRACERT     | `TRACERT [www.google.com](http://www.google.com/)`                                  |
+| Herramienta de **configuración avanzada** de red en línea                            |   NETSH     | `NETSH interface ip show`  `NETSH interface ip set address name="Ethernet" source=dhcp` |
 
 
 ## Configuración y comandos de red en Linux
@@ -276,13 +208,14 @@ Usando el comando sin parámetros nos mostrará los elementos en red compartidos
 Para crear la infraestructura de una red en Linux como mínimo, tenemos que tener en cuenta los siguientes aspectos:
 
 - **Configuración de la red**. Para empezar, necesitamos configurar las diferentes interfaces de red de nuestro equipo.
-- **Configurar nuestro router (iptables)**. Para permitir la comunicación entre dos o más redes; y nos permite establecer el tráfico de entrada y de salida que permite
-nuestro equipo.
+- **Servidor DNS**. Configurar un servidor dns permitirá mantener una equivalencia entre un nombre de Dominio y su dirección IP. 
 - **Servidor DHCP**. Permite asignar automáticamente la configuración IP de los equipos clientes de nuestra red. Este servicio es muy importante ya que nos facilita
 la conexión de los equipos a nuestra red. Por ejemplo, cuando un portátil se conecta a nuestra red a través del servidor DHCP obtiene su configuración IP.
-- **Servidor DNS**. Permite mantener una equivalencia entre un nombre y su dirección IP. Por ejemplo, el nombre www.ual.es equivale a 150.214.156.62.
+- **Configurar nuestro router (firewall)**. Para permitir la comunicación entre dos o más redes; y nos permite establecer el tráfico de entrada y de salida que permite
+nuestro equipo.
 
-#### Interfaces de red
+
+### Interfaces de red
 
 Las interfaces de red también conocidas como NIC (*Network Interface Card*) utilizaban un identificador en Linux que solía llamarse:
 
@@ -332,6 +265,39 @@ Ejemplos de utilización del comando **ifconfig.**
     sudo ifconfig enp0s3 broadcast 192.168.1.255
 ``` 
 
+### Comando ip
+
+El comando **ip** es una actualización del comando ifconfig utilizado en la mayoría de las distribuciones modernas.
+
+Forma parte del paquete *iproute2* y sustituye/mejora a los siguientes comandos o herramientas de red:
+
+- ifconfig
+- route
+- arp
+- netstat (parcialmente)
+
+Ejemplos de uso del comando ip:
+
+```bash
+#Muestra todas las interfaces de red y sus direcciones IP:
+ip addr
+
+#Activar/desactivar interfaz:
+sudo ip link set enp0s3 down
+sudo ip link set enp0s3 up
+
+#Asignar IP manualmente:
+sudo ip addr add 192.168.1.50/24 dev enp0s3
+
+#Ver la table de rutas:
+ip route
+
+#Para añadir puerta de enlace:
+sudo ip route add default via 192.168.1.1
+```
+> La configuración aplicada por el comando ip es provisional. Si queremos que los cambios se mantengan al reiniciar el equipo hay que usar la herramienta netplan.
+
+
 ### Utilidad netplan (Ubuntu)
 
 La utilidad **netplan** se usa para configurar fácilmente la red usado en distribuciones Ubuntu. Se basa en crear un fichero de texto siguiendo especifaciones *yaml* en la carpeta **/etc/netplan**.
@@ -379,7 +345,31 @@ network:
                 addresses: [8.8.1.1]
 ```
 
-#### Comando ping
+### Configuración dns
+
+El fichero `/etc/resolv.conf` es el archivo de configuración que indica al sistema qué servidores DNS debe utilizar para resolver nombres de dominio.
+
+    nameserver 8.8.8.8
+    
+
+No obstante, si utilizamos la herramienta **netplan** para la configuración la red, al usar el comando `netplan apply` el sistema generará automáticamente su contenido y se generará un fichero que enlaza a otro.
+
+
+### Configuración dhcp
+
+Cuando el equipo debe obtener una IP automáticamente:
+
+```bash
+sudo dhclient enp0S3
+```
+
+Este comando:
+- Solicita IP al servidor DHCP
+- Recibe IP, máscar, Gateway y DNS
+- Modifica automáticamente la configuración del sistema
+
+
+### Comando ping
 
 El archiconocido comando **ping** data de los años 70 y es conocido por ser uno de los comandos de red más básicos. Sin embargo, no es tan simple como podemos creer y tiene muchos más usos de los que ya conocemos.
 
@@ -390,21 +380,66 @@ Está basado en el protocolo ICMP y se utiliza para determinar:
 
 ![](media/f58fe7281639c3b5718383116fb17e5c.png)
 
+### Comando dig
+
+Aunque Linux también utiliza el comando nslookup, existe un comando más potente que se recomienda para realizar su función de forma más completa.
+
+    dig google.es
+
+El comando permite ver:
+- IP devuelta
+- Tiempo de respuesta
+- Servidor DNS consultado
+
 ### Comando nmap
 
-El comando **nmap** es la abreviatura de la herramienta *Network Mapper*. Es una herramienta de línea de comandos de Linux de código abierto que se utiliza para escanear direcciones IP y puertos en una red y para detectar aplicaciones instaladas.
+El comando **nmap** es una herramienta de código abierto utilizada para la exploración y auditoría de redes. Permite analizar uno o varios equipos de una red mediante el envío de paquetes y el análisis de las respuestas recibidas.
+
+Se emplea principalmente para:
+- Detectar equipos activos en una red.
+- Identificar puertos abiertos, cerrados o filtrados.
+- Determinar los servicios que se están ejecutando en dichos puertos.
+- Obtener información sobre el sistema operativo y versiones de software.
+- Realizar tareas básicas de auditoría de seguridad.
 
 ![](media/4e6078416ecea1d5e3edec9397644227.png)
 
+Para centrarse en puertos concretos se utiliza el parámetro -p:
+
+Así, por ejemplo:
+
+```bash
+nmap -p 80,443,53,25,587 localhost
+```
+
 ### Comando netstat
 
-El comando **netstat** es otro comando de red que se utiliza para identificar todas las conexiones *TCP* y *UDP* abiertas en una máquina. Además de esto, nos permite conocer la información siguiente:
+**netstat** es otro comando de red, ya algo obsoleto, que se utiliza para identificar todas las conexiones *TCP* y *UDP* abiertas en una máquina. Además de esto, nos permite conocer la información siguiente:
 
 -   Tablas de rutas para conocer nuestras interfaces de red y las salidas de las mismas.
 -   Estadísticas Ethernet que nos muestran los paquetes enviados, los recibidos y los posibles errores.
 -   Saber el id del proceso que está siendo utilizado por la conexión.
 
 ![](media/6929af58c1dd9d1166b2c73da2a3251f.png)
+
+### Comando ss
+
+El comando **ss** (*Socket Statistics*) es una herramienta moderna de monitorización de red en Linux que sustituye al antiguo comando netstat. Se utiliza para mostrar información sobre conexiones TCP y UDP, puertos abiertos y sockets del sistema de forma más rápida y eficiente.
+Además de esto, nos permite conocer la información siguiente:
+
+- Conexiones de red activas TCP y UDP.
+- Puertos abiertos y servicios en escucha.
+- Procesos y PID asociados a cada conexión.
+- Estados de las conexiones TCP (LISTEN, ESTABLISHED, TIME_WAIT, etc.).
+- Estadísticas y detalles avanzados de sockets.
+
+Los *parámetros* que permite:
+
+    -t  mostrar conexiones TCP
+    -u mostrar conexiones UDP
+    -l  mostrar únicamente puertos en escucha (LISTEN)
+    -a  mostrar todas las conexiones y puertos
+    -n  no resolver nombres ni puertos
 
 ### Comando traceroute
 
@@ -418,15 +453,35 @@ Su sintaxis:
 
 ![](media/1cf3b6028ac2f975347aaa3070b9a973.png)
 
+
+### Comandos wget y curl
+
+Tanto **wget** como **curl** son herramientas de línea de comandos en Linux utilizadas para transferir datos desde o hacia un servidor.
+
+El comando *wget* se utiliza para descargar archivos de la web utilizando los protocolos HTTP, HTTPS o FTP.
+
+Su sintaxis:
+
+    wget [OPCIONES] [URL]
+
+El comando *curl* es una más versáti para interactuar con servidores ya que admite una mayor variedad de protocolos.
+
+Por ejemplo:
+
+    curl -O https://www.ejemplo.com/archivo.zip
+
+
+
 Comandos de **gestión de redes** básicos en Linux:
 
 | **Comando**    | **Acción**                                                         | **Ejemplo**                                         |
 |----------------|--------------------------------------------------------------------|-----------------------------------------------------|
-| **hostname**   | Muestra información del nombre de la máquina                       | hostname                                            |
-| **ifconfig**   | Muestra información y configura las interfaces de red del sistema. | ifconfig enp0s3 192.168.4.2                         |
-| **netplan**    | El gestor de redes en Ubuntu (editar fichero yaml)                 | sudo netplan apply                                  |
-| **ping**       | Verificar estado de la conexión con un host concreto.              | ping [www.linux.org](http://www.linux.org/)         |
-| **netplan**    | Para aplicar configuraciones de red en el equipo.                  | netplan apply                                       |
-| **nslookup**   | Herramienta para verificar la resolución dns del equipo.           | nslookup educamadrid.org                            |
-| **netstat**    | Identificar conexiones abiertas con el equipo.                     | netstat -e                                          |
-| **traceroute** | Mostrar camino que recorre un paquete al destino.                  | traceroute [www.google.com](http://www.google.com/) |
+| **hostname**   | Muestra información del nombre de la máquina                       | `hostname`                                          |
+| **ifconfig**   | Muestra información y configura las interfaces de red del sistema. | `ifconfig enp0s3 192.168.4.2`                       |
+| **netplan**    | El gestor de redes en Ubuntu (editar fichero yaml)                 | `sudo netplan apply`                                |
+| **ping**       | Verificar estado de la conexión con un host concreto.              | `ping www.linux.org`                                |
+| **dig**        | Verificar la resolución de DNS                                     | `dig linux.org `                                    |
+| **netplan**    | Para aplicar configuraciones de red en el equipo.                  | `netplan apply`                                     |
+| **nslookup**   | Herramienta para verificar la resolución dns del equipo.           | `nslookup educamadrid.org`                          |
+| **netstat/ss** | Identificar conexiones abiertas con el equipo.                     | `netstat -e`                                        |
+| **traceroute** | Mostrar camino que recorre un paquete al destino.                  | `traceroute www.google.com`                         |

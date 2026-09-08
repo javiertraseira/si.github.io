@@ -128,7 +128,7 @@ Cada motor de búsqueda consiste de dos partes principales:
 
 ## Servicios de Directorio en red
 
-```notes
+```note
 Los **servicios de directorio (SD)** en red es un sistema especializado de almacenamiento y consulta de información diseñado para gestionar identidades y recursos dentro de una red.
 ```
 
@@ -174,7 +174,6 @@ El **flujo** típico es:
 3. Se consultan los grupos del usuario.
 4. Se aplican permisos según pertenencia
 
-
 ### Modelo X.500 y protocolo LDAP
 
 Los servicios de directorio modernos se basan en el estándar **X.500**, definido para organizar información jerárquica.
@@ -202,6 +201,7 @@ Es un **árbol jerárquico** compuesto por:
 - *DC* → Componente de Dominio
 - *OU* → Unidad organizativa
 - *CN* → Nombre del objeto Así, por ejemplo:
+
 
     CN=Juan Perez,OU=Profesores,DC=instituto,DC=local
 
@@ -255,6 +255,19 @@ Ejemplo:
 
 ![](media/de1eb5cf3930677e9baeae9d98215da1.png)
 
+### Políticas centralizadas
+
+Uno de los elementos más importantes de un servicio de directorio es la capacidad de **aplicar políticas centralizadas**.
+
+Estas políticas pueden afectar a:
+- Configuración del sistema.
+- Seguridad.
+- Restricciones de software.
+- Configuración de red.
+- Auditoría para monitoreo.
+
+![](media/policy.png)
+
 ## Servicio de Acceso Remoto
 
 Los servicios de **acceso remoto** son servicios muy útiles y bastante utilizados. Permiten acceder de forma remota a un equipo a través de la red.
@@ -262,11 +275,59 @@ Los servicios de **acceso remoto** son servicios muy útiles y bastante utilizad
 Pueden clasificarse en dos categorías:
 
 -   **Acceso remoto en modo terminal**. Para acceder a un servidor en modo terminal se procede generalmente a través de **SSH** (*Secure SHell*). Antiguamente se accedía también a través de *Telnet*, pero ya apenas se usa por ser inseguro.
-![](media/65cfbcbca40f2d58b98fce7982d7efab.jpeg)
 
--   **Acceso remoto en modo gráfico**. Para acceder en modo gráfico a un servidor se puede utilizar el servicio *VNC* (Windows y Linux) o el servicio de Escritorio remoto en sistemas Windows. También existen aplicaciones como TeamViewer o SupRemo
-![](media/f6bbeac2507c40f5a1ba98bb5b65f780.jpeg)
-![](media/413f91564cdddf982025e6c74e875db3.jpeg)
+    ![](media/65cfbcbca40f2d58b98fce7982d7efab.jpeg)
+
+-   **Acceso remoto en modo gráfico**. Para acceder en modo gráfico a un servidor se puede utilizar el servicio *VNC* (Windows y Linux) o el servicio de Escritorio remoto en sistemas Windows. También existen aplicaciones como TeamViewer o SupRemo.
+
+    ![](media/f6bbeac2507c40f5a1ba98bb5b65f780.jpeg)
+
+    ![](media/413f91564cdddf982025e6c74e875db3.jpeg)
+
+### Servicios de impresión en red
+
+El servicio de impresión en red permite que varios usuarios puedan enviar trabajos de impresión a una o varias impresoras compartidas a través de la red.
+
+En lugar de conectar la impresora por USB a un único equipo, la impresora:
+- Se conecta directamente a la red (Ethernet o WiFi), 
+- Se comparte desde un servidor de impresión.
+
+Esto permite:
+- Centralizar la gestión.
+- Controlar permisos.
+- Monitorizar trabajos.
+- Reducir costes.
+- Asignar cuotas o restricciones.
+
+![](media/printer_network.jpg)
+
+#### Modelos de impresión en red
+
+**Impresora con interfaz de red**
+La impresora tiene:
+- Tarjeta de red integrada.
+- Dirección IP propia.
+- Interfaz web de administración.
+
+Los clientes envían directamente los trabajos. Uso típico sería en entornos medianos.
+
+**Servidor de impresión dedicado**
+- Un servidor central gestiona:
+- Cola de impresión.
+- Permisos.
+- Monitorización.
+
+Los clientes envían el trabajo al servidor y este lo reenvía a la impresora. Un uso típico sería en entornos empresariales u oficinas grandes.
+
+#### Protocolos de impresión en red
+
+| Protocolo                        | Puerto   | Descripción                       |
+| -------------------------------- | -------- | --------------------------------- |
+| IPP (Internet Printing Protocol) | 631 TCP  | Protocolo moderno, basado en HTTP |
+| LPD/LPR                          | 515 TCP  | Protocolo tradicional Unix        |
+| SMB                              | 445 TCP  | Compartición en entornos Windows  |
+| RAW / JetDirect                  | 9100 TCP | Envío directo a impresora         |
+
 
 ### Servicios de Cloud Computing
 
@@ -292,7 +353,7 @@ Entre las ventajas que tiene el uso de este tipo de soluciones:
 -   Rendimiento: mejor relación precio-rendimiento para las cargas en la nube
 -   Confiabilidad: sistemas distribuidos, escalables y tolerantes a fallos en todos los servicios.
 
-Existen diversos niveles de Cloud Computing (*SaaS, PaaS y IaaS*) que hemos visto en unidades anteriores:
+Existen diversos niveles de Cloud Computing (*SaaS, PaaS y IaaS*) ya conocidos por nosotros:
 
 ![](media/cfce958dad0dea9b79986539252929ff.jpeg)
 
@@ -315,18 +376,33 @@ La transferencia de archivos mediante **P2P**, que significa *Peer-to-Peer* o de
 Ejemplos de servicios P2P son BitTorrent, eMule, entre otros.
 
 ![](media/c383c8bbf0dd0ae1ccd3014b0fbe17df.png)
+
 ![](media/cd6d06d2a64010d22b3cba2bc1caee63.jpeg)
 
 ### Servicios de archivos en redes locales
 
+En una red local, uno de los servicios más importantes es la compartición de archivos. Permite que varios usuarios accedan a documentos, carpetas o recursos de almacenamiento desde distintos equipos como si estuvieran en su propio ordenador.
+
+En lugar de copiar archivos manualmente entre dispositivos, los servicios de archivos en red permiten:
+
+- Centralizar la información.
+- Controlar permisos de acceso.
+- Facilitar el trabajo colaborativo.
+- Realizar copias de seguridad centralizadas.
+- Aplicar políticas de seguridad sobre los datos.
+
+Este tipo de servicio es fundamental en entornos empresariales, educativos y administrativos, donde múltiples usuarios necesitan acceder a los mismos recursos.
+
+#### SMB y NFS
+
 Para compartir archivos en una red local se suelen utilizar **SMB** (Server Message Block) o **NFS** (Network File System):
 
--   **SMB** es usado en sistemas Windows para compartir archivos e impresoras. Implementado en Samba en Linux.
+-   **SMB** es usado en sistemas Windows para compartir archivos e impresoras. En sistemas Linux se implementa mediante Samba, lo que permite interoperabilidad entre sistemas Windows y Linux.
 -   **NFS** es un protocolo nativo de Unix/Linux para compartir archivos en red. Permite montar directorios remotos como si fueran locales.
 
 ![](media/a0690c251ad0535c6e87b2c31be0e383.png)
 
-|                                | **SMB (Server Message Block)**                                                     | **NFS (Network File System)**                                        |
+|     **Característica**         | **SMB (Server Message Block)**                                                     | **NFS (Network File System)**                                        |
 |--------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | **Desarrollador**              | Microsoft (originalmente IBM)                                                      | Sun Microsystems (ahora parte de Oracle)                             |
 | **Compatibilidad**             | Windows, Linux, macOS (con Samba)                                                  | Linux, Unix, macOS, Windows (con software adicional)                 |
@@ -338,14 +414,14 @@ Para compartir archivos en una red local se suelen utilizar **SMB** (Server Mess
 
 ### Resumen de servicios
 
-| **Protocolo/Servicio** | **Seguridad**                        | **Uso Típico**                                                                  |
-|------------------------|--------------------------------------|---------------------------------------------------------------------------------|
-| FTP                    | Inseguro                             | Transferencias simples en redes internas                                        |
-| FTPS                   | Cifrado SSL/TLS                      | Transferencia segura en Internet                                                |
-| SFTP                   | SSH                                  | Transferencias seguras en servidores Linux                                      |
-| SMB                    | Soporta autenticación                | Compartición de archivos en redes Windows                                       |
-| NFS                    |                                      | Compartición de archivos en entornos Linux/Unix                                 |
-| P2P                    | Variable (depende del cifrado usado) | Transferencia distribuida de archivos, uso en torrents y redes descentralizadas |
+| Protocolo/Servicio | Seguridad                               | Uso Típico                                                       |
+|--------------------|------------------------------------------|------------------------------------------------------------------|
+| FTP                | ❌ Inseguro                              | Transferencias simples en redes internas                         |
+| FTPS               | ✅ Cifrado SSL/TLS                       | Transferencia segura en Internet                                 |
+| SFTP               | ✅ SSH                                   | Transferencias seguras en servidores Linux                       |
+| SMB                | ✅ Soporta autenticación                 | Compartición de archivos en redes Windows                        |
+| NFS                | ✅ (según versión/configuración)         | Compartición de archivos en entornos Linux/Unix                  |
+| P2P                | ⚠️ Variable (depende del cifrado usado) | Transferencia distribuida de archivos, uso en torrents y redes descentralizadas |
 
 ## Otros servicios de red
 

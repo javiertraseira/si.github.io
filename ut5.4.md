@@ -372,6 +372,63 @@ Tabla de posibles valores de la **máscara de red** usando *CIDR*:
 | 224.0.0.0             | /3       |
 | 192.0.0.0             | /2       |
 
+## Enrutamiento IP
+
+El **enrutamiento IP** es el proceso mediante el cual un equipo decide a qué interfaz o puerta de enlace debe enviar un paquete IP para que llegue a su destino.
+
+Cuando un host quiere comunicarse con una dirección IP, debe responder primero a esta pregunta:
+
+¿Está el destino en mi red o debo enviarlo a otro dispositivo?
+
+Esa decisión se toma consultando la **tabla de enrutamiento local**.
+
+Cuando un equipo quiere enviar un paquete:
+1. Comprueba su dirección IP y su máscara.
+2. Calcula su red.
+3. Compara la IP destino con las redes de su tabla de enrutamiento.
+4. Aplica la regla de coincidencia más específica (Longest Prefix Match).
+5. Envía el paquete:
+    - Directamente (si está en su red).
+    - A una puerta de enlace (si está en otra red).
+
+La **tabla de enrutamiento** es una estructura de datos que contiene las redes conocidas por el sistema.
+Cada entrada contiene normalmente:
+- Red destino
+- Máscara o prefijo
+- Gateway (puerta de enlace)
+- Interfaz
+- Métrica
+
+| Destino     | Prefijo | Gateway     | Interfaz |
+| ----------- | ------- | ----------- | -------- |
+| 192.168.1.0 | /24     | Directo     | eth0     |
+| 10.0.0.0    | /8      | 192.168.1.1 | eth0     |
+| 0.0.0.0     | /0      | 192.168.1.1 | eth0     |
+
+**Ruta estática**
+
+Configurada manualmente por el administrador.
+
+Ejemplo:
+
+|             |               |  
+| ----------- | -------       |  
+|  Destino    | 10.0.0.0/8    | 
+|  Gateway    | 192.168.1.1   | 
+
+
+**Ruta por defecto (0.0.0.0/0)**
+
+Es la ruta utilizada cuando ninguna otra coincide.
+
+Ejemplo:
+
+|             |             |  
+| ----------- | -------     |  
+|  Destino    |  0.0.0.0    | 
+|  Máscara    |  0.0.0.0    | 
+
+
 
 ## Creación de subredes: VLANs
 

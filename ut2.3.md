@@ -444,4 +444,13 @@ Para ello aprovechando las leyes del Álgebra Booleana (DeMorgan) en el que una 
 Para convertir un término producto o un término suma en una operación NAND o NOR debemos aplicarle al término una **doble negación**.
 
 Para poder realizar una función determinada o un circuito digital utilizando solo puertas **NAND** o **NOR**, se deben aplicar el **teorema DeMorgan** tantas veces como sea necesario, hasta que toda la función se exprese en forma de productos o sumas negadas, respectivamente.
+
+![](media/deMorgan.png)
+
+Ya hemos visto que es posible implementar cualquier expresión en forma de suma de productos usando únicamente puertas NAND. Así, por ejemplo:
+
+![](media/universals1.png)
+
+Se puede implementar mediante puertas NAND negando doblemente y su circuito equivalente tendrá el mismo comportamiento:
  
+![](media/universals2.png)
