@@ -32,6 +32,16 @@ El **software básico** para hacer funcionar cualquier ordenador se denomina sis
 El **sistema operativo** es el componente software de un sistema informático capaz de hacer que los **programas** (**software**) procesen información (**datos**) sobre los componentes electrónicos de un ordenador o sistema informático (**hardware**).
 ```
 
+Para poder realizar un programa necesitamos usar un lenguaje de programación, que es un conjunto de símbolos combinados que siguen una sintaxis y que se codificarán en instrucciones al ordenador.
+
+Existen diferentes tipos de lenguajes de programación:
+
+- **Lenguajes de bajo nivel**. Son los más cercanos al hardware del ordenador. Dentro de este tipo podemos distinguir:
+    - Lenguaje máquina: Comprensible directamente por la máquina (0’s y 1’s)
+    - Lenguaje ensamblador: Lenguaje cercano a la máquina, pero basado en instrucciones muy simples.
+- **Lenguajes de alto nivel**: Lenguajes independientes del hardware,mucho más comprensibles por el ser humano y que necesitan compilarse para poder traducirse a lenguaje máquina
+
+
 
 ## Clasificación del software
 
@@ -39,13 +49,13 @@ El software se suele clasificar de forma típica en tres tipos según su funció
 
 - Software del sistema
 
-- Software de programación
+- Software de programación y desarrollo
 
 - Software de aplicación
 
 ### Software del sistema (base)
 
-> 💡  El software de sistema también llamado **software de base** es el conjunto de programas que sirven para interactuar con el sistema informático, confiriendo control sobre todo el hardware, además de dar soporte a otros programas.
+El software de sistema también llamado **software de base** es el conjunto de programas que sirven para interactuar con el sistema informático, confiriendo control sobre todo el hardware, además de dar soporte a otros programas.
 
 Este software se divide en:
 
@@ -54,32 +64,107 @@ Este software se divide en:
 -   BIOS/UEFI
 -   Hipervisores de Máquinas Virtuales
 -   Gestores de arranque
--   Otros programas (como *OpenGL, directX*..)
+-   Bibliotecas, APIs y otros componentesdel sistema (OpenGL, directX, .NET..)
 
-### Software de programación
+### Software de programación y desarrollo
 
->   💡 El software de programación es un conjunto de herramientas software que permiten al desarrollador informático escribir programas usando diferentes alternativas y lenguajes de programación (muchos de ellos específicos para cada uno de ellos)
+El software de programación es un conjunto de herramientas software que permiten al desarrollador informático escribir programas usando diferentes alternativas y lenguajes de programación (muchos de ellos específicos para cada uno de ellos)
 
-Este tipo de software incluye principalmente:
+**Edición y desarrollo**
+Visual Studio Code, IntelliJ IDEA, Visual Studio.
 
--   Editores de código
--   Compiladores y depuradores de código
--   Sistemas de gestión de versiones (Git)
--   Intérpretes o ensambladores
--   Entornos de desarrollo integrado (IDEs) y sus frameworks asociados.
+**Compiladores e intérpretes**
+GCC, Java/JVM, Python, Node.js.
+
+**Depuración y pruebas**
+Debuggers, test unitarios, analizadores.
+
+**Control de versiones**
+Git, GitHub, GitLab.
+
+**Automatización y herramientas de desarrollo**
+Maven, Gradle, npm, Docker, CI/CD.
+
 
 ### Software de aplicación
 
->   💡 El software de aplicación son los programas diseñados para los usuarios para la realización de tareas específicas en los ordenadores o dispositivos para los que han sido diseñados.
+El software de aplicación son los programas diseñados para los usuarios para la realización de tareas específicas en los ordenadores o dispositivos para los que han sido diseñados.
 
-Este software se podría dividir en:
+**Creación de documentos**
+Word, Writer, Google Docs
 
--   Aplicaciones móviles
--   Aplicaciones de negocio.
--   Aplicaciones ofimáticas.
--   Aplicaciones educativas.
--   Aplicaciones de entretenimiento.
--   Aplicaciones personales.
+**Navegar y buscar información**
+Chrome, Firefox, Edge
+
+**Comunicarse**
+Outlook, Gmail, Teams, Slack
+
+**Crear contenido**
+Photoshop, GIMP, Canva, OBS
+
+**Trabajo con IA**
+ChatGPT, Gemini, Copilot
+
+#### Aplicaciones de propósito general
+
+Son aplicaciones diseñadas para resolver tareas comunes en múltiples sectores y entornos profesionales, no para una actividad especializada concreta.
+
+Categorías:
+- Ofimática (procesadores de textos, hojas de cálculo, presentaciones..)
+- Bases de datos.
+- Navegadores web.
+- Correo electrónico.
+- Mensajería y videoconferencia.
+- Compresión de archivos.
+- Transferencia de ficheros.
+- Edición básica multimedia.
+- Lectores y editores PDF.
+- Herramientas colaborativas 
+
+#### Aplicaciones de propósito específico
+
+Son aplicaciones diseñadas para una actividad o sector determinado:
+
+Ejemplos:
+- Ingeniería
+- Gestión empresarial
+- Asesorías
+- Creación 3D
+- Redes de telecomunicaciones
+
+La elección del software debe depender de las necesidades, compatibilidad, coste, seguridad, soporte, facilidad de uso y licencia.
+
+
+#### Inteligencia artificial aplicada al software
+La IA se está incorporando como una funcionalidad más dentro del software tradicional y también está dando lugar a nuevas aplicaciones.
+
+**Asistentes conversacionales**
+ChatGPT, Gemini, Claude, Copilot.
+
+**Generación de contenido**
+Texto, imágenes, audio, vídeo y presentaciones.
+
+**Asistencia profesional**
+Redacción, resumen, análisis, traducción y búsqueda.
+
+**Asistencia al desarrollo**
+Generación y explicación de código, documentación, pruebas y depuración.
+
+#### Aplicaciones locales, web y cloud
+La IA se está incorporando como una funcionalidad más dentro del software tradicional y también está dando lugar a nuevas aplicaciones.
+
+**Aplicación de escritorio (local)**
+Se instala y ejecuta principalmente en el equipo.
+
+**Aplicación web**
+Se ejecuta mediante un navegador.
+
+**Aplicación cloud / SaaS**
+El proveedor ofrece la aplicación como servicio a través de Internet.
+
+#### Tendencias en el software actual
+
+![](media/tendency.png)
 
 ### Otras clasificaciones
 
@@ -326,3 +411,46 @@ Un programa libre debe estar disponible para uso comercial, desarrollo comercial
 
 
 ![](media/dbd29cf8de14860ca5a64ac44a50cc36.jpeg)
+
+
+## Selección y evaluación de software
+
+![](media/eleccion_aplicacion.png)
+
+### Selección y evaluación del software de aplicación
+
+En un entorno profesional no siempre debemos elegir la aplicación más conocida, la más cara o la que tenga más funciones.
+
+La aplicación adecuada es aquella que **responde mejor a las necesidades reales del usuario o de la organización.**
+
+Antes de seleccionar una aplicación debemos analizar diferentes criterios:
+
+- **Funcionalidad:** qué tareas permite realizar.
+- **Compatibilidad:** con sistemas operativos, dispositivos y formatos.
+- **Modelo de uso:** aplicación local, web o cloud.
+- **Coste y licencia:** compra, suscripción, software libre o propietario.
+- **Seguridad y privacidad:** tratamiento y protección de la información.
+- **Usabilidad:** facilidad de aprendizaje y utilización.
+- **Integración:** capacidad para trabajar con otras aplicaciones.
+- **Soporte y mantenimiento:** actualizaciones y asistencia técnica.
+
+### Criterios técnicos y funcionales
+
+**Funcionalidad**
+
+- ¿Qué tareas debe realizar?  
+- ¿Qué funciones son imprescindibles?  
+- ¿Qué tipo de usuario va a utilizarla?
+
+**Compatibilidad**
+
+- Sistema operativo: Windows, GNU/Linux, macOS, Android...  
+- Requisitos de hardware: CPU, RAM, almacenamiento o GPU.  
+- Compatibilidad con formatos: PDF, DOCX, CSV, ODF, imágenes, vídeo...  
+- Compatibilidad con otros programas y dispositivos.
+
+**Modelo de uso**
+
+- **Local:** se instala y ejecuta en el equipo.  
+- **Web:** se utiliza desde un navegador.  
+- **Cloud:** se ofrece como servicio a través de Internet.
