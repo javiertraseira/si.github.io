@@ -324,10 +324,12 @@ Debido a que ambos sistemas se relacionan directamente con el sistema binario, l
 ## Sistemas de codificación
 
 ```note
-Bit es el acrónimo *Binary digit* (‘dígito binario’). Un bit es un dígito del sistema de numeración binario. Las unidades de almacenamiento tienen por símbolo bit.
+Bit es el acrónimo *Binary digit* (‘dígito binario’). Un bit es un dígito del sistema de numeración binario que puede adoptar dos valores. Su símbolo es **b**.
 ```
 
 >   El **bit** es la unidad mínima de información empleada en informática, en cualquier dispositivo digital, o en la teoría de la información. Con él, podemos representar dos valores cuales quiera, como verdadero o falso, abierto o cerrado, blanco o negro, norte o sur.
+
+El **byte** es un grupo de ocho bits y su símbolo es B.
 
 Los bits se pueden combinar para dar distintos resultados y generar distintos sistemas de codificación como hemos visto.
 
@@ -335,25 +337,25 @@ Los bits se pueden combinar para dar distintos resultados y generar distintos si
 
 Los **sistemas de codificación** se utilizan para procesar la información que el usuario entiende y el ordenador no.
 
-En dispositivos magnéticos, por ejemplo, una posición magnetizada se convierte en un uno y cada posición no magnetizada en un cero. Se buscará en una **tabla de códigos** y se compara la combinación de esos ocho bits, obteniendo la equivalencia con un carácter concreto en el caso de textos.
+Los dispositivos físicos utilizan diferentes mecanismos para representar estados binarios. En dispositivos magnéticos, por ejemplo, una posición magnetizada se convierte en un uno y cada posición no magnetizada en un cero. Se buscará en una **tabla de códigos** y se compara la combinación de esos ocho bits, obteniendo la equivalencia con un carácter concreto en el caso de textos.
 
 ![](media/magnetics.png)
 
 Diferentes tipos de información poseen diferentes codificaciones, pero las más habituales son:
 
-- Codificaciones numéricas:
+- **Representación numéricas:**
   Número enteros, números en coma flotante, etc.
 
-- Codificaciones alfanuméricas:
+- **Codificaciones de texto (alfanuméricas):**
   ASCII, Unicode (UTF-8, UTF-16)
 
-- Codificaciones multimedia:
-  Audio (wav, mp3, ogg), Gráficos (jpeg, png, tiff), Video (mpeg, avi)
+- **Codificaciones multimedia:**
+  PCM para audio, JPEG para imágenes o H.264/AVC para vídeo.
 
-- Codificaciones de compresión:
+- **Codificaciones de compresión:**
   Sin pérdida (GZIP, BZIP2, LHA), con pérdida (mp3, ogg, jpeg, mpeg)
 
-- Otros:
+- **Otros:**
   Cifrado de clave única, cifrado de clave pública, hash.
 
 ```note
@@ -399,9 +401,9 @@ El código ASCII se divide básicamente en:
 
 ### ASCII extendido (8bits)
 
->   💡Debido a que 8 bits no son suficientes para representar todos los alfabetos del mundo, continuaron apareciendo variantes ASCII de 8 bits incompatibles entre sí. Estas variantes se llaman a veces ASCII extendido, sin ser parte del estándar ANSI.
+Debido a que 8 bits no son suficientes para representar todos los alfabetos del mundo, continuaron apareciendo variantes ASCII de 8 bits incompatibles entre sí. Estas variantes se llaman a veces ASCII extendido, sin ser parte del estándar ANSI.
 
-Hay varios conjuntos de **ASCII extendido**, cada uno de los cuales contiene codificaciones para muchos lenguajes:
+Hay varios conjuntos de **ASCII extendido**, no existe una única codificación, cada una de las cuales contiene codificaciones para muchos lenguajes:
 
 -   **Windows code pages**, usado en aplicaciones gráficas
 -   **OEM code pages**, usando en aplicaciones de consola Windows.
@@ -433,7 +435,7 @@ En ASCII solo es posible trabajar con un alfabeto a la vez. ASCII tampoco es vá
 
 ### UNICODE
 
-> 💡 **UNICODE** es un consorcio internacional nacido en **1991** que define normas de internacionalización (I18N): Códigos de caracteres (Unicode), símbolos, librerías software, formatos…
+**UNICODE** es un consorcio internacional nacido en **1991** que define normas de internacionalización (I18N): Códigos de caracteres (Unicode), símbolos, librerías software, formatos…
 >     [http://www.unicode.org](http://www.unicode.org/)
 
 Es un código de caracteres internacionalizado. Es el resultado más conocido del consorcio. 
@@ -444,25 +446,21 @@ Puede representar la gran mayoría de lenguas presentes y pasadas.
 
 En Unicode existen distintas formas de codificar un mismo carácter según el formato. Existen los siguientes formatos UTF-8, UTF-16 y UTF-32.
 
-- **UTF-8** Usa símbolos de longitud variable de 1 a 4byts. Usa 1 byte para representar caracteres en el set ASCII, dos bytes para caracteres en otros bloques alfabéticos y tres bytes para el resto del BMP. Para los caracteres complementarios se utilizan 4 bytes.
+- **UTF-8** Usa símbolos de longitud variable de 1 a 4 bytes. Usa 1 byte para representar caracteres en el set ASCII, dos bytes para caracteres en otros bloques alfabéticos y tres bytes para el resto del BMP. Para los caracteres complementarios se utilizan 4 bytes.
 - **UTF-16** utiliza 2 bytes para cualquier carácter en el BMP y 4 bytes para los caracteres complementarios.
 - **UTF-32** emplea 4 bytes para todos los caracteres.
 
 
 - Los caracteres se agrupan a su vez en **planos**
 
-    ► Cada plano por tanto se codifica en 2 bytes 2 bytes (16 bits): 2^16 =**64536** caracteres
+    ► Cada plano por tanto se codifica en 2 bytes 2 bytes (16 bits): 2^16 =**65536** caracteres
     
 - Planos más importantes:
 
    -   **BMP** (Basic Multilingual Plane) Agrupa los símbolos más habituales de la mayoría de lenguas actuales.
-
    -   **SMP** (Suplementary Multilingual Plane): Lenguas antiguas y más
-
    -   **SIP** (Supl. Ideographic Plane): Ext. CJK (China, Japón, Korea)
-
    -   **TIP** (Tiertary Ideographic Plane): Lenguas antiguas asiáticas
-
    -   **SSP** (Suplementary Special-purpose Plane): usos especiales
 
 
@@ -471,7 +469,7 @@ En Unicode existen distintas formas de codificar un mismo carácter según el fo
 
 
 -   Los caracteres en Unicode se escriben usando el formato **U+xxxx** donde las xxxx son de cuatro a seis dígitos en sistema de numeración **hexadecimal**.
--   A partir de *Unicode 7.0* el rango válido de puntos de código va de 0 a 10FFFF16. El hexadecimal se usa por conveniencia en lugar del binario, porque es más fácil recordar. La versión más actual es la 12.0 (marzo 2019) con soporte para 136690 caracteres.
+-   A partir de *Unicode 7.0* el rango válido de puntos de código va de 0 a 10FFFF16. El hexadecimal se usa por conveniencia en lugar del binario, porque es más fácil recordar. La versión más actual es la 18.0 (septiembre 2026) con soporte para 172808 caracteres.
 -   Por ejemplo, Unicode asigna el número 65 a la letra a latina mayúscula. El punto de código correspondiente es **U+0041** porque 65 decimal = *0x41*hexadecimal.
 -   Unicode es **compatible** con codificaciones anteriores ya que los 256 primeros caracteres de Unicode coinciden con los caracteres de *ISO-8859-1*. Esto hace que la mayoría de texto en uso requiera solo un byte por carácter.
 -   UTF-8 y UTF-16 son codificaciones de amplitud variable. Esto significa que si un carácter se puede representar con un sólo byte, UTF-8 empleará sólo un byte. Si requiere dos bytes, usará dos, y así sucesivamente.
@@ -482,7 +480,7 @@ En Unicode existen distintas formas de codificar un mismo carácter según el fo
 ![](media/unicode_bmp.png)
 
 
-- Buscar en el **mapa de caracteres de Windows** los valores hexadecimales de los siguientes caracteres de texto Unicode:
+- Ejemplos de puntos de código Unicode con los valores hexadecimales de los siguientes caracteres de texto Unicode:
 
 
   | **Carácter Unicode** | **Valor hexadecimal** |
