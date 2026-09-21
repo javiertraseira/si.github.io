@@ -2,9 +2,9 @@
 
 ## Tipos de datos
 
->   💡 Tal y como sabemos componentes internos de un ordenador no almacenan directamente letras ni números o imágenes, si no 1 y 0’s, es decir la presencia de corriente eléctrica (**1**) o su ausencia (**0**).
+Los componentes de un sistema informático representan y procesan la información mediante estados binarios, simbolizados convencionalmente como 0 y 1. La implementación física de esos estados depende de la tecnología utilizada: niveles eléctricos, carga almacenada, orientación magnética o estados ópticos.
 
-Cuando un usuario quiere almacenar una letra en memoria, por ejemplo desde un programa procesador de textos (software), usando el sistema operativo se convertirá en un conjunto de *8 bits* que almacenarán esa letra codificada como un conjunto de impulsos eléctricos (1 y 0) en la memoria del ordenador.
+Cuando un usuario quiere almacenar una letra en memoria, por ejemplo desde un programa procesador de textos (software), usando el sistema operativo se convertirá en un conjunto de  bits (por ejemplo 8) que almacenarán esa letra codificada como un conjunto de impulsos eléctricos (1 y 0) en la memoria del ordenador.
 
 En este tema analizaremos los distintos **sistemas de numeración** que se usan en un ordenador (internamente binario) y por parte del sistema operativo (octal y hexadecimal) así como los **sistemas de codificación** o equivalencia utilizados para descifrar esos valores por parte del software.
 
@@ -27,17 +27,17 @@ La **base** de un sistema de numeración se refiere al número de símbolos que 
 Así para el **sistema decimal en base 10**, aplicando el *Teorema Fundamental de la Numeración* visto anteriormente, las cifras que componen un número son las cantidades que están multiplicando a las distintas potencias de diez (10, 100, 1000, 10000, etc.)
 
 Por ejemplo, 
-$$
-745 = 7 · 100 + 4 · 10 + 5 · 1
-$$
-O lo que es lo mismo: 
-$$
-745 = 7 · 102 + 4 · 101 + 5 · 100
-$$
+    $$
+    745 = 7 · 100 + 4 · 10 + 5 · 1
+    $$
+    O lo que es lo mismo: 
+    $$
+    745 = 7 · 102 + 4 · 101 + 5 · 100
+    $$
 
 
 
-Principales <u>sistemas de codificación numérica</u> usados en informática:
+Principales **sistemas de numeración** utilizados en informática:
 
 -   **Binario** (abreviado como *bin*) Sistema en **base 2** que utiliza dos símbolos diferentes: el cero y el uno (0,1).
     
@@ -45,7 +45,9 @@ Principales <u>sistemas de codificación numérica</u> usados en informática:
     
 -   **Hexadecimal** (abreviado como *hex*). Es un sistema de numeración en **base 16**. Usa 16 símbolos diferentes, del 0 al 9 y los dígitos valores (o letras) A, B, C, D, E y F.
 
-> El sistema que maneja internamente un ordenador es el **binario**, pero, en ocasiones, por comodidad en el manejo de los datos, se suele utilizar el octal y el hexadecimal, ya que mucha de la información que nos muestra el sistema operativo, como direcciones de memoria, se expresa en hexadecimal.
+```note
+El sistema binario es la base de la representación digital. Los sistemas octal y hexadecimal se utilizan como notaciones compactas porque sus bases son potencias de dos: cada dígito octal representa 3 bits y cada dígito hexadecimal representa 4 bits.
+```
 
 ### Binario
 
@@ -123,7 +125,7 @@ Principales <u>sistemas de codificación numérica</u> usados en informática:
 
 ### Nº de bits (dígitos binarios)
 
-Un número binario está por tanto compuesto por bits: a mayor número de bits (dígitos binarios), mayor número de <u>combinaciones</u> posibles:
+Un número binario está por tanto compuesto por bits: a mayor número de bits (dígitos binarios), mayor número de combinaciones posibles:
 
 | Nº de bits | Combinaciones posibles          |
 | ---------- | ------------------------------- |
@@ -141,9 +143,9 @@ Por extensión, el ordenador utiliza los sistemas de numeración de base 8 y bas
 
 > Debido a la estructura de 64 bits de un microprocesador las direcciones de memoria se expresan a menudo en hexadecimal. Por ejemplo, para no tener que escribir *111111010100000000000010101100* podemos escribir *3F5000AC* en hexadecimal.
 
-- Un procesador y un bus de **32 bits** permite especificar a la CPU <img src="https://render.githubusercontent.com/render/math?math=2^32=4.294.967.296">  direcciones de memoria distintas, lo cual a su vez genera un límite de 4GB en el dispositivo.
+- Si un sistema dispone de **32 bits** bits para representar direcciones de memoria, puede generar teóricamente 2^32= 4.294.967.296 direcciones, lo cual a su vez genera un límite de 4GB en el dispositivo.
 
-- Un procesador y un bus de **64 bits** permite especificar a la CPU <img src="https://render.githubusercontent.com/render/math?math=2^64"> direcciones (lo que se traduce en un rango de valores desde 0 hasta 18.446.744.073.709.551.615 de direcciones o 18 exabytes )
+- Para un sistema con **64 bits** podrían representarse teóricamente 264 direcciones (lo que se traduce en un rango de valores desde 0 hasta 18.446.744.073.709.551.615 de direcciones o 18 exabytes )
 
 
 ![](media/bsod.jpg)
