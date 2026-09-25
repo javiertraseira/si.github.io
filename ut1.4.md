@@ -54,6 +54,48 @@ información que se utiliza, permitiendo el acceso de determinados usuarios úni
 
 -   Muchos programas y dispositivos tienen bugs (agujeros en la seguridad) que pueden aprovecharse para acceder a la configuración de forma remota. La **seguridad** debe ser una cuestión importante, pues algunos usuarios pueden crear problemas voluntaria o involuntariamente.
 
+## Componentes básicos de una red
+
+Una red informática está formada por varios elementos que permiten que los dispositivos se comuniquen entre sí:
+
+- **Dispositivos finales**: ordenadores, móviles, impresoras, servidores y dispositivos IoT.
+- **Tarjeta o adaptador de red**: permite conectar el equipo a la red.
+- **Medios de transmisión**: cable Ethernet, fibra óptica o Wi-Fi.
+- **Dispositivos de interconexión**: switches, routers y puntos de acceso.
+- **Servicios de red**: permiten compartir archivos, impresoras, Internet u otros recursos.
+
+![](media/componentes-red.jpg)
+
+### Dispositivos finales y medios de transmisión
+
+Los **dispositivos finales** son los equipos que utilizan los usuarios o que ofrecen servicios dentro de la red. Algunos ejemplos son:
+
+- PC o portátil.
+- Smartphone o tablet.
+- Impresora de red.
+- Servidor.
+- Dispositivos IoT.
+
+![](media/dispositivos-finales.png)
+
+Los datos viajan a través de un **medio de transmisión**:
+
+- **Cable de par trenzado**: habitual en redes locales.
+- **Fibra óptica**: ofrece gran velocidad y permite cubrir largas distancias.
+- **Wi-Fi**: permite la comunicación inalámbrica mediante ondas de radio.
+
+![](media/medios-transmision.jpeg)
+
+### Dispositivos de interconexión
+
+Los dispositivos de interconexión permiten unir equipos y redes entre sí:
+
+- **Switch**: conecta varios dispositivos dentro de una red local, por ejemplo, varios ordenadores de un aula.
+- **Punto de acceso Wi-Fi**: permite conectar dispositivos inalámbricos a la red.
+- **Router**: conecta redes diferentes. En casa o en el aula, normalmente conecta la red local con Internet.
+
+![](media/dispositivos-interconexion.png)
+
 ## Internet
 
 ```note
@@ -154,12 +196,43 @@ Internet ya no depende solo de servidores centrales. Esto hace que sean más res
 - La IA está cada vez más integrada en servicios online: buscadores inteligentes, chatbots, traducción automática, asistentes virtuales.
 - Ejemplos: ChatGPT, traductores online, algoritmos de recomendación en Netflix o Spotify.
 
+### Evolución de las redes e Internet en la vida cotidiana
 
-¿Qué pasa en un minuto en **Internet** en 2024?
+La evolución de las redes ha pasado de una computación fija, en la que el usuario se desplazaba hasta el dispositivo, a la movilidad y el modelo *Bring Your Own Device* (BYOD). Posteriormente apareció el Internet de las cosas y, finalmente, el Internet de todo, que conecta personas, procesos, datos y objetos.
 
-![Gráfico, Diagrama  Descripción generada automáticamente](media/e2fb04468abba87bfcaa450c16d0ef11.jpeg)
+![](media/evolucion-redes-vida-cotidiana.png)
 
-## Servicios web
+### Evolución de los campos de la IA
+
+La inteligencia artificial surgió como disciplina en la década de 1950. El aprendizaje automático se desarrolló a partir de la década de 1980, el aprendizaje profundo cobró protagonismo en la década de 2010 y la IA generativa se extendió durante la década de 2020.
+
+![](media/evolucion-inteligencia-artificial.png)
+
+### Servicios en red
+
+Los **servicios en red** son las aplicaciones y recursos que permiten a los usuarios y dispositivos comunicarse, compartir información y acceder a funcionalidades a través de una red informática.
+
+Entre los principales servicios actuales se encuentran la navegación web, el correo electrónico, la mensajería instantánea, las videollamadas, el almacenamiento en la nube, el *streaming*, las redes sociales, el comercio electrónico, las aplicaciones SaaS y los juegos en línea.
+
+![](media/servicios-en-red.png)
+
+### Actividad en Internet por minuto
+
+La siguiente infografía muestra ejemplos del volumen de actividad que se produce en Internet durante un minuto. Los datos representados corresponden a 2023.
+
+![](media/internet-por-minuto-2023.png)
+
+### De la red local a la nube
+
+Tradicionalmente, muchos servicios se ejecutaban en servidores situados dentro de la propia organización, es decir, en una red local.
+
+Actualmente, es habitual acceder a servidores y aplicaciones alojados en centros de datos a través de Internet mediante servicios *cloud*.
+
+![](media/red-local-servicio-cloud.png)
+
+![](media/infraestructura-local-cloud.png)
+
+### Servicios web
 
 ```note
 Un **servicio web** es cualquier software que se pone a su disposición a través de Internet y utiliza un formato estandarizado (como XML o JSON) para la solicitud y la
@@ -193,7 +266,7 @@ Tipos de redes:
 
 A menudo, las redes físicas pueden conformar la base para varias redes de comunicación lógicas, llamadas **Virtual Private Networks (VPN)** de tamaño generalmente global.
 
-![](media/260b47ce3eaab9d0e510c8b020901cca.png)
+![](media/tipos-redes-pan-lan-wan.png)
 
 
 
@@ -265,6 +338,8 @@ Si el criterio que utilizamos es la **direccionalidad de la transmisión**, los 
 - Simplex: Cuando la comunicación se efectúa en un sólo sentido. Emisor emite, receptor recibe. Ejemplo: Cuando escuchamos música por radio analógica. Sólo nosotros recibimos.
 - Semidúplex (half duplex): Cuando la comunicación se realiza en los dos sentidos, pero no de forma simultánea. Emisor emite, receptor recibe, receptor pasa a ser emisor, y emisor pasa a ser receptor. Ejemplo: Hablar por emisoras o funcionamiento del WiFi.
 - Dúplex (full duplex): Cuando la comunicación se realiza en ambos sentidos de forma simultánea. Ambos son emisores y receptores a la vez.
+
+![](media/direccionalidad-transmision.png)
 
 ### Según su tecnología de interconexión
 
@@ -348,6 +423,10 @@ Es la forma en que circula la información dentro de la red, independientemente 
 - Describe cómo viajan los datos y qué reglas siguen en la comunicación.
 - Ejemplos: Una LAN Ethernet puede tener topología lógica en bus, aunque físicamente sea en estrella (todos al switch).
 
+![](media/topologia-fisica-logica.png)
+
+![](media/topologia-logica-malla-parcial.png)
+
 
 ## Características de una red
 
@@ -376,12 +455,20 @@ Por esta razón resulta determinante contar con un **hardware redundante** para 
 
 ![](media/353a202c8ee384ac5bf3f6963389c8e4.jpeg)
 
+Las conexiones redundantes permiten utilizar rutas alternativas cuando falla un dispositivo o un enlace, de modo que la experiencia del usuario no se vea afectada.
+
+![](media/conexiones-redundantes.jpg)
+
 ### Seguridad en la red
 
 -   Es un conjunto de estrategias que sirven para proteger una red de accesos indebidos o pérdida de datos. En el caso de redes inalámbricas, la **seguridad** es uno de sus aspectos más peligrosos y controvertidos. El uso de cifrados o contraseñas inseguras junto con la aparición de intrusos que puedan robar información y drenar ancho de banda es una de las razones que convierte estas redes en bastante más vulnerables.
 -  Por otro lado, las redes cableadas pueden sufrir interferencias (ruido) como consecuencia del uso de otros aparatos electrónicos. A diferencia de estas, la fibra óptica es la que ofrece una mayor seguridad.
 
 ![](media/a0c49a96b71dfe3afdfb18ca216eb898.png)
+
+Los administradores pueden proteger la red mediante mecanismos de seguridad de hardware y software, además de impedir el acceso físico no autorizado a los dispositivos de red.
+
+![](media/seguridad-red-medidas.png)
 
 
 ### Escalabilidad
@@ -390,6 +477,10 @@ Por esta razón resulta determinante contar con un **hardware redundante** para 
 -   Es por eso importante ver la facilidad y las posibilidades de añadir o cambiar componentes de hardware y software o nuevos servidores para mejorar el rendimiento de la red.
 
     ![](media/d3ee695c2c06bcfef04e6e7be9f2b48c.jpeg)
+
+Una red escalable permite conectar redes completas y usuarios adicionales sin degradar el rendimiento de los usuarios existentes.
+
+![](media/escalabilidad-red.png)
 
 ### Disponibilidad
 
@@ -460,4 +551,22 @@ Los equipos informáticos funcionan con electricidad y pueden presentar riesgos 
 
 La correcta organización del espacio de trabajo en un entorno informático es fundamental para garantizar tanto la seguridad física como la comodidad de los usuarios. Un área de trabajo ordenada reduce el riesgo de accidentes (como tropiezos con cables), facilita el mantenimiento de los equipos y favorece unas mejores condiciones de concentración y productividad.
 
+- Mantener el área de trabajo libre de obstáculos y cables sueltos.
+- Usar canaletas o pasacables para evitar tropiezos.
+- Señalizar y respetar las zonas de riesgo, como cuadros eléctricos o racks de servidores.
+
 ![](media/espacio_trabajo.png)
+
+### Seguridad informática
+
+Aunque la seguridad informática se abordará con mayor profundidad en unidades posteriores, también forma parte de la prevención:
+
+- Utilizar **contraseñas seguras**, largas y difíciles de adivinar. No se deben reutilizar y deben cumplir la política de seguridad de la organización.
+- Bloquear la sesión al dejar el puesto desatendido.
+- Mantener los equipos con el software actualizado y con antivirus.
+- No descargar ni instalar aplicaciones de fuentes no confiables.
+- Realizar copias de seguridad periódicas de los trabajos o datos del aula.
+
+![](media/seguridad-informatica.png)
+
+![](media/riesgos-seguridad-informatica.png)
