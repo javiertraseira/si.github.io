@@ -50,7 +50,7 @@ Una de las memorias contiene solamente las instrucciones del programa (Memoria d
 
 ## Arquitectura Von Neumann
 
->   💡 La arquitectura **Von Neumann** es una arquitectura de computadoras descrita en 1945 por el matemático y físico John Von Neumann. Esta es la arquitectura que rige actualmente en los ordenadores modernos con ligeras modificaciones.
+La arquitectura **Von Neumann** es una arquitectura de computadoras descrita en 1945 por el matemático y físico John Von Neumann. Esta es la arquitectura que rige actualmente en los ordenadores modernos con ligeras modificaciones.
 
 Tradicionalmente los sistemas con microprocesadores se basan en esta arquitectura, en la cual la unidad central de proceso (CPU), está conectada a una memoria principal única (casi siempre sólo RAM) donde se guardan las instrucciones del programa y los datos. A dicha memoria se accede a través de un sistema de buses único (control, direcciones y datos):
 
@@ -93,7 +93,9 @@ Dicha arquitectura consta de los siguientes <u>bloques</u>:
 
 ### Cuello de botella del modelo  
 
->   📌 El canal de transmisión de los datos entre CPU y memoria genera un **cuello de botella** para el rendimiento del procesador. 
+```note
+El canal de transmisión de los datos entre CPU y memoria genera un **cuello de botella** para el rendimiento del procesador. 
+```
 
 En la mayoría de computadoras modernas, la velocidad de comunicación entre la memoria y la CPU es más baja que la velocidad a la que puede trabajar esta última, reduciendo el rendimiento del procesador y limitando seriamente la velocidad de proceso eficaz, sobre todo cuando se necesitan procesar grandes cantidades de datos.
 
@@ -119,8 +121,11 @@ Un procesador está compuesto principalmente de:
 -   Reloj
 -   Otros: Tarjeta gráfica integrada (IGP) u otros elementos auxiliares
 
+### Frecuencia de reloj	
 
->   💡 La **frecuencia de reloj** en relación a un procesador o indica la frecuencia a la cual los transistores que lo conforman conmutan eléctricamente, es decir, abren y cierran el flujo de una corriente eléctrica.
+```note
+La **frecuencia de reloj** en relación a un procesador o indica la frecuencia a la cual los transistores que lo conforman conmutan eléctricamente, es decir, abren y cierran el flujo de una corriente eléctrica.
+```
 
 La frecuencia es una magnitud cuya unidad es el **Hertzio** "Hz", que representa un ciclo u oscilación por segundo. En el caso de los procesadores indica las conmutaciones eléctricas en un segundo dentro de un transistor.
 
@@ -128,6 +133,7 @@ $$
 2,1 GHz → 2,1·10^9
 $$
 
+![](media/frequency.png)
 
 ### Unidad de Control (UC)
 
@@ -153,7 +159,9 @@ El proceso empieza cuando llega una instrucción al **registro de instrucciones*
 
 ###  Unidad Aritmético-Lógica (ALU)
 
->   💡 Las funciones de la **Unidad aritmético-lógica (ALU)** son principalmente la de ejecutar operaciones aritméticas y comparaciones.
+```note
+Las funciones de la **Unidad aritmético-lógica (ALU)** son principalmente la de ejecutar operaciones aritméticas y comparaciones.
+```
 
 -   Cálculos (operaciones aritméticas)
     -   suma, resta, multiplicación y división
@@ -211,7 +219,7 @@ Vamos a trabajar con los siguientes registros de la CPU que ya hemos nombrado:
 4. La UC ordenará a la ALU que efectúe las operaciones necesarias. El resultado de la operación se almacenará en el **Registro Acumulador**.
 5. Finalmente se incrementará en 1 el registro del **Contador de Programa**.
 
-##   La memoria	
+## La memoria	
 
 ```note
 Se denomina **memoria** a cualquier dispositivo electrónico que retenga, memorice o almacena datos informáticos durante un período de tiempo determinado.
@@ -329,6 +337,7 @@ Existen varios tipos de buses:
 
 - **Bus de datos**: permite el intercambio de datos entre la CPU y el resto de dispositivos.
 
+![](media/buses.png)
 
 ![](media/esquema_bus.jpg)
 
@@ -336,6 +345,7 @@ Existen varios tipos de buses:
 
 
 Podemos clasificar los buses también según el tipo de transmisión: 
+
 - **Serie/Paralelo**: un bus en serie envía la información secuencialmente bit a bit, mientras que un bus paralelo puede enviar una palabra completa en un solo ciclo de reloj. Los buses paralelos tienen par tanta la ventaja de su velocidad pero tienen problemas de  sincronización de señales para largas distancias y son más caras 
 - **Unidireccional/bidireccional**: en función de si únicamente pueden transmitir información en un sentido o si pue den transmitir en ambos sentidos. 
 - **Simplex/semiduplex/fullduplex** el bus simple es unidireccional. Es semiduplex cuando puede enviar en ambos sentidos pero no al mismo tiempo (a bien envía en un sentido o  bien envía en el otro), y es fullduplex cuando puede enviar en ambos sentidos simultáneamente. 
@@ -346,6 +356,10 @@ Existen dos tipos de transferencia en los buses como ya comentamos:
 - **Paralelo**: El bus permite transferir varios bits simultáneamente, por ejemplo 8 bits.
 
 ![esquema_buses](media/esquema_buses.png)
+
+### Jerarquía de buses
+
+![jerarquia_buses](media/jerarquia_buses.png)
 
 ## Unidad de control E/S	
 
