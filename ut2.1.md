@@ -8,7 +8,7 @@ La arquitectura básica de los ordenadores parte del siguiente esquema básico:
 
 La **CPU** también está compuesta por una memoria (en la cual residen los datos y los programas) y un procesador, que irá ejecutando las órdenes de los programas y la información de los periféricos de entrada para poder generar la salida esperada:
 
-![](media/esquema_basico_cpu.jpg)
+![](media/esquema_basico_cpu.png)
 
 Algunos <u>conceptos</u> importantes que veremos en arquitectura de computadores:
 
