@@ -377,6 +377,8 @@ Sus funciones son:
 
 ![esquema_chipset](media/esquema_chipset.png)
 
+![esquema_chipset](media/esquema_chipset1.png)
+
 ## Los periféricos	
 
 ```note
